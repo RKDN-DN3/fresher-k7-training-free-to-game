@@ -1,3 +1,3 @@
-# fresher-k7-training-free-to-game
+# FreeToGame
 
 Api use: https://www.freetogame.com/api-doc
