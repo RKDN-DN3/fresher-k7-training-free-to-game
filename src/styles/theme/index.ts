@@ -4,6 +4,8 @@ export const secondaryColor = '#32383e';
 export const primaryTextColor = '#aaa';
 export const secondaryTextColor = '#7a8288';
 export const tertiaryTextColor = '#272b30';
+export const whiteColor = '#FFFFFF';
+export const subColor = '#3a3f44';
 
 export const backgroundColor = '#7a8288';
 

@@ -3,7 +3,7 @@ import { LanguageState } from '../../types';
 // const localStorageLang = localStorage.getItem('language');
 
 const initialState: LanguageState = {
-  language: 'VI',
+  language: 'EN',
 };
 
 export const LanguageSlice = createSlice({

@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../header';
-import styles from './DefaultLayout.module.scss';
+import { DefaultLayoutContainer, Content } from './style';
 
 type Props = {
   children?: React.ReactNode;
@@ -8,10 +8,10 @@ type Props = {
 
 const DefaultLayout = ({ children }: Props) => {
   return (
-    <div className={styles.container}>
+    <DefaultLayoutContainer>
       <Header />
-      <div className={styles.content}>{children}</div>
-    </div>
+      <Content>{children}</Content>
+    </DefaultLayoutContainer>
   );
 };
 

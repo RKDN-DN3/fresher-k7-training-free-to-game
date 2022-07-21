@@ -1,6 +1,6 @@
-export interface LanguageState {
-  language: 'VI' | 'EN';
-}
+export type LanguageState = {
+  language: string;
+};
 
 export interface RouteType {
   component: () => JSX.Element;

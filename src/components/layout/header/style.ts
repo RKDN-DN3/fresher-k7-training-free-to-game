@@ -1,29 +1,44 @@
 import styled from 'styled-components';
-// import { Link } from 'react-router-dom';
-import { primaryColor, primaryTextColor, width } from 'styles/theme';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import { primaryColor, primaryTextColor, width, whiteColor, subColor } from 'styles/theme';
 import { breakpoints } from 'styles/breakpoints';
+import { MenuItem, Popover, Select, Box } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 
 export const HeaderContainer = styled.div`
+  position: sticky;
+  top: 0;
+  z-index: 10;
   display: flex;
   align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  min-height: 55px;
   padding: 0 16px;
   color: ${primaryTextColor};
-  height: 55px;
   background-color: ${primaryColor};
-  @media (min-width: ${breakpoints.tablet}) {
+  border-bottom: 1px solid rgba(28, 28, 28, 0.6) !important;
+  text-shadow: 1px 1px 1px rgb(0 0 0 / 30%);
+  @media (max-width: ${breakpoints.tablet}) {
     white-space: nowrap;
+    padding: 0 70px;
   }
 `;
+
 export const HeaderContent = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  min-height: 55px;
   width: ${width};
   color: ${primaryTextColor};
-  height: 55px;
   background-color: ${primaryColor};
-  @media (min-width: ${breakpoints.tablet}) {
+  @media (max-width: ${breakpoints.tablet}) {
     white-space: nowrap;
+    margin: 0 100px !important;
+    width: 100%;
+  }
+  @media (max-width: 1160px) {
+    width: 100%;
   }
 `;
 
@@ -47,55 +62,104 @@ export const Right = styled.div`
 export const Li = styled.li`
   display: flex;
   align-items: center;
+  cursor: pointer;
+  &:hover {
+    color: ${whiteColor};
+  }
 `;
-// export const StyledLink = styled(Link)`
-//   width: 100%;
-//   display: inline-block;
-//   background-color: ${secondaryColor};
-//   border-radius: 4px;
-//   text-decoration: none;
-// `;
 
-// export const Title = styled.h2`
-//   margin: 0;
-//   font-size: 24px;
-//   font-weight: 510;
-//   color: ${primaryTextColor};
-//   @media (min-width: ${breakpoints.tablet}) {
-//     overflow: hidden;
-//     text-overflow: ellipsis;
-//   }
-// `;
+export const LiItem = styled(Li)`
+  @media (max-width: ${breakpoints.tablet}) {
+    display: none;
+  }
+`;
 
-// export const Details = styled.div`
-//   padding: 20px;
-//   @media (min-width: ${breakpoints.tablet}) {
-//     white-space: nowrap;
-//   }
-// `;
+export const IconDropDown = styled(ArrowDropDownIcon)`
+  font-size: 50px;
+`;
+export const Dropdown = styled(Popover)`
+  width: 100%;
+`;
 
-// export const Description = styled.p`
-//   font-size: 16px;
-//   color: ${secondaryTextColor};
-//   @media (min-width: ${breakpoints.tablet}) {
-//     overflow: hidden;
-//     text-overflow: ellipsis;
-//   }
-// `;
+export const Item = styled(MenuItem)`
+  width: 100%;
+`;
 
-// export const Icon = styled.img`
-//   width: 20px;
-//   height: 20px;
-//   margin-right: 8px;
-// `;
+export const SelectStyled = styled(Select)`
+  border-radius: 5px;
+  padding: 3px;
+  height: 25px;
+  background-color: transparent;
+  color: ${whiteColor} !important;
+  font-size: 12px !important;
+  fieldset {
+    border: none;
+  }
+  .MuiSvgIcon-root {
+    display: none;
+  }
+  .MuiSelect-select {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .MuiList-root {
+    padding: 0;
+  }
+  .MuiPaper-root {
+    top: 55px !important;
+  }
+`;
 
-// export const Genre = styled.p`
-//   padding: 2px 4px;
-//   margin: 0 8px 0 0;
-//   border-radius: 4px;
-//   font-size: 12px;
-//   font-weight: bold;
-//   color: ${tertiaryTextColor};
-//   background-color: ${backgroundColor};
-//   float: right;
-// `;
+export const ItemSelect = styled(MenuItem)`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px !important;
+  height: 25px;
+  background-color: ${subColor} !important;
+  color: ${whiteColor} !important;
+  &:hover {
+    background-color: ${primaryColor} !important;
+  }
+`;
+
+export const MenuSub = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 16px;
+  cursor: pointer;
+  &:hover {
+    color: ${whiteColor} !important;
+  }
+  @media (max-width: ${breakpoints.tablet}) {
+    padding: 16px 70px;
+  }
+`;
+type BoxSubState = {
+  open: boolean;
+};
+
+export const BoxSub = styled(Box)`
+  position: absolute;
+  background-color: ${primaryColor} !important;
+  top: 55px;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100% !important;
+  overflow: hidden;
+  height: 0;
+  -webkit-transition: height 0.5s;
+  transition: height 0.5s;
+  ${({ open }: BoxSubState) => (open ? `height: 250px` : '0')};
+`;
+
+export const IconMenu = styled(MenuIcon)`
+  border: 1px solid ${primaryTextColor};
+  border-radius: 5px;
+  padding: 3px;
+  font-size: 30px !important;
+  border-color: ${({ open }: BoxSubState) => (open ? `#FFFFFF` : '')};
+`;
