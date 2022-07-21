@@ -59,6 +59,11 @@ export const TitleDes = styled.div`
   font-size: 14px;
   font-weight: 300;
   color: ${secondaryTextColor};
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 380px;
 `;
 
 export const IconSa = styled(IconSave)`

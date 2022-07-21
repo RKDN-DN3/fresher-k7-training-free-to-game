@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import { width } from 'styles/theme';
-import { breakpoints } from 'styles/breakpoints';
 
 export const TopTittle = styled.div`
   display: flex;

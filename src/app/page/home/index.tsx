@@ -1,6 +1,6 @@
 import ListGame from 'components/listGame';
 import { Container } from 'styles/components/style';
-import { ContentGame, ContentLeft, ContentRight } from './style';
+import { ContentGame, ContentLeft, ContentRight, Banner } from './style';
 import { translate } from 'language';
 import SmartToyIcon from '@mui/icons-material/SmartToy';
 import HelpIcon from '@mui/icons-material/Help';
@@ -18,6 +18,8 @@ const arr: State[] = [
   { tittle: 'tien' },
   { tittle: 'tien' },
   { tittle: 'tien' },
+  { tittle: 'tien' },
+  { tittle: 'tien' },
 ];
 
 const Home = () => {
@@ -25,6 +27,10 @@ const Home = () => {
 
   return (
     <Container>
+      <Banner>
+        Find & track the best free-to-play games! Track what you've played and search for what to play next! Plus get
+        free premium loot!
+      </Banner>
       <HeaderTitle
         topTile={translate('recommendations', language)}
         bottomTitle={translate('help', language)}
@@ -35,7 +41,7 @@ const Home = () => {
       <ContentGame>
         <ContentLeft>
           <HeaderTitle topTile={translate('recently-added', language)} />
-          <ListGame items={arr} limit={5} Card={CardGameMini} column />
+          <ListGame items={arr} limit={6} Card={CardGameMini} column />
         </ContentLeft>
         <ContentRight>
           <HeaderTitle topTile={translate('most-play-today', language)} />
