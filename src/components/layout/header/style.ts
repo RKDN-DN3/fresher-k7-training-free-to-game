@@ -1,7 +1,9 @@
 import styled from 'styled-components';
-// import { Link } from 'react-router-dom';
-import { primaryColor, primaryTextColor, width } from 'styles/theme';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import { primaryColor, primaryTextColor, width, whiteColor } from 'styles/theme';
 import { breakpoints } from 'styles/breakpoints';
+import { MenuItem, Popover, Select } from '@mui/material';
+import { ReactComponent as IconVi } from 'assets/icons/IconVi.svg';
 
 export const HeaderContainer = styled.div`
   display: flex;
@@ -15,9 +17,11 @@ export const HeaderContainer = styled.div`
     white-space: nowrap;
   }
 `;
+
 export const HeaderContent = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: ${width};
   color: ${primaryTextColor};
   height: 55px;
@@ -47,7 +51,54 @@ export const Right = styled.div`
 export const Li = styled.li`
   display: flex;
   align-items: center;
+  cursor: pointer;
+  &:hover {
+    color: ${whiteColor};
+  }
 `;
+
+export const IconDropDown = styled(ArrowDropDownIcon)`
+  font-size: 50px;
+`;
+export const Dropdown = styled(Popover)`
+  width: 100%;
+`;
+
+export const Item = styled(MenuItem)`
+  width: 100%;
+`;
+
+export const SelectStyled = styled(Select)`
+  border-radius: 5px;
+  padding: 3px;
+  height: 25px;
+  background-color: transparent;
+  color: ${whiteColor} !important;
+  font-size: 12px !important;
+  fieldset {
+    border: none;
+  }
+  svg {
+    color: ${whiteColor} !important;
+  }
+  .MuiSelect-select {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .MuiPaper-root {
+    top: 50px !important;
+  }
+`;
+
+export const ItemSelect = styled(MenuItem)`
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px !important;
+  height: 25px;
+`;
+
 // export const StyledLink = styled(Link)`
 //   width: 100%;
 //   display: inline-block;
