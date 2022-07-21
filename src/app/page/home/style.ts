@@ -7,3 +7,15 @@ export const Container = styled.div`
   width: ${width};
   margin: auto;
 `;
+
+export const ContentGame = styled.div`
+  display: flex;
+  gap: 20px;
+  margin-top: 50px;
+`;
+
+export const ContentLeft = styled.div`
+  flex: 2;
+`;
+
+export const ContentRight = styled.div``;

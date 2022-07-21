@@ -17,10 +17,12 @@ const HeaderTitle = (props: HeaderTitleProps) => {
         {IconTop && <IconTop />}
         <H3>{topTile}</H3>
       </TopTittle>
-      <BottomTittle>
-        {IconBottom && <IconBottom />}
-        {bottomTitle}
-      </BottomTittle>
+      {bottomTitle && (
+        <BottomTittle>
+          {IconBottom && <IconBottom />}
+          {bottomTitle}
+        </BottomTittle>
+      )}
     </Container>
   );
 };

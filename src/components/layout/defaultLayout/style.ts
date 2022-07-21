@@ -9,5 +9,5 @@ export const Content = styled.div`
   width: ${width};
   margin: auto;
   margin-top: 50px;
-  height: 1000px;
+  height: 2000px;
 `;

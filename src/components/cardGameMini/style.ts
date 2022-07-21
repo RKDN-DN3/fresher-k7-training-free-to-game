@@ -3,7 +3,8 @@ import { whiteColor } from 'styles/theme';
 import styled from 'styled-components';
 
 export const CardGameContainer = styled.div`
-  position: relative;
+  display: flex;
+  padding: 20px;
   background-color: ${secondaryColor};
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
@@ -32,11 +33,6 @@ export const Button = styled.button`
   font-weight: 700;
   cursor: pointer;
 `;
-
-export const Img = styled.img``;
-
-export const ButtonAlone = styled(Button)`
-  position: absolute;
-  right: 15px;
-  bottom: 15px;
+export const Img = styled.img`
+  height: 90px;
 `;
