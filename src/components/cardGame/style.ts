@@ -7,7 +7,7 @@ export const CardGameContainer = styled.div`
   background-color: ${secondaryColor};
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-  border-radius: 3px;
+  border-radius: 5px;
   overflow: hidden;
   transition: all 0.2s ease-in-out;
   &:hover {

@@ -35,7 +35,7 @@ const Home = () => {
       <ContentGame>
         <ContentLeft>
           <HeaderTitle topTile={translate('recently-added', language)} />
-          <ListGame items={arr} limit={2} Card={CardGameMini} column />
+          <ListGame items={arr} limit={5} Card={CardGameMini} column />
         </ContentLeft>
         <ContentRight>
           <HeaderTitle topTile={translate('most-play-today', language)} />

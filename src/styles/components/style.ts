@@ -8,6 +8,7 @@ export const Container = styled.div`
 
 export const H3 = styled.h3`
   color: ${primaryTextColor};
-  font-size: 24px;
+  font-size: 20px;
   margin: 0;
+  font-weight: 500;
 `;
