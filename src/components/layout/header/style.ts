@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { ItemSelect } from './../../selectLanguage/style';
 import styled from 'styled-components';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
@@ -165,4 +166,9 @@ export const IconMenu = styled(MenuIcon)`
   padding: 3px;
   font-size: 30px !important;
   border-color: ${({ open }: BoxSubState) => (open ? `#FFFFFF` : '')};
+`;
+
+export const LinkStyled = styled(Link)`
+  color: ${primaryTextColor} !important;
+  text-decoration: none;
 `;

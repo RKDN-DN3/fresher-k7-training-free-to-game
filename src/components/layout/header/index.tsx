@@ -13,6 +13,7 @@ import {
   MenuSub,
   BoxSub,
   IconMenu,
+  LinkStyled,
 } from './style';
 import { useSelector } from 'react-redux';
 import { RootState } from 'app/store';
@@ -20,9 +21,9 @@ import { translate } from 'language';
 import SelectLanguage from 'components/selectLanguage';
 import { Box } from '@mui/system';
 import { IconButton } from '@mui/material';
-import { Link } from 'react-router-dom';
 import { GENRES_ALL, GENRES_BROWSER } from 'constants/constants.d';
 import { GENRES_ARR, GENRES_BROWSER_ARR, typeListGame } from 'constants/games';
+import { useNavigate } from 'react-router-dom';
 
 type headerType = {
   title: string;
@@ -41,6 +42,7 @@ const Header = () => {
   const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
   const [openSubMenu, setOpenSubMenu] = React.useState(false);
   const [listSubMenu, setListSubMenu] = React.useState<typeListGame[]>([]);
+  const navigate = useNavigate();
 
   const { language } = useSelector((state: RootState) => state.lang);
   const handleOpenMenuItem = (e: any, item: headerType) => {
@@ -59,17 +61,22 @@ const Header = () => {
     setAnchorEl(null);
   };
 
+  const handleClickMenuItem = (item: typeListGame) => {
+    setAnchorEl(null);
+    navigate(`/games?id=${item.value}`);
+  };
+
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
   return (
     <HeaderContainer>
       <HeaderContent>
         <Left>
-          <Link to="/">
+          <LinkStyled to="/">
             <Li>
               <Img src="https://www.freetogame.com/assets/images/freetogame-logo.png" />
             </Li>
-          </Link>
+          </LinkStyled>
           {headers?.map((item: headerType, index: number) => {
             const Icon = item.icon;
             return (
@@ -92,7 +99,11 @@ const Header = () => {
             }}
           >
             {listSubMenu?.map((item: typeListGame, i: any) => {
-              return <Item key={i}>{item.display}</Item>;
+              return (
+                <Item key={i} onClick={() => handleClickMenuItem(item)}>
+                  {item.display}
+                </Item>
+              );
             })}
           </Dropdown>
         </Left>

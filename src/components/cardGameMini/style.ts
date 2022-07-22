@@ -87,9 +87,11 @@ export const CardGameMiniViewGamesStyled = styled.div`
   .cardGameMini {
     flex-direction: column;
     width: 270px;
+    height: 280px;
     padding: 0;
     img {
       flex: 1;
+      height: 152px;
     }
     .card-game-mini_des-container {
       display: flex;
@@ -112,6 +114,7 @@ export const CardGameMiniViewGamesStyled = styled.div`
       svg {
         margin: 0;
         width: 15px;
+        height: 15px;
       }
       button {
         height: 13px;
@@ -123,6 +126,14 @@ export const CardGameMiniViewGamesStyled = styled.div`
       justify-content: space-between;
       align-items: center;
       gap: 5px;
+      h3 {
+        white-space: normal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+      }
       button {
         display: flex;
         align-items: center;
