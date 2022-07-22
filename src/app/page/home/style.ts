@@ -1,6 +1,6 @@
+import { black_1 } from './../../../styles/theme/index';
 import styled from 'styled-components';
 import { width } from 'styles/theme';
-import { breakpoints } from 'styles/breakpoints';
 
 export const Container = styled.div`
   background-color: red !important;
@@ -19,3 +19,42 @@ export const ContentLeft = styled.div`
 `;
 
 export const ContentRight = styled.div``;
+
+export const Community = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+`;
+
+export const CommunityItem = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 26px;
+  background-color: ${black_1};
+  max-height: 200px;
+  width: 50%;
+`;
+
+export const CommunityDes = styled.div`
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  line-height: 16pt;
+  word-spacing: 5px;
+`;
+
+export const CommunityAuth = styled.div`
+  display: flex;
+  text-align: left;
+  width: 100%;
+`;
+
+export const CommunityText = styled.div`
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  overflow: hidden;
+`;

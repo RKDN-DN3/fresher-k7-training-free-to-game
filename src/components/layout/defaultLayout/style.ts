@@ -7,7 +7,5 @@ export const DefaultLayoutContainer = styled.div`
 `;
 export const Content = styled.div`
   width: ${width};
-  margin: auto;
-  margin-top: 50px;
-  height: 2000px;
+  margin: 50px auto;
 `;

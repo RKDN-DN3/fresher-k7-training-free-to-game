@@ -1,3 +1,4 @@
+import { ItemProps } from 'components/cardGame';
 import { secondaryColor } from './../../styles/theme/index';
 import { whiteColor } from 'styles/theme';
 import styled from 'styled-components';
@@ -7,7 +8,7 @@ export const CardGameContainer = styled.div`
   background-color: ${secondaryColor};
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-  border-radius: 3px;
+  border-radius: 5px;
   overflow: hidden;
   transition: all 0.2s ease-in-out;
   &:hover {
@@ -33,7 +34,9 @@ export const Button = styled.button`
   cursor: pointer;
 `;
 
-export const Img = styled.img``;
+export const Img = styled.img`
+  height: ${({ size }: ItemProps) => (size === 'minium' ? '140px' : '')};
+`;
 
 export const ButtonAlone = styled(Button)`
   position: absolute;

@@ -9,14 +9,15 @@ import { CardGameContainer, Name, Button, ButtonAlone, Img } from './style';
 export type ItemProps = {
   item?: Item;
   disableName?: boolean;
+  size?: 'minium';
 };
 
 const CardGame = (props: ItemProps) => {
   const { language } = useSelector((state: RootState) => state.lang);
-  const { item, disableName } = props;
+  const { item, disableName, size } = props;
   return (
     <CardGameContainer>
-      <Img src="https://www.freetogame.com/g/341/thumbnail.jpg" alt="not found" />
+      <Img size={size} src="https://www.freetogame.com/g/341/thumbnail.jpg" alt="not found" />
       {disableName && <ButtonAlone>{translate(CONSTANTS.FREE, language)}</ButtonAlone>}
       {!disableName && (
         <Name>
