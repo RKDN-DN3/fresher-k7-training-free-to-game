@@ -1,3 +1,4 @@
+import { ItemProps } from 'components/cardGame';
 import { secondaryColor } from './../../styles/theme/index';
 import { whiteColor } from 'styles/theme';
 import styled from 'styled-components';
@@ -33,7 +34,9 @@ export const Button = styled.button`
   cursor: pointer;
 `;
 
-export const Img = styled.img``;
+export const Img = styled.img`
+  height: ${({ size }: ItemProps) => (size === 'minium' ? '140px' : '')};
+`;
 
 export const ButtonAlone = styled(Button)`
   position: absolute;
