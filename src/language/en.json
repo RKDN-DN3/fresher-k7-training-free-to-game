@@ -17,5 +17,14 @@
   "get-started": "GET STARTED",
   "browse-games": "Browse Games",
   "more-games": "More Games",
-  "community-recommendations": "Community Recommendations"
+  "community-recommendations": "Community Recommendations",
+  "about-us": "About Us",
+  "api": "API",
+  "contact-us": "Contact Us",
+  "help/faq": "Help/FAQ",
+  "support": "Support & Bugs",
+  "feature": "Feature Request",
+  "privacy": "Privacy Policy",
+  "cookies": "Cookies Policy",
+  "terms": "Terms of Use"
 }
