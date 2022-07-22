@@ -17,7 +17,7 @@ const App = () => {
                 key={index}
                 path={route.patch}
                 element={
-                  <DefaultLayout>
+                  <DefaultLayout noneBanner={route.noneBanner && true}>
                     <Component />
                   </DefaultLayout>
                 }
@@ -31,17 +31,3 @@ const App = () => {
 };
 
 export default App;
-
-// import { useDispatch, useSelector } from 'react-redux';
-// import { changeLanguage } from './features/language/LanguageSlice';
-// import { RootState } from 'app/store';
-// import { translate } from './language';
-// const dispatch = useDispatch();
-// const { language } = useSelector((state: RootState) => state.lang);
-// const handleChangeLanguage = () => {
-//   if (language === 'VI') {
-//     dispatch(changeLanguage('EN'));
-//   } else {
-//     dispatch(changeLanguage('VI'));
-//   }
-// };

@@ -5,6 +5,7 @@ export type LanguageState = {
 export interface RouteType {
   component: () => JSX.Element;
   patch: string;
+  noneBanner?: boolean;
 }
 
 export type Game = {

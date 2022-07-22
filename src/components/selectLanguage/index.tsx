@@ -38,11 +38,11 @@ const SelectLanguage = () => {
       >
         <ItemSelect value={LANGUAGES.VI}>
           <IconVi />
-          <p>{translate('vi', language)}</p>
+          <p style={{ margin: '0px' }}>{translate('vi', language)}</p>
         </ItemSelect>
         <ItemSelect value={LANGUAGES.EN}>
           <IconEn />
-          <p>{translate('en', language)}</p>
+          <p style={{ margin: '0px' }}>{translate('en', language)}</p>
         </ItemSelect>
       </SelectStyled>
     </>

@@ -6,13 +6,14 @@ import { DefaultLayoutContainer, Content } from './style';
 
 type Props = {
   children?: React.ReactNode;
+  noneBanner?: boolean;
 };
 
-const DefaultLayout = ({ children }: Props) => {
+const DefaultLayout = ({ children, noneBanner }: Props) => {
   return (
     <DefaultLayoutContainer>
       <Header />
-      <Banner />
+      {!noneBanner && <Banner />}
       <Content>{children}</Content>
       <Footer />
     </DefaultLayoutContainer>

@@ -1,5 +1,5 @@
 import React from 'react';
-import CardGame, { ItemProps } from 'components/cardGame';
+import { ItemProps } from 'components/cardGame';
 import { Container } from 'styles/components/style';
 import { RecommendContent } from './style';
 
@@ -7,7 +7,7 @@ export type Item = {
   tittle: string;
 };
 
-type ItemsProps = {
+export type ItemsProps = {
   items: Array<Item>;
   column?: boolean;
   limit?: number;
@@ -30,7 +30,7 @@ const ListGame = (props: ItemsProps) => {
 
   return (
     <Container>
-      <RecommendContent column={column}>
+      <RecommendContent column={column} limit={limit}>
         {listArr?.map((item, i: number) => {
           return <Card key={i} item={item} disableName={disableName} />;
         })}

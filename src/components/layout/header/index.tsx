@@ -20,6 +20,7 @@ import { translate } from 'language';
 import SelectLanguage from 'components/selectLanguage';
 import { Box } from '@mui/system';
 import { IconButton } from '@mui/material';
+import { Link } from 'react-router-dom';
 
 type headerType = {
   title: string;
@@ -54,9 +55,11 @@ const Header = () => {
     <HeaderContainer>
       <HeaderContent>
         <Left>
-          <Li>
-            <Img src="https://www.freetogame.com/assets/images/freetogame-logo.png" />
-          </Li>
+          <Link to="/">
+            <Li>
+              <Img src="https://www.freetogame.com/assets/images/freetogame-logo.png" />
+            </Li>
+          </Link>
           {headers?.map((item: headerType, index: number) => {
             const Icon = item.icon;
             return (

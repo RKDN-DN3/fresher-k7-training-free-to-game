@@ -6,7 +6,7 @@ interface HeaderTitleProps {
   IconTop?: any;
   IconBottom?: any;
   topTile?: string;
-  bottomTitle?: string;
+  bottomTitle?: string | JSX.Element;
 }
 
 const HeaderTitle = (props: HeaderTitleProps) => {
