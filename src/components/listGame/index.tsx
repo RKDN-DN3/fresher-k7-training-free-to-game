@@ -2,13 +2,10 @@ import React from 'react';
 import { ItemProps } from 'components/cardGame';
 import { Container } from 'styles/components/style';
 import { RecommendContent } from './style';
-
-export type Item = {
-  tittle: string;
-};
+import { Game } from 'types';
 
 export type ItemsProps = {
-  items: Array<Item>;
+  items: Array<Game>;
   column?: boolean;
   limit?: number;
   Card: (props: ItemProps) => JSX.Element;
@@ -17,7 +14,7 @@ export type ItemsProps = {
 
 const ListGame = (props: ItemsProps) => {
   const { items, column = false, limit = null, Card, disableName } = props;
-  const [listArr, setListArr] = React.useState<Item[]>([]);
+  const [listArr, setListArr] = React.useState<Game[]>([]);
 
   React.useEffect(() => {
     if (limit) {

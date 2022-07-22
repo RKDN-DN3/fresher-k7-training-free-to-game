@@ -21,15 +21,18 @@ import SelectLanguage from 'components/selectLanguage';
 import { Box } from '@mui/system';
 import { IconButton } from '@mui/material';
 import { Link } from 'react-router-dom';
+import { GENRES_ALL, GENRES_BROWSER } from 'constants/constants.d';
+import { GENRES_ARR, GENRES_BROWSER_ARR, typeListGame } from 'constants/games';
 
 type headerType = {
   title: string;
   icon?: any;
+  type?: string;
 };
 
 const headers: headerType[] = [
-  { title: 'free-games', icon: IconDropDown },
-  { title: 'browser-games', icon: IconDropDown },
+  { title: 'free-games', icon: IconDropDown, type: GENRES_ALL },
+  { title: 'browser-games', icon: IconDropDown, type: GENRES_BROWSER },
   { title: 'special-offer' },
   { title: 'top' },
 ];
@@ -37,11 +40,18 @@ const headers: headerType[] = [
 const Header = () => {
   const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
   const [openSubMenu, setOpenSubMenu] = React.useState(false);
+  const [listSubMenu, setListSubMenu] = React.useState<typeListGame[]>([]);
 
   const { language } = useSelector((state: RootState) => state.lang);
   const handleOpenMenuItem = (e: any, item: headerType) => {
     if (item.icon) {
       setAnchorEl(e.currentTarget);
+      if (item.type === GENRES_ALL) {
+        setListSubMenu(GENRES_ARR);
+      }
+      if (item.type === GENRES_BROWSER) {
+        setListSubMenu(GENRES_BROWSER_ARR);
+      }
     }
   };
 
@@ -68,23 +78,23 @@ const Header = () => {
                   {translate(item.title, language)}
                   {Icon && <Icon />}
                 </LiItem>
-                <Dropdown
-                  id={id}
-                  open={open}
-                  anchorEl={anchorEl}
-                  onClose={handleClose}
-                  anchorOrigin={{
-                    vertical: 'bottom',
-                    horizontal: 'left',
-                  }}
-                >
-                  <Item>alo</Item>
-                  <Item>alo</Item>
-                  <Item>alo</Item>
-                </Dropdown>
               </React.Fragment>
             );
           })}
+          <Dropdown
+            id={id}
+            open={open}
+            anchorEl={anchorEl}
+            onClose={handleClose}
+            anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'left',
+            }}
+          >
+            {listSubMenu?.map((item: typeListGame, i: any) => {
+              return <Item key={i}>{item.display}</Item>;
+            })}
+          </Dropdown>
         </Left>
         <Right>
           <SelectLanguage />

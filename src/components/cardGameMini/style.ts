@@ -50,9 +50,10 @@ export const Des = styled.div`
 export const ButtonType = styled(Button)`
   display: flex;
   align-items: center;
+  justify-content: center;
   background-color: ${secondaryTextColor};
   height: 18px;
-  width: 90px;
+  width: 80px;
 `;
 
 export const TitleDes = styled.div`

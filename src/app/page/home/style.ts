@@ -33,6 +33,7 @@ export const CommunityItem = styled.div`
   background-color: ${black_1};
   max-height: 200px;
   width: 50%;
+  border-radius: 5px;
 `;
 
 export const CommunityDes = styled.div`

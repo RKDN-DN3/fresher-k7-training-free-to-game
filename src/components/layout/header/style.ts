@@ -1,6 +1,7 @@
+import { ItemSelect } from './../../selectLanguage/style';
 import styled from 'styled-components';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import { primaryColor, primaryTextColor, width, whiteColor, subColor } from 'styles/theme';
+import { primaryColor, primaryTextColor, width, whiteColor, tertiaryTextColor } from 'styles/theme';
 import { breakpoints } from 'styles/breakpoints';
 import { MenuItem, Popover, Select, Box } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -79,10 +80,25 @@ export const IconDropDown = styled(ArrowDropDownIcon)`
 `;
 export const Dropdown = styled(Popover)`
   width: 100%;
+  padding: 10px 0;
+  .MuiPaper-root {
+    margin-top: 18px;
+    background-color: transparent;
+  }
 `;
 
-export const Item = styled(MenuItem)`
-  width: 100%;
+export const Item = styled(ItemSelect)`
+  width: 160px;
+  padding: 4px 24px !important;
+  font-size: 15px !important;
+  color: ${primaryTextColor} !important;
+  height: 30px;
+  &:first-child {
+    height: 40px;
+  }
+  &:last-child {
+    height: 40px;
+  }
 `;
 
 export const SelectStyled = styled(Select)`
@@ -108,19 +124,6 @@ export const SelectStyled = styled(Select)`
   }
   .MuiPaper-root {
     top: 55px !important;
-  }
-`;
-
-export const ItemSelect = styled(MenuItem)`
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 12px !important;
-  height: 25px;
-  background-color: ${subColor} !important;
-  color: ${whiteColor} !important;
-  &:hover {
-    background-color: ${primaryColor} !important;
   }
 `;
 
