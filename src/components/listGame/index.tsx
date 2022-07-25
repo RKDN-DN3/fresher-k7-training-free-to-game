@@ -1,14 +1,11 @@
 import React from 'react';
-import CardGame, { ItemProps } from 'components/cardGame';
+import { ItemProps } from 'components/cardGame';
 import { Container } from 'styles/components/style';
 import { RecommendContent } from './style';
+import { Game } from 'types';
 
-export type Item = {
-  tittle: string;
-};
-
-type ItemsProps = {
-  items: Array<Item>;
+export type ItemsProps = {
+  items: Array<Game>;
   column?: boolean;
   limit?: number;
   Card: (props: ItemProps) => JSX.Element;
@@ -17,7 +14,7 @@ type ItemsProps = {
 
 const ListGame = (props: ItemsProps) => {
   const { items, column = false, limit = null, Card, disableName } = props;
-  const [listArr, setListArr] = React.useState<Item[]>([]);
+  const [listArr, setListArr] = React.useState<Game[]>([]);
 
   React.useEffect(() => {
     if (limit) {
@@ -30,7 +27,7 @@ const ListGame = (props: ItemsProps) => {
 
   return (
     <Container>
-      <RecommendContent column={column}>
+      <RecommendContent column={column} limit={limit}>
         {listArr?.map((item, i: number) => {
           return <Card key={i} item={item} disableName={disableName} />;
         })}

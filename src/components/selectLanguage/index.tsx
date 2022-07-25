@@ -1,12 +1,11 @@
-import React from 'react';
 import { ItemSelect, SelectStyled } from './style';
-import { RootState } from 'app/store';
-import { translate } from 'language';
-import { LANGUAGES } from 'constants/language.d';
+import { RootState } from 'store/store';
+import { translate } from 'util/translate';
 import { ReactComponent as IconVi } from 'assets/icons/IconVi.svg';
 import { ReactComponent as IconEn } from 'assets/icons/IconEn.svg';
 import { useDispatch, useSelector } from 'react-redux';
 import { changeLanguage } from 'features/language/LanguageSlice';
+import { EN, VI } from 'constants/constants.d';
 
 const SelectLanguage = () => {
   const { language } = useSelector((state: RootState) => state.lang);
@@ -14,12 +13,10 @@ const SelectLanguage = () => {
   const dispatch = useDispatch();
 
   const handleChangeLanguage = () => {
-    if (language === LANGUAGES.VI) {
-      const en: any = LANGUAGES.EN;
-      dispatch(changeLanguage(en));
+    if (language === VI) {
+      dispatch(changeLanguage(EN));
     } else {
-      const vi: any = LANGUAGES.VI;
-      dispatch(changeLanguage(vi));
+      dispatch(changeLanguage(VI));
     }
   };
 
@@ -36,13 +33,13 @@ const SelectLanguage = () => {
           disablePortal: true,
         }}
       >
-        <ItemSelect value={LANGUAGES.VI}>
+        <ItemSelect value={VI}>
           <IconVi />
-          <p>{translate('vi', language)}</p>
+          <p style={{ margin: '0px' }}>{translate('vi', language)}</p>
         </ItemSelect>
-        <ItemSelect value={LANGUAGES.EN}>
+        <ItemSelect value={EN}>
           <IconEn />
-          <p>{translate('en', language)}</p>
+          <p style={{ margin: '0px' }}>{translate('en', language)}</p>
         </ItemSelect>
       </SelectStyled>
     </>

@@ -1,9 +1,9 @@
+import { backgroundColor } from 'styles/themeProvider';
 import styled from 'styled-components';
-import { width, primaryColor } from 'styles/theme';
-import { breakpoints } from 'styles/breakpoints';
+import { width } from 'styles/theme';
 
 export const DefaultLayoutContainer = styled.div`
-  background-color: ${primaryColor};
+  background-color: ${backgroundColor};
 `;
 export const Content = styled.div`
   width: ${width};

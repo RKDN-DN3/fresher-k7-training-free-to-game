@@ -1,4 +1,8 @@
-import { secondaryColor, secondaryTextColor } from './../../styles/theme/index';
+import {
+  secondaryColor,
+  secondaryTextColor,
+  black_1,
+} from 'styles/theme/index';
 import { whiteColor } from 'styles/theme';
 import styled from 'styled-components';
 import { ReactComponent as IconWindow } from 'assets/icons/IconWindow.svg';
@@ -50,9 +54,10 @@ export const Des = styled.div`
 export const ButtonType = styled(Button)`
   display: flex;
   align-items: center;
+  justify-content: center;
   background-color: ${secondaryTextColor};
   height: 18px;
-  width: 90px;
+  width: 80px;
 `;
 
 export const TitleDes = styled.div`
@@ -79,5 +84,69 @@ export const IconWin = styled(IconWindow)`
   margin-right: 35px;
   path {
     fill: ${secondaryTextColor} !important;
+  }
+`;
+
+export const CardGameMiniViewGamesStyled = styled.div`
+  .cardGameMini {
+    flex-direction: column;
+    width: 270px;
+    height: 280px;
+    padding: 0;
+    img {
+      flex: 1;
+      height: 152px;
+    }
+    .card-game-mini_des-container {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+    }
+    .card-game-mini_des {
+      white-space: normal;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+    }
+    .card-game-mini_battle {
+      display: flex;
+      justify-content: flex-end;
+      gap: 5px;
+      margin-top: 15px;
+      svg {
+        margin: 0;
+        width: 15px;
+        height: 15px;
+      }
+      button {
+        height: 13px;
+        min-width: 90px;
+        color: ${black_1};
+      }
+    }
+    .card-game-mini_name {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 5px;
+      h3 {
+        white-space: normal;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+      }
+      button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 20px;
+        font-size: 9px !important;
+        min-width: 55px;
+      }
+    }
   }
 `;

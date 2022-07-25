@@ -1,9 +1,16 @@
-import React from 'react';
+import {
+  BannerStyled,
+  H1,
+  BannerContent,
+  BannerText,
+  BannerAction,
+} from './style';
 import { ButtonPrimary, ButtonOutline } from 'components/button';
-import { BannerStyled, H1, BannerContent, BannerText, BannerAction } from './style';
 import { useSelector } from 'react-redux';
-import { translate } from 'language';
-import { RootState } from 'app/store';
+import { translate } from 'util/translate';
+import { RootState } from 'store/store';
+import { Link } from 'react-router-dom';
+
 const Banner = () => {
   const { language } = useSelector((state: RootState) => state.lang);
 
@@ -14,7 +21,11 @@ const Banner = () => {
         <BannerText>{translate('banner-text', language)}</BannerText>
         <BannerAction>
           <ButtonPrimary>{translate('get-started', language)}</ButtonPrimary>
-          <ButtonOutline>{translate('browser-games', language)}</ButtonOutline>
+          <Link to="/games?platform=browser">
+            <ButtonOutline>
+              {translate('browser-games', language)}
+            </ButtonOutline>
+          </Link>
         </BannerAction>
       </BannerContent>
     </BannerStyled>

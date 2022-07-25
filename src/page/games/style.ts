@@ -1,5 +1,5 @@
-import { black_1 } from './../../../styles/theme/index';
 import styled from 'styled-components';
+import { black_1, secondaryTextColor } from 'styles/theme/index';
 import { width } from 'styles/theme';
 
 export const Container = styled.div`
@@ -49,7 +49,15 @@ export const CommunityDes = styled.div`
 export const CommunityAuth = styled.div`
   display: flex;
   text-align: left;
+  align-items: center;
   width: 100%;
+  img {
+    height: 32px;
+  }
+  p {
+    margin: 0;
+    color: ${secondaryTextColor};
+  }
 `;
 
 export const CommunityText = styled.div`

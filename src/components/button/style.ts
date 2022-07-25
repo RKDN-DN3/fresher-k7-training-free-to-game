@@ -1,10 +1,6 @@
-import { secondaryTextColor } from './../../styles/theme/index';
-import { primaryTextColor, whiteColor } from 'styles/theme';
+import { secondaryTextColor } from 'styles/theme/index';
+import { whiteColor } from 'styles/theme';
 import styled from 'styled-components';
-
-type PropsStyle = {
-  outline?: boolean;
-};
 
 export const ButtonPrimaryStyled = styled.button`
   border: none;

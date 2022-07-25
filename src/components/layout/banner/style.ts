@@ -1,4 +1,4 @@
-import { secondaryTextColor } from './../../../styles/theme/index';
+import { secondaryTextColor } from 'styles/theme/index';
 import { primaryTextColor } from 'styles/theme';
 import styled from 'styled-components';
 

@@ -1,0 +1,47 @@
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { Games, Game } from 'types';
+
+const initialState: Games = {
+  gamesRelease: [],
+  gamesRelevance: [],
+  gamesPopularity: [],
+  gamesFilter: [],
+  loading: false,
+  failed: false,
+};
+
+export const GameSlice = createSlice({
+  name: 'games',
+  initialState,
+  reducers: {
+    getGameRelease: (state: Games, action: PayloadAction<Game[]>) => {
+      state.gamesRelease = action.payload;
+      state.loading = false;
+    },
+    getGameRelevance: (state: Games, action: PayloadAction<Game[]>) => {
+      state.gamesRelevance = action.payload;
+      state.loading = false;
+    },
+    getGamePopularity: (state: Games, action: PayloadAction<Game[]>) => {
+      state.gamesPopularity = action.payload;
+      state.loading = false;
+    },
+    getGameFilter: (state: Games, action: PayloadAction<Game[]>) => {
+      state.gamesFilter = action.payload;
+      state.loading = false;
+    },
+    getGameFailed: (state: Games) => {
+      state.failed = true;
+    },
+  },
+});
+
+export const {
+  getGameRelevance,
+  getGameRelease,
+  getGamePopularity,
+  getGameFailed,
+  getGameFilter,
+} = GameSlice.actions;
+
+export default GameSlice.reducer;

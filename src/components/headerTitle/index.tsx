@@ -1,12 +1,11 @@
-import React from 'react';
 import { Container } from 'styles/components/style';
 import { TopTittle, BottomTittle, H3 } from './style';
 
 interface HeaderTitleProps {
   IconTop?: any;
   IconBottom?: any;
-  topTile?: string;
-  bottomTitle?: string;
+  topTile?: string | JSX.Element;
+  bottomTitle?: string | JSX.Element;
 }
 
 const HeaderTitle = (props: HeaderTitleProps) => {

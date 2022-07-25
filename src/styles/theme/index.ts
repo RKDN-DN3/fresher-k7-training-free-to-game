@@ -12,3 +12,5 @@ export const backgroundColor = '#7a8288';
 export const black_1 = '#1c1e22';
 
 export const width = '1125px';
+
+export const hoverColorWhite = '#f9f9f9';

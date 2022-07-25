@@ -1,9 +1,18 @@
+import { textHoverColor } from './../../../styles/themeProvider/index';
+import { Link } from 'react-router-dom';
+import { ItemSelect } from 'components/selectLanguage/style';
 import styled from 'styled-components';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
-import { primaryColor, primaryTextColor, width, whiteColor, subColor } from 'styles/theme';
+import {
+  primaryColor,
+  primaryTextColor,
+  width,
+  whiteColor,
+} from 'styles/theme';
 import { breakpoints } from 'styles/breakpoints';
-import { MenuItem, Popover, Select, Box } from '@mui/material';
+import { Popover, Select, Box } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import { backgroundColor, textColor } from 'styles/themeProvider';
 
 export const HeaderContainer = styled.div`
   position: sticky;
@@ -14,8 +23,8 @@ export const HeaderContainer = styled.div`
   flex-direction: column;
   min-height: 55px;
   padding: 0 16px;
-  color: ${primaryTextColor};
-  background-color: ${primaryColor};
+  color: ${textColor};
+  background-color: ${backgroundColor};
   border-bottom: 1px solid rgba(28, 28, 28, 0.6) !important;
   text-shadow: 1px 1px 1px rgb(0 0 0 / 30%);
   @media (max-width: ${breakpoints.tablet}) {
@@ -30,8 +39,8 @@ export const HeaderContent = styled.div`
   justify-content: space-between;
   min-height: 55px;
   width: ${width};
-  color: ${primaryTextColor};
-  background-color: ${primaryColor};
+  color: ${textColor};
+  background-color: ${backgroundColor};
   @media (max-width: ${breakpoints.tablet}) {
     white-space: nowrap;
     margin: 0 100px !important;
@@ -44,6 +53,7 @@ export const HeaderContent = styled.div`
 
 export const Img = styled.img`
   height: 45px;
+  background: ${primaryColor} !important;
 `;
 
 export const Left = styled.ul`
@@ -64,7 +74,7 @@ export const Li = styled.li`
   align-items: center;
   cursor: pointer;
   &:hover {
-    color: ${whiteColor};
+    color: ${textHoverColor};
   }
 `;
 
@@ -79,10 +89,24 @@ export const IconDropDown = styled(ArrowDropDownIcon)`
 `;
 export const Dropdown = styled(Popover)`
   width: 100%;
+  padding: 10px 0;
+  .MuiPaper-root {
+    margin-top: 18px;
+    background-color: transparent;
+  }
 `;
 
-export const Item = styled(MenuItem)`
-  width: 100%;
+export const Item = styled(ItemSelect)`
+  width: 160px;
+  padding: 4px 24px !important;
+  font-size: 15px !important;
+  height: 30px;
+  &:first-child {
+    height: 40px;
+  }
+  &:last-child {
+    height: 40px;
+  }
 `;
 
 export const SelectStyled = styled(Select)`
@@ -108,19 +132,6 @@ export const SelectStyled = styled(Select)`
   }
   .MuiPaper-root {
     top: 55px !important;
-  }
-`;
-
-export const ItemSelect = styled(MenuItem)`
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-size: 12px !important;
-  height: 25px;
-  background-color: ${subColor} !important;
-  color: ${whiteColor} !important;
-  &:hover {
-    background-color: ${primaryColor} !important;
   }
 `;
 
@@ -162,4 +173,9 @@ export const IconMenu = styled(MenuIcon)`
   padding: 3px;
   font-size: 30px !important;
   border-color: ${({ open }: BoxSubState) => (open ? `#FFFFFF` : '')};
+`;
+
+export const LinkStyled = styled(Link)`
+  color: ${primaryTextColor} !important;
+  text-decoration: none;
 `;

@@ -1,13 +1,13 @@
-import { RootState } from 'app/store';
-import { Item } from 'components/listGame';
+import { RootState } from 'store/store';
 import { CONSTANTS } from 'constants/constants.d';
-import { translate } from 'language';
+import { translate } from 'util/translate';
 import { useSelector } from 'react-redux';
 import { H3 } from 'styles/components/style';
+import { Game } from 'types';
 import { CardGameContainer, Name, Button, ButtonAlone, Img } from './style';
 
 export type ItemProps = {
-  item?: Item;
+  item?: Game;
   disableName?: boolean;
   size?: 'minium';
 };
@@ -17,11 +17,13 @@ const CardGame = (props: ItemProps) => {
   const { item, disableName, size } = props;
   return (
     <CardGameContainer>
-      <Img size={size} src="https://www.freetogame.com/g/341/thumbnail.jpg" alt="not found" />
-      {disableName && <ButtonAlone>{translate(CONSTANTS.FREE, language)}</ButtonAlone>}
+      <Img size={size} src={item?.thumbnail} />
+      {disableName && (
+        <ButtonAlone>{translate(CONSTANTS.FREE, language)}</ButtonAlone>
+      )}
       {!disableName && (
         <Name>
-          <H3>{item?.tittle}</H3>
+          <H3>{item?.title}</H3>
           <Button>{translate(CONSTANTS.FREE, language)}</Button>
         </Name>
       )}

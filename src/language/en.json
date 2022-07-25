@@ -17,5 +17,20 @@
   "get-started": "GET STARTED",
   "browse-games": "Browse Games",
   "more-games": "More Games",
-  "community-recommendations": "Community Recommendations"
+  "community-recommendations": "Community Recommendations",
+  "about-us": "About Us",
+  "api": "API",
+  "contact-us": "Contact Us",
+  "help/faq": "Help/FAQ",
+  "support": "Support & Bugs",
+  "feature": "Feature Request",
+  "privacy": "Privacy Policy",
+  "cookies": "Cookies Policy",
+  "terms": "Terms of Use",
+  "best-free": "Best Free",
+  "games-title-header": "Games for PC and Browser In 2022!",
+  "games-title-browser": "Games for Browser In 2022!",
+  "free-to-play": "free-to-play",
+  "found": "found in our games list!",
+  "browser": "Browser"
 }
