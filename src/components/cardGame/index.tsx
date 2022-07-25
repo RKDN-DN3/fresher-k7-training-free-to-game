@@ -1,6 +1,6 @@
-import { RootState } from 'app/store';
+import { RootState } from 'store/store';
 import { CONSTANTS } from 'constants/constants.d';
-import { translate } from 'language';
+import { translate } from 'util/translate';
 import { useSelector } from 'react-redux';
 import { H3 } from 'styles/components/style';
 import { Game } from 'types';
@@ -18,7 +18,9 @@ const CardGame = (props: ItemProps) => {
   return (
     <CardGameContainer>
       <Img size={size} src={item?.thumbnail} />
-      {disableName && <ButtonAlone>{translate(CONSTANTS.FREE, language)}</ButtonAlone>}
+      {disableName && (
+        <ButtonAlone>{translate(CONSTANTS.FREE, language)}</ButtonAlone>
+      )}
       {!disableName && (
         <Name>
           <H3>{item?.title}</H3>

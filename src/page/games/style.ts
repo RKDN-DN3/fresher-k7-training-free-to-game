@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { black_1, secondaryTextColor, tertiaryTextColor } from './../../../styles/theme/index';
+import { black_1, secondaryTextColor } from 'styles/theme/index';
 import { width } from 'styles/theme';
 
 export const Container = styled.div`

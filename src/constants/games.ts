@@ -51,10 +51,6 @@ export const GENRES_ARR: typeListGame[] = [
     value: 'social',
     display: 'Social',
   },
-  {
-    value: 'fighting',
-    display: 'Fighting',
-  },
 ];
 
 export const GENRES_BROWSER_ARR: typeListGame[] = [

@@ -1,19 +1,30 @@
-import { Game } from './../../types/index';
-import { getGamesRelease, getGamesRelevance, getGamePopularity, getGameFailed } from './GameSlice';
+import { Game } from 'types/index';
+import {
+  getGameRelease,
+  getGameRelevance,
+  getGamePopularity,
+  getGameFilter,
+} from './GameSlice';
 
-const getAllGameReleaseRedux = async (dispatch: any, data: Game[], error: any) => {
-  if (!error) {
-    dispatch(getGamesRelease(data));
-  } else {
-    dispatch(getGameFailed());
-  }
+const dispatchGameRelease = async (dispatch: any, data: Game[]) => {
+  dispatch(getGameRelease(data));
 };
 
-const getGamesRelevanceRedux = async (dispatch: any, data: Game[]) => {
-  dispatch(getGamesRelevance(data));
+const dispatchGameRelevance = (dispatch: any, data: Game[]) => {
+  dispatch(getGameRelevance(data));
 };
 
-const getGamePopularityRedux = async (dispatch: any, data: Game[]) => {
+const dispatchGamePopularity = (dispatch: any, data: Game[]) => {
   dispatch(getGamePopularity(data));
 };
-export { getAllGameReleaseRedux, getGamesRelevanceRedux, getGamePopularityRedux };
+
+const dispatchGameFilter = (dispatch: any, data: Game[]) => {
+  dispatch(getGameFilter(data));
+};
+
+export {
+  dispatchGameRelease,
+  dispatchGameRelevance,
+  dispatchGamePopularity,
+  dispatchGameFilter,
+};

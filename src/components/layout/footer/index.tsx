@@ -13,8 +13,8 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import RssFeedIcon from '@mui/icons-material/RssFeed';
 import { useSelector } from 'react-redux';
-import { translate } from 'language';
-import { RootState } from 'app/store';
+import { translate } from 'util/translate';
+import { RootState } from 'store/store';
 const Footer = () => {
   const { language } = useSelector((state: RootState) => state.lang);
   return (
@@ -35,7 +35,10 @@ const Footer = () => {
           <Item>{translate('cookies', language)}</Item>
           <Item>{translate('terms', language)}</Item>
         </ListItem>
-        <Img src="	https://www.freetogame.com/assets/images/logo-footer.png" alt="" />
+        <Img
+          src="	https://www.freetogame.com/assets/images/logo-footer.png"
+          alt=""
+        />
       </FooterContent>
       <FooterEnd>
         <FooterEndContent>

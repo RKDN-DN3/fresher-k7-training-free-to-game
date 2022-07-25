@@ -1,5 +1,5 @@
-import en from './en.json';
-import vi from './vi.json';
+import en from 'language/en.json';
+import vi from 'language/vi.json';
 
 export const translate = (key: string, language: string): string => {
   let langData: { [key: string]: string } = {};

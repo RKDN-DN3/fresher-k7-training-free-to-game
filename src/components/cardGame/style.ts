@@ -1,5 +1,5 @@
 import { ItemProps } from 'components/cardGame';
-import { secondaryColor } from './../../styles/theme/index';
+import { secondaryColor } from 'styles/theme/index';
 import { whiteColor } from 'styles/theme';
 import styled from 'styled-components';
 
@@ -21,6 +21,14 @@ export const Name = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+  h3 {
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
 `;
 
 export const Button = styled.button`

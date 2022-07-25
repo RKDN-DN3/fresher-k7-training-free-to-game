@@ -1,12 +1,18 @@
+import { primaryTextColor } from './../../styles/theme/index';
+import {
+  backgroundMenuSubColor,
+  backgroundHoverColor,
+  textHoverColor,
+} from './../../styles/themeProvider/index';
+import { textColor } from 'styles/themeProvider';
 import styled from 'styled-components';
-import { primaryColor, whiteColor, subColor, primaryTextColor } from 'styles/theme';
 import { MenuItem, Select } from '@mui/material';
 export const SelectStyled = styled(Select)`
   border-radius: 5px;
   padding: 3px;
   height: 25px;
   background-color: transparent;
-  color: ${whiteColor} !important;
+  color: ${textColor} !important;
   font-size: 12px !important;
   fieldset {
     border: none;
@@ -34,9 +40,10 @@ export const ItemSelect = styled(MenuItem)`
   gap: 5px;
   font-size: 12px !important;
   height: 25px;
-  background-color: ${subColor} !important;
-  color: ${whiteColor} !important;
+  background-color: ${backgroundMenuSubColor} !important;
+  color: ${textColor} !important;
   &:hover {
-    background-color: ${primaryColor} !important;
+    background-color: ${backgroundHoverColor} !important;
+    color: ${textHoverColor} !important;
   }
 `;

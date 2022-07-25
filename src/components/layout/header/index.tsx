@@ -7,7 +7,6 @@ import {
   Li,
   LiItem,
   Right,
-  IconDropDown,
   Dropdown,
   Item,
   MenuSub,
@@ -15,36 +14,28 @@ import {
   IconMenu,
   LinkStyled,
 } from './style';
-import { useSelector } from 'react-redux';
-import { RootState } from 'app/store';
-import { translate } from 'language';
-import SelectLanguage from 'components/selectLanguage';
 import { Box } from '@mui/system';
+import { useSelector } from 'react-redux';
+import { RootState } from 'store/store';
+import { translate } from 'util/translate';
 import { IconButton } from '@mui/material';
-import { GENRES_ALL, GENRES_BROWSER } from 'constants/constants.d';
+import { GENRES_ALL, GENRES_BROWSER, BROWSER } from 'constants/constants.d';
 import { GENRES_ARR, GENRES_BROWSER_ARR, typeListGame } from 'constants/games';
 import { useNavigate } from 'react-router-dom';
-
-type headerType = {
-  title: string;
-  icon?: any;
-  type?: string;
-};
-
-const headers: headerType[] = [
-  { title: 'free-games', icon: IconDropDown, type: GENRES_ALL },
-  { title: 'browser-games', icon: IconDropDown, type: GENRES_BROWSER },
-  { title: 'special-offer' },
-  { title: 'top' },
-];
+import SelectLanguage from 'components/selectLanguage';
+import { headers, headerType } from './type';
+import LightOfDark from 'components/lightOfDark';
 
 const Header = () => {
-  const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
+  const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(
+    null,
+  );
   const [openSubMenu, setOpenSubMenu] = React.useState(false);
   const [listSubMenu, setListSubMenu] = React.useState<typeListGame[]>([]);
   const navigate = useNavigate();
 
   const { language } = useSelector((state: RootState) => state.lang);
+
   const handleOpenMenuItem = (e: any, item: headerType) => {
     if (item.icon) {
       setAnchorEl(e.currentTarget);
@@ -63,7 +54,12 @@ const Header = () => {
 
   const handleClickMenuItem = (item: typeListGame) => {
     setAnchorEl(null);
-    navigate(`/games?id=${item.value}`);
+    if (listSubMenu === GENRES_ARR) {
+      navigate(`/games?sort-by=${item.value}`);
+    }
+    if (listSubMenu === GENRES_BROWSER_ARR) {
+      navigate(`/games?platform=${BROWSER}&sort-by=${item.value}`);
+    }
   };
 
   const open = Boolean(anchorEl);
@@ -81,7 +77,10 @@ const Header = () => {
             const Icon = item.icon;
             return (
               <React.Fragment key={index}>
-                <LiItem aria-describedby={id} onClick={(e) => handleOpenMenuItem(e, item)}>
+                <LiItem
+                  aria-describedby={id}
+                  onClick={(e) => handleOpenMenuItem(e, item)}
+                >
                   {translate(item.title, language)}
                   {Icon && <Icon />}
                 </LiItem>
@@ -108,15 +107,26 @@ const Header = () => {
           </Dropdown>
         </Left>
         <Right>
+          <LightOfDark />
           <SelectLanguage />
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton color="inherit" onClick={() => setOpenSubMenu(!openSubMenu)}>
+            <IconButton
+              color="inherit"
+              onClick={() => setOpenSubMenu(!openSubMenu)}
+            >
               <IconMenu open={openSubMenu} />
             </IconButton>
           </Box>
         </Right>
       </HeaderContent>
-      <BoxSub open={openSubMenu} sx={{ flexGrow: 1, justifyContent: 'flex-start', display: { md: 'none' } }}>
+      <BoxSub
+        open={openSubMenu}
+        sx={{
+          flexGrow: 1,
+          justifyContent: 'flex-start',
+          display: { md: 'none' },
+        }}
+      >
         {headers?.map((item: headerType, index: number) => {
           const Icon = item.icon;
           return (

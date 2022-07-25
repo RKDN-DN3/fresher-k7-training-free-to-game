@@ -1,6 +1,6 @@
-import { RouteType } from '../types';
-import Home from '../app/page/home';
-import Games from 'app/page/games';
+import { RouteType } from 'types';
+import Home from 'page/home';
+import Games from 'page/games';
 
 export const publicRoute: RouteType[] = [
   { component: Home, patch: '/' },

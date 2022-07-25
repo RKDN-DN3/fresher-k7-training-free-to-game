@@ -1,4 +1,4 @@
-import { black_1, tertiaryTextColor } from './../../../styles/theme/index';
+import { black_1, tertiaryTextColor } from 'styles/theme/index';
 import { primaryTextColor, width, whiteColor } from 'styles/theme';
 import styled from 'styled-components';
 

@@ -1,4 +1,8 @@
-import { secondaryColor, secondaryTextColor, black_1 } from './../../styles/theme/index';
+import {
+  secondaryColor,
+  secondaryTextColor,
+  black_1,
+} from 'styles/theme/index';
 import { whiteColor } from 'styles/theme';
 import styled from 'styled-components';
 import { ReactComponent as IconWindow } from 'assets/icons/IconWindow.svg';
@@ -118,6 +122,7 @@ export const CardGameMiniViewGamesStyled = styled.div`
       }
       button {
         height: 13px;
+        min-width: 90px;
         color: ${black_1};
       }
     }
@@ -137,7 +142,10 @@ export const CardGameMiniViewGamesStyled = styled.div`
       button {
         display: flex;
         align-items: center;
-        height: 19px;
+        justify-content: center;
+        height: 20px;
+        font-size: 9px !important;
+        min-width: 55px;
       }
     }
   }

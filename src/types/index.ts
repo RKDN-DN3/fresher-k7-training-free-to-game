@@ -1,6 +1,7 @@
 export type LanguageState = {
   language: string;
 };
+
 export interface RouteType {
   component: () => JSX.Element;
   patch: string;
@@ -8,23 +9,24 @@ export interface RouteType {
 }
 
 export type Game = {
-  id: number;
-  title: string;
-  thumbnail: string;
-  short_description: string;
-  game_url: string;
-  genre: string;
-  platform: string;
-  publisher: string;
-  developer: string;
-  release_date: string;
-  freetogame_profile_url: string;
+  id?: number;
+  title?: string;
+  thumbnail?: string;
+  short_description?: string;
+  game_url?: string;
+  genre?: string;
+  platform?: string;
+  publisher?: string;
+  developer?: string;
+  release_date?: string;
+  freetogame_profile_url?: string;
 };
 
 export type Games = {
-  listGamesRelease: Array<Game>;
-  listGamesRelevance: Array<Game>;
-  listGamesPopularity: Array<Game>;
+  gamesRelease: Array<Game>;
+  gamesRelevance: Array<Game>;
+  gamesPopularity: Array<Game>;
+  gamesFilter: Array<Game>;
   loading?: boolean;
   failed?: boolean;
 };

@@ -1,6 +1,6 @@
-import { RootState } from 'app/store';
-import { CONSTANTS } from 'constants/constants.d';
-import { translate } from 'language';
+import { RootState } from 'store/store';
+import { CONSTANTS, PC_BROWSER, WEB_BROWSER } from 'constants/constants.d';
+import { translate } from 'util/translate';
 import { useSelector } from 'react-redux';
 import { H3 } from 'styles/components/style';
 import { Game } from 'types';
@@ -36,15 +36,25 @@ const CardGameMini = (props: ItemProps) => {
           <>
             <Des>
               <div className="card-game-mini_name">
-                <H3>{item?.title}</H3> <Button>{translate(CONSTANTS.FREE, language)}</Button>
+                <H3>{item?.title}</H3>{' '}
+                <Button>{translate(CONSTANTS.FREE, language)}</Button>
               </div>
               <TitleDes className="card-game-mini_des">
-                Play the most competitive massively multiplayer party royale game featuring beans ever for free on a
-                variety of platforms.
+                Play the most competitive massively multiplayer party royale
+                game featuring beans ever for free on a variety of platforms.
               </TitleDes>
               <div className="card-game-mini_battle">
                 <ButtonType>{item?.genre}</ButtonType>
-                {item?.platform === 'Web Browser' ? <IconSa /> : <IconWin />}
+
+                {item?.platform === PC_BROWSER ? (
+                  <>
+                    <IconSa /> <IconWin />
+                  </>
+                ) : (
+                  <>
+                    {item?.platform === WEB_BROWSER ? <IconSa /> : <IconWin />}
+                  </>
+                )}
               </div>
             </Des>
           </>
@@ -52,7 +62,9 @@ const CardGameMini = (props: ItemProps) => {
           <>
             <Des>
               <H3>{item?.title}</H3>
-              <TitleDes className="card-game-mini_des">{item?.short_description}</TitleDes>
+              <TitleDes className="card-game-mini_des">
+                {item?.short_description}
+              </TitleDes>
               <ButtonType>{item?.genre}</ButtonType>
             </Des>
             {item?.platform === 'Web Browser' ? <IconSa /> : <IconWin />}
