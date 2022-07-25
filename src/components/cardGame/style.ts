@@ -1,3 +1,4 @@
+import { cardMenuColor } from './../../styles/themeProvider/index';
 import { buttonColor } from './../../styles/theme/index';
 import { ItemProps } from 'components/cardGame';
 import { secondaryColor } from 'styles/theme/index';
@@ -7,7 +8,7 @@ import styled from 'styled-components';
 export const CardGameContainer = styled.div`
   width: ${({ size }: ItemProps) => (size === 'minium' ? '244px' : '365px')};
   position: relative;
-  background-color: ${secondaryColor};
+  background-color: ${cardMenuColor};
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
   border-radius: 5px;

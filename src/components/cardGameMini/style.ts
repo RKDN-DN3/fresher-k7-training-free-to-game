@@ -1,4 +1,9 @@
-import { buttonColor } from './../../styles/theme/index';
+import {
+  cardMenuColor,
+  textColor,
+  backgroundHoverColor,
+} from './../../styles/themeProvider/index';
+import { buttonColor } from 'styles/theme/index';
 import {
   secondaryColor,
   secondaryTextColor,
@@ -12,7 +17,7 @@ import { ReactComponent as IconSave } from 'assets/icons/IconSave.svg';
 export const CardGameContainer = styled.div`
   display: flex;
   padding: 20px;
-  background-color: ${secondaryColor};
+  background-color: ${cardMenuColor};
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
   border-radius: 5px;
@@ -117,6 +122,7 @@ export const CardGameMiniViewGamesStyled = styled.div`
       justify-content: flex-end;
       gap: 5px;
       margin-top: 15px;
+
       svg {
         margin: 0;
         width: 15px;
@@ -125,7 +131,7 @@ export const CardGameMiniViewGamesStyled = styled.div`
       button {
         height: 13px;
         min-width: 90px;
-        color: ${black_1};
+        color: ${backgroundHoverColor};
       }
     }
     .card-game-mini_name {

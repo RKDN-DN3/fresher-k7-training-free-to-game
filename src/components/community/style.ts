@@ -1,3 +1,4 @@
+import { CommunityItemColor } from 'styles/themeProvider/index';
 import { black_1, secondaryTextColor } from 'styles/theme/index';
 import styled from 'styled-components';
 
@@ -11,7 +12,7 @@ export const CommunityItem = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 30px 26px;
-  background-color: ${black_1};
+  background-color: ${CommunityItemColor};
   min-height: 200px;
   width: 50%;
   border-radius: 5px;

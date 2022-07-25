@@ -1,3 +1,4 @@
+import { secondaryColor } from 'styles/theme/index';
 import { hoverColorWhite, subColor } from './../theme/index';
 import {
   primaryColor,
@@ -31,4 +32,14 @@ export const backgroundHoverColor = theme('theme', {
 export const backgroundMenuSubColor = theme('theme', {
   light: `${whiteColor}`,
   dark: `${subColor}`,
+});
+
+export const cardMenuColor = theme('theme', {
+  light: `${whiteColor}`,
+  dark: `${secondaryColor}`,
+});
+
+export const CommunityItemColor = theme('theme', {
+  light: `${whiteColor}`,
+  dark: `${black_1}`,
 });
