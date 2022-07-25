@@ -1,4 +1,7 @@
-import { textHoverColor } from './../../../styles/themeProvider/index';
+import {
+  textHoverColor,
+  backgroundHoverColor,
+} from './../../../styles/themeProvider/index';
 import { Link } from 'react-router-dom';
 import { ItemSelect } from 'components/selectLanguage/style';
 import styled from 'styled-components';
@@ -144,7 +147,8 @@ export const MenuSub = styled.div`
   padding: 16px;
   cursor: pointer;
   &:hover {
-    color: ${whiteColor} !important;
+    color: ${textHoverColor} !important;
+    background-color: ${backgroundHoverColor};
   }
   @media (max-width: ${breakpoints.tablet}) {
     padding: 16px 70px;
@@ -156,7 +160,7 @@ type BoxSubState = {
 
 export const BoxSub = styled(Box)`
   position: absolute;
-  background-color: ${primaryColor} !important;
+  background-color: ${backgroundColor} !important;
   top: 55px;
   align-items: center;
   justify-content: flex-start;

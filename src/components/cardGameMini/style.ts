@@ -73,7 +73,8 @@ export const TitleDes = styled.div`
 `;
 
 export const IconSa = styled(IconSave)`
-  width: 20px;
+  width: 18px !important;
+  height: 18px !important;
   margin-right: 35px;
   path {
     fill: ${secondaryTextColor} !important;

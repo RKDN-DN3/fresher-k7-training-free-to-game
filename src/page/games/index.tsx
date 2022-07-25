@@ -35,12 +35,6 @@ const Games = () => {
   const [searchArr, setSearchArr] = React.useState<Game[]>([]);
 
   React.useEffect(() => {
-    return () => {
-      dispatch(setIsSearchRedux(false));
-    };
-  }, [dispatch]);
-
-  React.useEffect(() => {
     if (platform || sortBy) {
       setFilter({
         platform: platform,
@@ -81,6 +75,12 @@ const Games = () => {
     }
     return data;
   };
+
+  React.useEffect(() => {
+    return () => {
+      dispatch(setIsSearchRedux(false));
+    };
+  }, [dispatch]);
 
   return (
     <Container>
