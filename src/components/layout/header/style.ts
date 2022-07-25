@@ -13,6 +13,7 @@ import { breakpoints } from 'styles/breakpoints';
 import { Popover, Select, Box } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { backgroundColor, textColor } from 'styles/themeProvider';
+import { Search as SearchIcon } from '@mui/icons-material';
 
 export const HeaderContainer = styled.div`
   position: sticky;
@@ -178,4 +179,18 @@ export const IconMenu = styled(MenuIcon)`
 export const LinkStyled = styled(Link)`
   color: ${primaryTextColor} !important;
   text-decoration: none;
+`;
+
+export const Action = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`;
+
+export const SearchIconStyled = styled(SearchIcon)`
+  cursor: pointer;
+  margin-top: 6px;
+  &:hover {
+    color: ${textHoverColor};
+  }
 `;

@@ -1,3 +1,4 @@
+import { buttonColor } from './../../styles/theme/index';
 import {
   secondaryColor,
   secondaryTextColor,
@@ -31,7 +32,7 @@ export const Name = styled.div`
 `;
 
 export const Button = styled.button`
-  background-color: #4799eb;
+  background-color: ${buttonColor};
   border: none;
   border-radius: 5px;
   padding: 8px;

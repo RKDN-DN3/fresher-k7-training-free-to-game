@@ -1,6 +1,8 @@
+import { textColor } from 'styles/themeProvider';
 import styled from 'styled-components';
-import { black_1, secondaryTextColor } from 'styles/theme/index';
 import { width } from 'styles/theme';
+import { TextField as TextFieldStyle } from '@mui/material';
+import { SearchIconStyled } from 'components/layout/header/style';
 
 export const Container = styled.div`
   background-color: red !important;
@@ -14,55 +16,38 @@ export const ContentGame = styled.div`
   margin-top: 50px;
 `;
 
-export const ContentLeft = styled.div`
-  flex: 2;
+export const TextField = styled(TextFieldStyle)`
+  height: 46px;
+  width: 425px;
+  color: ${textColor} !important;
+  input {
+    color: ${textColor} !important;
+
+    padding: 15px;
+    ::placeholder {
+      color: ${textColor} !important;
+      font-size: 20px;
+    }
+    caret-color: ${textColor};
+  }
+  fieldset {
+    border: none;
+  }
 `;
 
-export const ContentRight = styled.div``;
-
-export const Community = styled.div`
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-`;
-
-export const CommunityItem = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding: 30px 26px;
-  background-color: ${black_1};
-  max-height: 200px;
-  width: 50%;
-`;
-
-export const CommunityDes = styled.div`
-  flex: 2;
+export const SearchStyled = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  line-height: 16pt;
-  word-spacing: 5px;
-`;
-
-export const CommunityAuth = styled.div`
-  display: flex;
-  text-align: left;
-  align-items: center;
-  width: 100%;
-  img {
-    height: 32px;
-  }
-  p {
-    margin: 0;
-    color: ${secondaryTextColor};
+  gap: 10px;
+  margin: 20px 0;
+  .games_search-icon-title {
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
   }
 `;
 
-export const CommunityText = styled.div`
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 7;
-  overflow: hidden;
+export const SearchIcon = styled(SearchIconStyled)`
+  font-size: 30px !important;
+  margin: 0;
 `;

@@ -17,12 +17,15 @@ const useFetch = (params: Filter): Response => {
   const [err, setErr] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const { platform, genre, tag, sortBy } = params;
-
   useEffect(() => {
     if (!_.isEmpty(params)) {
       setIsLoading(true);
+      let urlFetch = '/games';
+      if (tag) {
+        urlFetch = 'filter';
+      }
       axios
-        .get('/games', {
+        .get(urlFetch, {
           baseURL: `https://${API_HOST}/api`,
           headers: {
             'x-rapidapi-key': API_KEY,

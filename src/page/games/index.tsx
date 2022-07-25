@@ -2,7 +2,7 @@ import React from 'react';
 import { translate } from 'util/translate';
 import { RootState } from 'store/store';
 import { Container } from 'styles/components/style';
-import { ContentGame } from './style';
+import { ContentGame, TextField, SearchStyled, SearchIcon } from './style';
 import { Filter } from 'hook/type';
 import { useSelector } from 'react-redux';
 import { CardGameMiniViewGames } from 'components/cardGameMini';
@@ -13,19 +13,32 @@ import CardGame from 'components/cardGame';
 import ListGame from 'components/listGame';
 import useFetch from 'hook';
 import Loading from 'components/loading';
+import FilterSelect from 'components/filterSelect';
+import { useAppDispatch } from 'hook/hooksStore';
+import { setIsSearchRedux } from 'features/actionHeader';
+import searchInput from 'util/search';
+import { Game } from 'types';
 
 const Games = () => {
   const { search } = useLocation();
   const sortBy = new URLSearchParams(search).get('sort-by');
   const platform = new URLSearchParams(search).get('platform');
 
-  const { language } = useSelector((state: RootState) => {
-    return { ...state.lang, ...state.games };
+  const dispatch = useAppDispatch();
+
+  const { language, isSearch } = useSelector((state: RootState) => {
+    return { ...state.lang, ...state.actionHeader };
   });
 
   const [filter, setFilter] = React.useState<Filter>({});
-
   const { games, isLoading } = useFetch(filter);
+  const [searchArr, setSearchArr] = React.useState<Game[]>([]);
+
+  React.useEffect(() => {
+    return () => {
+      dispatch(setIsSearchRedux(false));
+    };
+  }, [dispatch]);
 
   React.useEffect(() => {
     if (platform || sortBy) {
@@ -42,20 +55,35 @@ const Games = () => {
     }
   }, [sortBy, platform, search]);
 
-  // const onFilterChange = React.useCallback(
-  //   (event: React.ChangeEvent<HTMLFormElement>) => {
-  //     setFilter((current) => ({
-  //       ...current,
-  //       [event.target.name]: event.target.value,
-  //     }));
-  //     event.preventDefault();
-  //   },
-  //   [],
-  // );
+  const onFilterChange = React.useCallback(
+    (event: React.ChangeEvent<HTMLFormElement>) => {
+      setFilter((current) => ({
+        ...current,
+        [event.target.name]: event.target.value,
+      }));
+      event.preventDefault();
+      setSearchArr([]);
+    },
+    [],
+  );
+
+  const handleOnChangeInput = (e: any) => {
+    const searchArr = searchInput(games, e.target.value);
+    setSearchArr(searchArr as any);
+  };
+
+  const renderWhenSearch = () => {
+    let data = [];
+    if (searchArr.length > 0) {
+      data = searchArr;
+    } else {
+      data = games;
+    }
+    return data;
+  };
 
   return (
     <Container>
-      {isLoading && <Loading />}
       <HeaderTitle
         topTile={
           <div>
@@ -78,8 +106,23 @@ const Games = () => {
         }
       />
       <ListGame items={games} limit={3} Card={CardGame} />
+      {isSearch && (
+        <SearchStyled>
+          <div className="games_search-icon-title">
+            <SearchIcon />
+            <TextField
+              onChange={handleOnChangeInput}
+              variant="filled"
+              placeholder={translate('find-games', language)}
+              autoFocus
+            />
+          </div>
+        </SearchStyled>
+      )}
+      <FilterSelect onChange={onFilterChange} />
+      {isLoading && <Loading />}
       <ContentGame>
-        <ListGame items={games} Card={CardGameMiniViewGames} />
+        <ListGame items={renderWhenSearch()} Card={CardGameMiniViewGames} />
       </ContentGame>
     </Container>
   );

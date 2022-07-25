@@ -27,3 +27,7 @@ export const STATUS_SUCCESS = 200;
 
 //PATCH
 export const GAMES = '/games';
+
+//img link
+export const IMG_LOGO =
+  'https://www.freetogame.com/assets/images/freetogame-logo.png';
