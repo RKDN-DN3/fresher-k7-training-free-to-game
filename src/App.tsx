@@ -7,9 +7,10 @@ import DefaultLayout from 'components/layout/defaultLayout';
 import { ThemeProvider } from 'styled-components';
 import { RootState } from 'store/store';
 import { useSelector } from 'react-redux';
+import NotFound from 'components/notFound';
 
 const App = () => {
-  const { isLight } = useSelector((state: RootState) => state.lightOfDark);
+  const { isLight } = useSelector((state: RootState) => state.actionHeader);
   return (
     <ThemeProvider theme={{ theme: isLight ? 'light' : 'dark' }}>
       <GlobalStyle>
@@ -29,6 +30,14 @@ const App = () => {
                 />
               );
             })}
+            <Route
+              path="*"
+              element={
+                <DefaultLayout noneBanner={true}>
+                  <NotFound />
+                </DefaultLayout>
+              }
+            />
           </Routes>
         </BrowserRouter>
       </GlobalStyle>

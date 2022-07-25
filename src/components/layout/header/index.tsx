@@ -13,18 +13,27 @@ import {
   BoxSub,
   IconMenu,
   LinkStyled,
+  Action,
+  SearchIconStyled,
 } from './style';
 import { Box } from '@mui/system';
 import { useSelector } from 'react-redux';
 import { RootState } from 'store/store';
 import { translate } from 'util/translate';
 import { IconButton } from '@mui/material';
-import { GENRES_ALL, GENRES_BROWSER, BROWSER } from 'constants/constants.d';
+import {
+  GENRES_ALL,
+  GENRES_BROWSER,
+  BROWSER,
+  IMG_LOGO,
+} from 'constants/constants.d';
 import { GENRES_ARR, GENRES_BROWSER_ARR, typeListGame } from 'constants/games';
 import { useNavigate } from 'react-router-dom';
 import SelectLanguage from 'components/selectLanguage';
 import { headers, headerType } from './type';
 import LightOfDark from 'components/lightOfDark';
+import { setIsSearchRedux } from 'features/actionHeader';
+import { useDispatch } from 'react-redux';
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(
@@ -33,8 +42,11 @@ const Header = () => {
   const [openSubMenu, setOpenSubMenu] = React.useState(false);
   const [listSubMenu, setListSubMenu] = React.useState<typeListGame[]>([]);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
-  const { language } = useSelector((state: RootState) => state.lang);
+  const { language, isSearch } = useSelector((state: RootState) => {
+    return { ...state.lang, ...state.actionHeader };
+  });
 
   const handleOpenMenuItem = (e: any, item: headerType) => {
     if (item.icon) {
@@ -62,6 +74,13 @@ const Header = () => {
     }
   };
 
+  const handleRedirectWhenSearch = () => {
+    if (isSearch === false) {
+      navigate(`/games`);
+    }
+    dispatch(setIsSearchRedux(!isSearch));
+  };
+
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
   return (
@@ -70,7 +89,7 @@ const Header = () => {
         <Left>
           <LinkStyled to="/">
             <Li>
-              <Img src="https://www.freetogame.com/assets/images/freetogame-logo.png" />
+              <Img src={IMG_LOGO} />
             </Li>
           </LinkStyled>
           {headers?.map((item: headerType, index: number) => {
@@ -107,7 +126,10 @@ const Header = () => {
           </Dropdown>
         </Left>
         <Right>
-          <LightOfDark />
+          <Action>
+            <SearchIconStyled onClick={handleRedirectWhenSearch} />
+            <LightOfDark />
+          </Action>
           <SelectLanguage />
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton

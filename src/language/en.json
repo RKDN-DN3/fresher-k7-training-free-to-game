@@ -32,5 +32,7 @@
   "games-title-browser": "Games for Browser In 2022!",
   "free-to-play": "free-to-play",
   "found": "found in our games list!",
-  "browser": "Browser"
+  "browser": "Browser",
+  "not-found-page": "We don't have this feature yet!",
+  "find-games": "Find games"
 }

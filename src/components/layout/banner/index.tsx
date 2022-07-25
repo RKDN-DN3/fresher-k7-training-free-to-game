@@ -18,9 +18,12 @@ const Banner = () => {
     <BannerStyled>
       <BannerContent>
         <H1>{translate('banner-header-title', language)}</H1>
+
         <BannerText>{translate('banner-text', language)}</BannerText>
         <BannerAction>
-          <ButtonPrimary>{translate('get-started', language)}</ButtonPrimary>
+          <Link to="/notFound">
+            <ButtonPrimary>{translate('get-started', language)}</ButtonPrimary>
+          </Link>
           <Link to="/games?platform=browser">
             <ButtonOutline>
               {translate('browser-games', language)}
