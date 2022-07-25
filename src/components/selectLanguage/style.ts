@@ -1,4 +1,3 @@
-import { primaryTextColor } from './../../styles/theme/index';
 import {
   backgroundMenuSubColor,
   backgroundHoverColor,

@@ -13,6 +13,7 @@ import CardGame from 'components/cardGame';
 import ListGame from 'components/listGame';
 import useFetch from 'hook';
 import Loading from 'components/loading';
+import FilterSelect from 'components/filterSelect';
 
 const Games = () => {
   const { search } = useLocation();
@@ -42,16 +43,18 @@ const Games = () => {
     }
   }, [sortBy, platform, search]);
 
-  // const onFilterChange = React.useCallback(
-  //   (event: React.ChangeEvent<HTMLFormElement>) => {
-  //     setFilter((current) => ({
-  //       ...current,
-  //       [event.target.name]: event.target.value,
-  //     }));
-  //     event.preventDefault();
-  //   },
-  //   [],
-  // );
+  const onFilterChange = React.useCallback(
+    (event: React.ChangeEvent<HTMLFormElement>) => {
+      console.log(event.target.name);
+      console.log(event.target.value);
+      setFilter((current) => ({
+        ...current,
+        [event.target.name]: event.target.value,
+      }));
+      event.preventDefault();
+    },
+    [],
+  );
 
   return (
     <Container>
@@ -78,6 +81,7 @@ const Games = () => {
         }
       />
       <ListGame items={games} limit={3} Card={CardGame} />
+      <FilterSelect onChange={onFilterChange} />
       <ContentGame>
         <ListGame items={games} Card={CardGameMiniViewGames} />
       </ContentGame>

@@ -1,0 +1,62 @@
+import { PLATFORMS, GENRES_ARR, TAGS, SORT_BY } from 'constants/games';
+import { Form, Label, Select, Option } from './style';
+
+interface Props {
+  onChange: (e: any) => void;
+}
+
+const FilterSelect = ({ onChange }: Props) => {
+  return (
+    <>
+      <Form onChange={onChange}>
+        <Label htmlFor="platform-select">
+          Platform:
+          <Select name="platform" id="platform-select">
+            {PLATFORMS.map((platform) => (
+              <Option key={platform.value} value={platform.value}>
+                {platform.display}
+              </Option>
+            ))}
+          </Select>
+        </Label>
+
+        <Label htmlFor="genre-select">
+          Genre:
+          <Select name="genre" id="genre-select">
+            <Option value="">All Genres</Option>
+            {GENRES_ARR.map((genre) => (
+              <Option key={genre.value} value={genre.value}>
+                {genre.display}
+              </Option>
+            ))}
+          </Select>
+        </Label>
+
+        <Label htmlFor="tag-select">
+          Tag:
+          <Select name="tag" id="tag-select">
+            <Option value="">All Tags</Option>
+            {TAGS.map((tag) => (
+              <Option key={tag.value} value={tag.value}>
+                {tag.display}
+              </Option>
+            ))}
+          </Select>
+        </Label>
+
+        <Label htmlFor="sortBy-select">
+          Sort By:
+          <Select name="sortBy" id="sortBy-select">
+            {SORT_BY.map((sortBy) => (
+              <option key={sortBy.value} value={sortBy.value}>
+                {sortBy.display}
+              </option>
+            ))}
+          </Select>
+        </Label>
+      </Form>
+    </>
+  );
+};
+
+export default FilterSelect;

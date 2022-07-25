@@ -4,6 +4,7 @@ import { whiteColor } from 'styles/theme';
 import styled from 'styled-components';
 
 export const CardGameContainer = styled.div`
+  width: ${({ size }: ItemProps) => (size === 'minium' ? '244px' : '365px')};
   position: relative;
   background-color: ${secondaryColor};
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
@@ -22,6 +23,7 @@ export const Name = styled.div`
   justify-content: space-between;
   padding: 20px;
   h3 {
+    width: 80%;
     white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
