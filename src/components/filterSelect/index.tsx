@@ -1,6 +1,5 @@
 import { PLATFORMS, GENRES_ARR, TAGS, SORT_BY } from 'constants/games';
-import { Form, Label, Select, Option } from './style';
-
+import { Form, Label, Select, Option, IconCheckSquare } from './style';
 interface Props {
   onChange: (e: any) => void;
 }
@@ -11,6 +10,7 @@ const FilterSelect = ({ onChange }: Props) => {
       <Form onChange={onChange}>
         <Label htmlFor="platform-select">
           Platform:
+          <IconCheckSquare />
           <Select name="platform" id="platform-select">
             {PLATFORMS.map((platform) => (
               <Option key={platform.value} value={platform.value}>
@@ -22,6 +22,7 @@ const FilterSelect = ({ onChange }: Props) => {
 
         <Label htmlFor="genre-select">
           Genre:
+          <IconCheckSquare />
           <Select name="genre" id="genre-select">
             <Option value="">All Genres</Option>
             {GENRES_ARR.map((genre) => (
@@ -34,6 +35,7 @@ const FilterSelect = ({ onChange }: Props) => {
 
         <Label htmlFor="tag-select">
           Tag:
+          <IconCheckSquare />
           <Select name="tag" id="tag-select">
             <Option value="">All Tags</Option>
             {TAGS.map((tag) => (
@@ -46,11 +48,12 @@ const FilterSelect = ({ onChange }: Props) => {
 
         <Label htmlFor="sortBy-select">
           Sort By:
+          <IconCheckSquare />
           <Select name="sortBy" id="sortBy-select">
             {SORT_BY.map((sortBy) => (
-              <option key={sortBy.value} value={sortBy.value}>
+              <Option key={sortBy.value} value={sortBy.value}>
                 {sortBy.display}
-              </option>
+              </Option>
             ))}
           </Select>
         </Label>

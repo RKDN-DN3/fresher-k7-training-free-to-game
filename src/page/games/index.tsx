@@ -45,8 +45,6 @@ const Games = () => {
 
   const onFilterChange = React.useCallback(
     (event: React.ChangeEvent<HTMLFormElement>) => {
-      console.log(event.target.name);
-      console.log(event.target.value);
       setFilter((current) => ({
         ...current,
         [event.target.name]: event.target.value,

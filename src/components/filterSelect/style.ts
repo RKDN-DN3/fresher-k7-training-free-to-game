@@ -1,6 +1,8 @@
-import { subColor } from './../../styles/theme/index';
+import { buttonColor } from './../../styles/theme/index';
+import { textColor, backgroundMenuSubColor } from 'styles/themeProvider';
 import styled from 'styled-components';
 import { secondaryTextColor } from 'styles/theme';
+import { ReactComponent as CheckBox } from 'assets/icons/IconCheckSquare.svg';
 
 export const Form = styled.form`
   display: flex;
@@ -19,13 +21,18 @@ export const Label = styled.label`
 `;
 
 export const Select = styled.select`
-  color: white;
+  color: ${textColor};
   background-color: transparent;
   border: none;
   cursor: pointer;
 `;
 
 export const Option = styled.option`
-  background-color: ${subColor};
-  padding: 10px;
+  background-color: ${backgroundMenuSubColor};
+  color: ${textColor};
+`;
+
+export const IconCheckSquare = styled(CheckBox)`
+  color: ${buttonColor};
+  width: 13px !important;
 `;

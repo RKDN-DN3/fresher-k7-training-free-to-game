@@ -1,3 +1,4 @@
+import { buttonColor } from './../../styles/theme/index';
 import { ItemProps } from 'components/cardGame';
 import { secondaryColor } from 'styles/theme/index';
 import { whiteColor } from 'styles/theme';
@@ -34,7 +35,7 @@ export const Name = styled.div`
 `;
 
 export const Button = styled.button`
-  background-color: #4799eb;
+  background-color: ${buttonColor};
   border: none;
   border-radius: 5px;
   padding: 8px;

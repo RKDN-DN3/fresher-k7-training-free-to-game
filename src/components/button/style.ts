@@ -1,3 +1,4 @@
+import { buttonColor } from './../../styles/theme/index';
 import { secondaryTextColor } from 'styles/theme/index';
 import { whiteColor } from 'styles/theme';
 import styled from 'styled-components';
@@ -12,8 +13,8 @@ export const ButtonPrimaryStyled = styled.button`
     linear,
     left top,
     left bottom,
-    from(#4799eb),
-    color-stop(60%, #4799eb),
+    from(${buttonColor}),
+    color-stop(60%, ${buttonColor}),
     to(#49acff)
   );
   &:hover {
