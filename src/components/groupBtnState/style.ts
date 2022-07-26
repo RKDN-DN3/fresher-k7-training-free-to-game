@@ -3,11 +3,7 @@ import {
   backgroundHoverColor,
 } from './../../styles/themeProvider/index';
 import { textColor, textHoverColor } from 'styles/themeProvider/index';
-import {
-  secondaryColor,
-  subColor,
-  primaryTextColor,
-} from './../../styles/theme/index';
+import { primaryTextColor } from './../../styles/theme/index';
 import styled from 'styled-components';
 import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
 import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';

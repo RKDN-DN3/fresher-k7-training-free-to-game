@@ -1,5 +1,13 @@
 import styled from 'styled-components';
 
+export const Container = styled.div`
+  @media (max-width: 1200px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+`;
+
 export const LoadingStyled = styled.div`
   border: 6px solid #f3f3f3;
   border-radius: 50%;

@@ -1,4 +1,3 @@
-import { breakpoints } from 'styles/breakpoints';
 import { CommunityItemColor } from 'styles/themeProvider/index';
 import { secondaryTextColor } from 'styles/theme/index';
 import styled from 'styled-components';

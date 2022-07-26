@@ -1,4 +1,3 @@
-import { breakpoints } from 'styles/breakpoints';
 import styled from 'styled-components';
 
 type styleProps = {

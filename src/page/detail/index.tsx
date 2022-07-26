@@ -52,7 +52,7 @@ const Detail = () => {
       </BackGroundImgStyled>
       <div className="detail-left">
         <div className="detail-card">
-          <img src={game?.thumbnail} />
+          <img src={game?.thumbnail} alt="not found image" />
           <ActionStyled>
             <div className="detail-free">{translate('FREE', language)}</div>
             <ButtonPrimary>
