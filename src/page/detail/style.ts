@@ -1,35 +1,86 @@
-import { subColor, primaryTextColor } from './../../styles/theme/index';
+import { primaryTextColor, borderColor } from './../../styles/theme/index';
+import { subColor, width, secondaryTextColor } from 'styles/theme/index';
 import { textHoverColor } from './../../styles/themeProvider/index';
 import { secondaryColor } from 'styles/theme/index';
 import { textColor } from 'styles/themeProvider';
 import styled from 'styled-components';
-import SentimentSatisfiedAltIcon from '@mui/icons-material/SentimentSatisfiedAlt';
-import SentimentVeryDissatisfiedIcon from '@mui/icons-material/SentimentVeryDissatisfied';
-import SentimentNeutralIcon from '@mui/icons-material/SentimentNeutral';
-import AddBoxIcon from '@mui/icons-material/AddBox';
+import { Breadcrumbs as BreadcrumbsStyle } from '@mui/material';
+
+import HeaderTitle from 'components/headerTitle';
 
 export const DetailContainer = styled.div`
-  color: ${textColor};
-  height: 100vh;
+  height: 300vh;
   display: flex;
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  padding-right: 21%;
-  padding-left: 21%;
-  margin-right: auto;
-  margin-left: auto;
+  width: ${width};
+  margin: 20px auto 0 auto;
+  color: ${textColor};
   .detail-right {
-    flex: 1;
+    flex: 2;
+    color: white;
+    z-index: 1;
   }
   .detail-left {
-    z-index: 1;
-    position: fixed;
-    top: 80px;
+    flex: 1;
     img {
       width: 356px;
     }
   }
+  .detail-card {
+    z-index: 1;
+    position: fixed;
+    top: 80px;
+  }
+`;
+
+export const Breadcrumbs = styled(BreadcrumbsStyle)`
+  .MuiTypography-root,
+  nav,
+  li {
+    font-size: 12px;
+    color: ${textColor};
+    cursor: pointer;
+  }
+  .MuiTypography-root {
+    cursor: auto;
+    color: ${secondaryTextColor};
+  }
+`;
+
+export const ActionStyled = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  padding: 20px 0;
+  .detail-free {
+    width: 65px;
+    height: 48px;
+    background-color: ${secondaryColor};
+    border-radius: 5px;
+    cursor: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      background-color: ${subColor};
+      color: ${textHoverColor};
+    }
+  }
+  button {
+    flex: 1;
+    font-weight: 700;
+  }
+`;
+
+export const H4 = styled.h4`
+  color: ${primaryTextColor};
+  border-bottom: 0.5px solid ${borderColor};
+  padding-bottom: 10px;
+`;
+
+export const Text = styled.p`
+  color: ${primaryTextColor};
+  margin-bottom: 50px;
 `;
 
 export const BackGroundImgStyled = styled.div`
@@ -62,71 +113,17 @@ export const BackGroundImgStyled = styled.div`
   }
 `;
 
-export const ActionStyled = styled.div`
+export const HeaderTitleStyled = styled(HeaderTitle)``;
+
+export const InformationTitle = styled.div`
+  border-bottom: 0.5px solid ${borderColor} !important;
+  padding-bottom: 10px;
+`;
+
+export const Screenshots = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 5px;
-  padding: 20px 0;
-  .detail-free {
-    width: 65px;
-    height: 48px;
-    background-color: ${secondaryColor};
-    border-radius: 5px;
-    cursor: auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    &:hover {
-      background-color: ${subColor};
-      color: ${textHoverColor};
-    }
+  margin: 15px 0;
+  img {
+    width: 168px;
   }
-  button {
-    flex: 1;
-    font-weight: 700;
-  }
-`;
-
-export const GroupBtn = styled.div`
-  background-color: ${secondaryColor};
-  display: flex;
-  justify-content: space-between;
-  overflow: hidden;
-  border-radius: 5px !important;
-`;
-
-export const Button = styled.button`
-  background-color: transparent;
-  border: none;
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  align-items: center;
-  color: ${textColor};
-
-  &:hover {
-    color: ${textHoverColor};
-    background-color: ${subColor};
-  }
-  span {
-    font-size: 12px;
-  }
-`;
-
-export const Smile = styled(SentimentSatisfiedAltIcon)`
-  color: #62c462;
-`;
-
-export const Neutral = styled(SentimentNeutralIcon)`
-  color: ${primaryTextColor};
-`;
-
-export const SadFace = styled(SentimentVeryDissatisfiedIcon)`
-  color: #ee5f5b;
-`;
-
-export const AddBox = styled(AddBoxIcon)`
-  color: #5bc0de;
 `;

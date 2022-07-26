@@ -1,9 +1,8 @@
 import React from 'react';
-import { ContentGame, ContentLeft, ContentRight } from './style';
+import { ContentGame, ContentLeft, ContentRight, Container } from './style';
 import { useSelector } from 'react-redux';
 import { translate } from 'util/translate';
 import { RootState } from 'store/store';
-import { Container } from 'styles/components/style';
 import { ButtonOutline } from 'components/button';
 import { useAppDispatch } from 'hook/hooksStore';
 import ListGame from 'components/listGame';

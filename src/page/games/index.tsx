@@ -1,8 +1,13 @@
 import React from 'react';
 import { translate } from 'util/translate';
 import { RootState } from 'store/store';
-import { Container } from 'styles/components/style';
-import { ContentGame, TextField, SearchStyled, SearchIcon } from './style';
+import {
+  ContentGame,
+  TextField,
+  SearchStyled,
+  SearchIcon,
+  Container,
+} from './style';
 import { Filter } from 'hook/type';
 import { useSelector } from 'react-redux';
 import { CardGameMiniViewGames } from 'components/cardGameMini';
