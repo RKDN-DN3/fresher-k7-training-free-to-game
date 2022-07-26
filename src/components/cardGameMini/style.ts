@@ -1,21 +1,13 @@
-import {
-  cardMenuColor,
-  textColor,
-  backgroundHoverColor,
-} from './../../styles/themeProvider/index';
-import { buttonColor } from 'styles/theme/index';
-import {
-  secondaryColor,
-  secondaryTextColor,
-  black_1,
-} from 'styles/theme/index';
-import { whiteColor } from 'styles/theme';
+import { breakpoints } from 'styles/breakpoints';
 import styled from 'styled-components';
+import { cardMenuColor, backgroundHoverColor } from 'styles/themeProvider';
+import { buttonColor, secondaryTextColor, whiteColor } from 'styles/theme';
 import { ReactComponent as IconWindow } from 'assets/icons/IconWindow.svg';
 import { ReactComponent as IconSave } from 'assets/icons/IconSave.svg';
 
 export const CardGameContainer = styled.div`
   display: flex;
+  align-items: center;
   padding: 20px;
   background-color: ${cardMenuColor};
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
@@ -28,6 +20,7 @@ export const CardGameContainer = styled.div`
     transform: scale(1.01);
   }
 `;
+
 export const Name = styled.div`
   display: flex;
   align-items: center;
@@ -48,6 +41,9 @@ export const Button = styled.button`
 `;
 export const Img = styled.img`
   height: 90px;
+  @media (max-width: 980px), (max-width: 1160px) {
+    height: 50px;
+  }
 `;
 
 export const Des = styled.div`
@@ -70,11 +66,16 @@ export const TitleDes = styled.div`
   font-size: 14px;
   font-weight: 300;
   color: ${secondaryTextColor};
-
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 380px;
+  @media (max-width: ${breakpoints.desktop}) {
+    max-width: 330px;
+  }
+  @media (max-width: 980px), (max-width: 1160px) {
+    max-width: 200px;
+  }
 `;
 
 export const IconSa = styled(IconSave)`
@@ -99,17 +100,58 @@ export const CardGameMiniViewGamesStyled = styled.div`
     flex-direction: column;
     width: 270px;
     height: 280px;
+    @media (min-width: 1200px) {
+      max-width: 300px;
+    }
+    @media (max-width: 990px) {
+      max-width: 216px;
+    }
     padding: 0;
     img {
       flex: 1;
       height: 152px;
+      @media (max-width: 1200px) {
+        width: 100%;
+        height: 100%;
+      }
     }
-    .card-game-mini_des-container {
-      display: flex;
-      flex-direction: column;
-      padding: 20px;
+  }
+  .card-game-mini_des-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  .card-game-mini_des {
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+  }
+  .card-game-mini_battle {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+    margin-top: 15px;
+
+    svg {
+      margin: 0;
+      width: 15px;
+      height: 15px;
     }
-    .card-game-mini_des {
+    button {
+      height: 13px;
+      min-width: 90px;
+      color: ${backgroundHoverColor};
+    }
+  }
+  .card-game-mini_name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+    h3 {
       white-space: normal;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -117,44 +159,13 @@ export const CardGameMiniViewGamesStyled = styled.div`
       -webkit-line-clamp: 1;
       -webkit-box-orient: vertical;
     }
-    .card-game-mini_battle {
+    button {
       display: flex;
-      justify-content: flex-end;
-      gap: 5px;
-      margin-top: 15px;
-
-      svg {
-        margin: 0;
-        width: 15px;
-        height: 15px;
-      }
-      button {
-        height: 13px;
-        min-width: 90px;
-        color: ${backgroundHoverColor};
-      }
-    }
-    .card-game-mini_name {
-      display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 5px;
-      h3 {
-        white-space: normal;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
-      }
-      button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 20px;
-        font-size: 9px !important;
-        min-width: 55px;
-      }
+      justify-content: center;
+      height: 20px;
+      font-size: 9px !important;
+      min-width: 55px;
     }
   }
 `;

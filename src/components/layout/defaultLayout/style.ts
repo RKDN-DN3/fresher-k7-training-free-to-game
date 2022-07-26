@@ -11,7 +11,7 @@ export const DefaultLayoutContainer = styled.div`
 `;
 
 export const Content = styled.div`
-  width: ${width};
+  /* width: ${width}; */
   margin: auto;
   ${(props: StyleProps) => props.backGroundImg && `width: 100%;`}
 `;

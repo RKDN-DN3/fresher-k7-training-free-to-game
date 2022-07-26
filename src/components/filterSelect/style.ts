@@ -1,4 +1,4 @@
-import { buttonColor } from './../../styles/theme/index';
+import { buttonColor } from 'styles/theme/index';
 import { textColor, backgroundMenuSubColor } from 'styles/themeProvider';
 import styled from 'styled-components';
 import { secondaryTextColor } from 'styles/theme';
@@ -11,6 +11,11 @@ export const Form = styled.form`
   margin: 50px 0;
   color: ${secondaryTextColor};
   box-sizing: border-box;
+  width: auto;
+  @media (max-width: 1200px) {
+    justify-content: center;
+    text-align: center;
+  }
 `;
 
 export const Label = styled.label`
