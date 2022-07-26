@@ -1,5 +1,5 @@
 import { CommunityItemColor } from 'styles/themeProvider/index';
-import { black_1, secondaryTextColor } from 'styles/theme/index';
+import { secondaryTextColor } from 'styles/theme/index';
 import styled from 'styled-components';
 
 export const CommunityStyled = styled.div`

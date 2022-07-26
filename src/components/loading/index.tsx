@@ -1,10 +1,10 @@
-import { LoadingStyled } from './style';
+import { LoadingStyled, Container } from './style';
 
 const Loading = () => {
   return (
-    <div style={{ marginBottom: '20px' }}>
+    <Container style={{ marginBottom: '20px' }}>
       <LoadingStyled /> Loading...
-    </div>
+    </Container>
   );
 };
 

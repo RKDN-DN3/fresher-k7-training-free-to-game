@@ -6,6 +6,10 @@ export const TopTittle = styled.div`
   align-items: center;
   gap: 5px;
   margin-bottom: 8px;
+  @media (max-width: 1200px) {
+    justify-content: center;
+    text-align: center;
+  }
 `;
 
 export const BottomTittle = styled.div`
@@ -14,6 +18,10 @@ export const BottomTittle = styled.div`
   gap: 5px;
   margin-bottom: 16px;
   color: ${buttonColor};
+  @media (max-width: 1200px) {
+    justify-content: center;
+    text-align: center;
+  }
 `;
 
 export const H3 = styled.h3`

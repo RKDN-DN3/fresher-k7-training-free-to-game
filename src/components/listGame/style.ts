@@ -11,4 +11,7 @@ export const RecommendContent = styled.div`
   justify-content: flex-start;
   flex-direction: ${({ column }: styleProps) => (column ? 'column' : 'row')};
   flex-wrap: wrap;
+  @media (max-width: 1200px) {
+    justify-content: center;
+  }
 `;

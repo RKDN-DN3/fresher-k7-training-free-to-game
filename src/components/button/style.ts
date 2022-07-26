@@ -4,6 +4,11 @@ import { whiteColor } from 'styles/theme';
 import styled from 'styled-components';
 
 export const ButtonPrimaryStyled = styled.button`
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   border: none;
   height: 48px;
   color: #ffffff;

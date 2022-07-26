@@ -1,13 +1,16 @@
-import { secondaryColor } from 'styles/theme/index';
-import { hoverColorWhite, subColor } from './../theme/index';
+import theme from 'styled-theming';
 import {
+  secondaryColor,
+  hoverColorWhite,
+  subColor,
+  gradientBackGroundColorLight,
+  gradientBackGroundColorDark,
   primaryColor,
   primaryTextColor,
   whiteColor,
   black_1,
   secondaryTextColor,
 } from 'styles/theme';
-import theme from 'styled-theming';
 
 export const backgroundColor = theme('theme', {
   light: `${whiteColor}`,
@@ -42,4 +45,9 @@ export const cardMenuColor = theme('theme', {
 export const CommunityItemColor = theme('theme', {
   light: `${whiteColor}`,
   dark: `${black_1}`,
+});
+
+export const gradientColor = theme('theme', {
+  light: `${gradientBackGroundColorLight}`,
+  dark: `${gradientBackGroundColorDark}`,
 });

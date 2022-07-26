@@ -1,3 +1,4 @@
+import { breakpoints } from 'styles/breakpoints';
 import { black_1, tertiaryTextColor } from 'styles/theme/index';
 import { primaryTextColor, width, whiteColor } from 'styles/theme';
 import styled from 'styled-components';
@@ -12,16 +13,37 @@ export const FooterStyled = styled.div`
 
 export const FooterContent = styled.div`
   display: flex;
-  width: ${width};
+  width: auto !important;
   flex: 1;
   margin: auto;
   gap: 30px;
   padding: 50px 0;
+  @media (min-width: 980px) {
+    width: auto;
+  }
+  @media (max-width: 1160px) {
+    width: auto;
+  }
+  @media (max-width: ${breakpoints.desktop}) {
+    width: auto;
+  }
+  /* @media (max-width: 1200px) {
+    width: auto;
+  }
+  @media (max-width: 980px) {
+    width: auto;
+  }
+  @media (max-width: 918px) {
+    width: auto;
+  } */
 `;
 
 export const ListItem = styled.div`
   list-style: none;
   width: 250px;
+  @media (max-width: 1160px) {
+    width: auto;
+  }
 `;
 
 export const Img = styled.img`

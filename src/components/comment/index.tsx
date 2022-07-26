@@ -3,12 +3,17 @@ import SentimentNeutralIcon from '@mui/icons-material/SentimentNeutral';
 import MoodBadIcon from '@mui/icons-material/MoodBad';
 import { CommentInput, Container, Textarea } from './style';
 import SendIcon from '@mui/icons-material/Send';
+import { useSelector } from 'react-redux';
+import { RootState } from 'store/store';
+import { translate } from 'util/translate';
+
 const Comment = () => {
+  const { language } = useSelector((state: RootState) => state.lang);
   return (
     <Container>
       <div className="comment-content">
         <span className="comment-title">
-          What do you think about Fall Guys?
+          {translate('about-think', language)} Fall Guys?
         </span>
         <div className="comment-face-state">
           <span>
@@ -27,7 +32,7 @@ const Comment = () => {
           src="https://www.freetogame.com/assets/images/avatars/default/default.png"
           alt=""
         />
-        <Textarea placeholder="Write a review for Fall Guys! Share your thoughts with our community." />
+        <Textarea placeholder={translate('write-review', language)} />
         <button>
           <SendIcon />
         </button>
