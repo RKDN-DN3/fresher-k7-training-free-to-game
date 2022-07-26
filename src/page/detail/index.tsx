@@ -23,52 +23,17 @@ import SystemRequirements from 'components/systemRequirements';
 import { STATUS_SUCCESS } from 'constants/constants.d';
 import React from 'react';
 import requestApi from 'api/requestApi';
-import { ReviewsStyle } from 'components/reviews/style';
-
-export const CONFIGURATION: GameDetails = {
-  developer: 'Blizzard Entertainment',
-  freetogame_profile_url: 'https://www.freetogame.com/diablo-immortal',
-  game_url: 'https://www.freetogame.com/open/diablo-immortal',
-  genre: 'MMOARPG',
-  id: 521,
-  platform: 'PC (Windows)',
-  publisher: 'Blizzard Entertainment',
-  release_date: '2022-06-02',
-  short_description:
-    'Built for mobile and also released on PC, Diablo Immortal fills in the gaps between Diablo II and III in an MMOARPG environment.',
-  thumbnail: 'https://www.freetogame.com/g/521/thumbnail.jpg',
-  title: 'Diablo Immortal',
-  minimum_system_requirements: {
-    os: 'Windows 7 64-Bit (SP1) or Windows 10 64-Bit',
-    processor: 'Intel Core i3-4340 or AMD FX-6300',
-    memory: '8GB RAM',
-    graphics: 'NVIDIA GeForce GTX 670 / GeForce GTX 1650 or Radeon HD 7950',
-    storage: '175GB HD space',
-  },
-  screenshots: [
-    {
-      id: 1124,
-      image: 'https://www.freetogame.com/g/452/Call-of-Duty-Warzone-1.jpg',
-    },
-    {
-      id: 1125,
-      image: 'https://www.freetogame.com/g/452/Call-of-Duty-Warzone-2.jpg',
-    },
-    {
-      id: 1126,
-      image: 'https://www.freetogame.com/g/452/Call-of-Duty-Warzone-3.jpg',
-    },
-    {
-      id: 1127,
-      image: 'https://www.freetogame.com/g/452/Call-of-Duty-Warzone-4.jpg',
-    },
-  ],
-};
+import Reviews from 'components/reviews';
+import { RootState } from 'store/store';
+import { useSelector } from 'react-redux';
+import { translate } from 'util/translate';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 
 const Detail = () => {
   const { search } = useLocation();
   const id = new URLSearchParams(search).get('id');
   const [game, setGame] = React.useState<GameDetails>({});
+  const { language } = useSelector((state: RootState) => state.lang);
 
   React.useEffect(() => {
     const fetch = async () => {
@@ -78,7 +43,8 @@ const Detail = () => {
       }
     };
     fetch();
-  }, []);
+  }, [id]);
+
   return (
     <DetailContainer>
       <BackGroundImgStyled>
@@ -86,13 +52,18 @@ const Detail = () => {
       </BackGroundImgStyled>
       <div className="detail-left">
         <div className="detail-card">
-          <img src={game?.thumbnail} alt="" />
+          <img src={game?.thumbnail} />
           <ActionStyled>
-            <div className="detail-free">FREE</div>
-            <ButtonPrimary>PLAY NOW</ButtonPrimary>
+            <div className="detail-free">{translate('FREE', language)}</div>
+            <ButtonPrimary>
+              <a href={game?.game_url}>
+                {translate('play-now', language)}
+                <PlayArrowIcon />
+              </a>
+            </ButtonPrimary>
           </ActionStyled>
           {/* GroupBtnState */}
-          <GroupBtnState />
+          <GroupBtnState like={translate('like', language)} />
         </div>
       </div>
       <div className="detail-right">
@@ -102,28 +73,34 @@ const Detail = () => {
           aria-label="breadcrumb"
         >
           <Link color="inherit" to="/">
-            Home
+            {translate('home', language)}
           </Link>
-          <Link to="/games">Free Games</Link>
+          <Link to="/games">{translate('free-games', language)} </Link>
           <Typography>{game?.title}</Typography>
         </Breadcrumbs>
         <h1>{game?.title}</h1>
         {/* Reviews */}
-        <ReviewsStyle />
+        <Reviews />
+        {/* Comment */}
         <Comment />
-        <H4>About {game?.title}</H4>
+        <H4>
+          {translate('about', language)} {game?.title}
+        </H4>
         <Text>{game?.description}</Text>
         <InformationTitle>
           <HeaderTitleStyled
-            topTile={`Additional Information`}
-            bottomTitle={`Please note this free-to-play game may or may not offer optional in-game purchases.`}
+            topTile={translate('additional-information', language)}
+            bottomTitle={translate('please-note', language)}
             IconBottom={ErrorIcon}
           />
         </InformationTitle>
         <Information item={game} />
-        <H4>RIFT Screenshots</H4>
+        <H4>
+          {game?.title} {translate('screenshots', language)}
+        </H4>
+        {/* Screenshots */}
         <Screenshots>
-          {game?.screenshots?.map((item, i) => {
+          {game?.screenshots?.map((item) => {
             return (
               <div key={item?.id} className="col-lg-3 col-md-4 col-6">
                 <img
@@ -135,14 +112,14 @@ const Detail = () => {
             );
           })}
         </Screenshots>
-        <H4>Minimum System Requirements (Windows)</H4>
+        <H4>
+          {translate('system-requirements', language)} ({game?.platform})
+        </H4>
         <InformationTitle>
           <SystemRequirements item={game} />
         </InformationTitle>
-        <p>
-          All material on this page is copyrighted by ©Trion Worlds and their
-          respective licensors. All other trademarks are the property of their
-          respective owners.
+        <p className="detail-title-end">
+          {translate('license-note', language)}
         </p>
       </div>
     </DetailContainer>

@@ -1,7 +1,10 @@
-import { subColor, borderColor } from './../../styles/theme/index';
-import { translate } from './../../util/translate';
-import { secondaryTextColor, black_1 } from 'styles/theme';
-import { textColor } from 'styles/themeProvider/index';
+import {
+  subColor,
+  borderColor,
+  secondaryTextColor,
+  black_1,
+} from 'styles/theme';
+import { textColor, CommunityItemColor } from 'styles/themeProvider/index';
 import styled from 'styled-components';
 
 export const Container = styled.div`
@@ -32,6 +35,9 @@ export const CommentInput = styled.div`
   display: flex;
   margin: 20px;
   margin-right: 0;
+  textarea {
+    background-color: ${CommunityItemColor} !important;
+  }
   button {
     background-color: transparent !important;
     border: 0.5px solid ${borderColor};

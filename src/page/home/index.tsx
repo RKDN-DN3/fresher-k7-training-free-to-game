@@ -14,6 +14,7 @@ import CardGameMini from 'components/cardGameMini';
 import dispatchDataRedux from 'util/dispatchDataRedux';
 import _ from 'lodash';
 import Community from 'components/community';
+import Loading from 'components/loading';
 
 const Home = () => {
   const { language, gamesRelease, gamesRelevance, gamesPopularity } =
@@ -41,6 +42,7 @@ const Home = () => {
         IconTop={SmartToyIcon}
         IconBottom={HelpIcon}
       />
+      {gamesRelevance.length === 0 && <Loading />}
       <ListGame items={gamesRelevance} limit={3} Card={CardGame} />
       {/* body */}
       <ContentGame>

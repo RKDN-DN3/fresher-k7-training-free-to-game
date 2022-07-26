@@ -1,3 +1,7 @@
+import {
+  cardMenuColor,
+  backgroundHoverColor,
+} from './../../styles/themeProvider/index';
 import { textColor, textHoverColor } from 'styles/themeProvider/index';
 import {
   secondaryColor,
@@ -11,7 +15,7 @@ import SentimentNeutralIcon from '@mui/icons-material/SentimentNeutral';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 
 export const Container = styled.div`
-  background-color: ${secondaryColor};
+  background-color: ${cardMenuColor};
   display: flex;
   justify-content: space-between;
   overflow: hidden;
@@ -30,7 +34,7 @@ export const Button = styled.button`
 
   &:hover {
     color: ${textHoverColor};
-    background-color: ${subColor};
+    background-color: ${backgroundHoverColor};
   }
   span {
     font-size: 12px;

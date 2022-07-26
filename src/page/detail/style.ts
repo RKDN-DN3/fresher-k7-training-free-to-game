@@ -1,22 +1,29 @@
-import { primaryTextColor, borderColor } from './../../styles/theme/index';
-import { subColor, width, secondaryTextColor } from 'styles/theme/index';
-import { textHoverColor } from './../../styles/themeProvider/index';
-import { secondaryColor } from 'styles/theme/index';
-import { textColor } from 'styles/themeProvider';
+import { gradientColor } from './../../styles/themeProvider/index';
 import styled from 'styled-components';
+import {
+  width,
+  secondaryTextColor,
+  primaryTextColor,
+  borderColor,
+} from 'styles/theme';
+import {
+  textHoverColor,
+  cardMenuColor,
+  backgroundHoverColor,
+  textColor,
+} from 'styles/themeProvider';
 import { Breadcrumbs as BreadcrumbsStyle } from '@mui/material';
 
 import HeaderTitle from 'components/headerTitle';
 
 export const DetailContainer = styled.div`
-  height: 300vh;
   display: flex;
   width: ${width};
-  margin: 20px auto 0 auto;
+  margin: 20px auto 50px auto;
   color: ${textColor};
   .detail-right {
     flex: 2;
-    color: white;
+    color: ${textColor};
     z-index: 1;
   }
   .detail-left {
@@ -30,14 +37,19 @@ export const DetailContainer = styled.div`
     position: fixed;
     top: 80px;
   }
+  .detail-title-end {
+    font-size: 12px;
+    color: ${secondaryTextColor};
+  }
 `;
 
 export const Breadcrumbs = styled(BreadcrumbsStyle)`
   .MuiTypography-root,
   nav,
-  li {
+  li,
+  a {
     font-size: 12px;
-    color: ${textColor};
+    color: ${textColor} !important;
     cursor: pointer;
   }
   .MuiTypography-root {
@@ -53,16 +65,16 @@ export const ActionStyled = styled.div`
   gap: 5px;
   padding: 20px 0;
   .detail-free {
-    width: 65px;
     height: 48px;
-    background-color: ${secondaryColor};
+    padding: 10px;
+    background-color: ${cardMenuColor};
     border-radius: 5px;
     cursor: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     &:hover {
-      background-color: ${subColor};
+      background-color: ${backgroundHoverColor};
       color: ${textHoverColor};
     }
   }
@@ -96,20 +108,8 @@ export const BackGroundImgStyled = styled.div`
   z-index: 1;
   opacity: 0.5;
   .detail-gradient {
-    background: linear-gradient(
-        90deg,
-        #292e33 0%,
-        rgba(35, 46, 46, 0.1) 16.15%,
-        rgba(35, 46, 46, 0.1) 80.21%,
-        #292e33 100%
-      ),
-      linear-gradient(
-        180deg,
-        rgb(39, 43, 48) 0%,
-        rgba(0, 0, 0, 0.58) 33.85%,
-        #292e33 100%
-      );
     height: 101% !important;
+    background: ${gradientColor};
   }
 `;
 
