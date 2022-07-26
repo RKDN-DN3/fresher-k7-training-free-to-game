@@ -52,7 +52,7 @@ const Detail = () => {
       </BackGroundImgStyled>
       <div className="detail-left">
         <div className="detail-card">
-          <img src={game?.thumbnail} alt="not found image" />
+          <img src={game?.thumbnail} alt="" />
           <ActionStyled>
             <div className="detail-free">{translate('FREE', language)}</div>
             <ButtonPrimary>
@@ -103,11 +103,7 @@ const Detail = () => {
           {game?.screenshots?.map((item) => {
             return (
               <div key={item?.id} className="col-lg-3 col-md-4 col-6">
-                <img
-                  className="thumb-gallery shadow-sm rounded"
-                  src={item?.image}
-                  alt="RIFT Thumbnail 1"
-                />
+                <img src={item?.image} alt="" />
               </div>
             );
           })}
