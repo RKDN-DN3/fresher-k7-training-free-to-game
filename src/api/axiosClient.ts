@@ -1,3 +1,4 @@
+import { API_KEY } from './../constants/constants.d';
 import axios from 'axios';
 import { API_HOST } from 'constants/constants.d';
 import queryString from 'query-string';
@@ -6,6 +7,8 @@ const axiosClient = axios.create({
   baseURL: `https://${API_HOST}/api`,
   headers: {
     'Content-Type': 'application/json',
+    'x-rapidapi-key': API_KEY,
+    'x-rapidapi-host': API_HOST,
   },
   paramsSerializer: (params) => queryString.stringify({ ...params }),
 });

@@ -6,6 +6,7 @@ export interface RouteType {
   component: () => JSX.Element;
   patch: string;
   noneBanner?: boolean;
+  backGroundImg?: boolean;
 }
 
 export type Game = {
@@ -20,6 +21,36 @@ export type Game = {
   developer?: string;
   release_date?: string;
   freetogame_profile_url?: string;
+};
+
+export type System = {
+  os: string;
+  processor: string;
+  memory: string;
+  graphics: string;
+  storage: string;
+};
+
+export type Screenshots = {
+  id?: number;
+  image?: string;
+};
+
+export type GameDetails = {
+  id?: number;
+  title?: string;
+  thumbnail?: string;
+  short_description?: string;
+  description?: string;
+  game_url?: string;
+  genre?: string;
+  platform?: string;
+  publisher?: string;
+  developer?: string;
+  release_date?: string;
+  freetogame_profile_url?: string;
+  minimum_system_requirements?: System;
+  screenshots?: Screenshots[] | undefined;
 };
 
 export type Games = {

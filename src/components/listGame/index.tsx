@@ -1,6 +1,6 @@
 import React from 'react';
 import { ItemProps } from 'components/cardGame';
-import { Container } from 'styles/components/style';
+import { Container, Link } from 'styles/components/style';
 import { RecommendContent } from './style';
 import { Game } from 'types';
 
@@ -29,7 +29,11 @@ const ListGame = (props: ItemsProps) => {
     <Container>
       <RecommendContent column={column} limit={limit}>
         {listArr?.map((item, i: number) => {
-          return <Card key={i} item={item} disableName={disableName} />;
+          return (
+            <Link to={`/game?id=${item.id}`}>
+              <Card key={i} item={item} disableName={disableName} />
+            </Link>
+          );
         })}
       </RecommendContent>
     </Container>

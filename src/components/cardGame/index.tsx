@@ -15,6 +15,7 @@ export type ItemProps = {
 const CardGame = (props: ItemProps) => {
   const { language } = useSelector((state: RootState) => state.lang);
   const { item, disableName, size } = props;
+
   return (
     <CardGameContainer size={size}>
       <Img size={size} src={item?.thumbnail} />

@@ -1,10 +1,12 @@
+import { Container as ContainerStyle } from 'styles/components/style';
 import styled from 'styled-components';
 import { width } from 'styles/theme';
 
-export const Container = styled.div`
-  background-color: red !important;
+export const Container = styled(ContainerStyle)`
   width: ${width};
   margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
 `;
 
 export const ContentGame = styled.div`

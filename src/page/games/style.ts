@@ -1,13 +1,15 @@
+import { Container as ContainerStyle } from 'styles/components/style';
 import { textColor } from 'styles/themeProvider';
 import styled from 'styled-components';
 import { width } from 'styles/theme';
 import { TextField as TextFieldStyle } from '@mui/material';
 import { SearchIconStyled } from 'components/layout/header/style';
 
-export const Container = styled.div`
-  background-color: red !important;
+export const Container = styled(ContainerStyle)`
   width: ${width};
   margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
 `;
 
 export const ContentGame = styled.div`

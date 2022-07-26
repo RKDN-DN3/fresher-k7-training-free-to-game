@@ -16,3 +16,5 @@ export const width = '1125px';
 export const hoverColorWhite = '#f9f9f9';
 
 export const buttonColor = '#4799eb';
+
+export const borderColor = '#424446';

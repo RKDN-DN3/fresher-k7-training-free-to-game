@@ -23,7 +23,10 @@ const App = () => {
                   key={index}
                   path={route.patch}
                   element={
-                    <DefaultLayout noneBanner={route.noneBanner && true}>
+                    <DefaultLayout
+                      noneBanner={route.noneBanner && true}
+                      backGroundImg={route.backGroundImg && true}
+                    >
                       <Component />
                     </DefaultLayout>
                   }

@@ -1,8 +1,13 @@
 import React from 'react';
 import { translate } from 'util/translate';
 import { RootState } from 'store/store';
-import { Container } from 'styles/components/style';
-import { ContentGame, TextField, SearchStyled, SearchIcon } from './style';
+import {
+  ContentGame,
+  TextField,
+  SearchStyled,
+  SearchIcon,
+  Container,
+} from './style';
 import { Filter } from 'hook/type';
 import { useSelector } from 'react-redux';
 import { CardGameMiniViewGames } from 'components/cardGameMini';
@@ -33,12 +38,6 @@ const Games = () => {
   const [filter, setFilter] = React.useState<Filter>({});
   const { games, isLoading } = useFetch(filter);
   const [searchArr, setSearchArr] = React.useState<Game[]>([]);
-
-  React.useEffect(() => {
-    return () => {
-      dispatch(setIsSearchRedux(false));
-    };
-  }, [dispatch]);
 
   React.useEffect(() => {
     if (platform || sortBy) {
@@ -81,6 +80,12 @@ const Games = () => {
     }
     return data;
   };
+
+  React.useEffect(() => {
+    return () => {
+      dispatch(setIsSearchRedux(false));
+    };
+  }, [dispatch]);
 
   return (
     <Container>
