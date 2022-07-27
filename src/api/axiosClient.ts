@@ -1,4 +1,4 @@
-import { API_HOST, API_KEY } from 'constants/constants.d';
+import { API_HOST, API_KEY, STATUS_SUCCESS } from 'constants/constants.d';
 import axios from 'axios';
 import queryString from 'query-string';
 
@@ -11,5 +11,20 @@ const axiosClient = axios.create({
   },
   paramsSerializer: (params) => queryString.stringify({ ...params }),
 });
+
+axiosClient.interceptors.request.use(async (config) => config);
+
+axiosClient.interceptors.response.use(
+  (response) => {
+    if (response && response.status === STATUS_SUCCESS) {
+      return response.data;
+    }
+
+    return response;
+  },
+  (error) => {
+    throw error;
+  },
+);
 
 export default axiosClient;
