@@ -5,7 +5,7 @@ import { ItemProps } from 'components/cardGame';
 import styled from 'styled-components';
 
 export const CardGameContainer = styled.div`
-  width: ${({ size }: ItemProps) => (size === 'minium' ? '244px' : '100%')};
+  width: ${({ size }: ItemProps) => (size === 'minium' ? '244px' : '365px')};
   position: relative;
   background-color: ${cardMenuColor};
   -webkit-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
@@ -18,13 +18,16 @@ export const CardGameContainer = styled.div`
     transform: scale(1.02);
   }
   @media (max-width: ${breakpoints.desktop}) {
-    width: ${({ size }: ItemProps) => (size === 'minium' ? '200px' : '296px')};
+    width: ${({ size }: ItemProps) => (size === 'minium' ? '100%' : '296px')};
   }
   @media (max-width: 1200px) {
-    width: ${({ size }: ItemProps) => (size === 'minium' ? '200px' : '296px')};
+    width: ${({ size }: ItemProps) => (size === 'minium' ? '100%' : '296px')};
+  }
+  @media (max-width: 1138px) {
+    width: ${({ size }: ItemProps) => (size === 'minium' ? '100%' : '290px')};
   }
   @media (max-width: 980px) {
-    width: ${({ size }: ItemProps) => (size === 'minium' ? '200px' : '216px')};
+    width: ${({ size }: ItemProps) => (size === 'minium' ? '100%' : '216px')};
   }
 `;
 export const Name = styled.div`

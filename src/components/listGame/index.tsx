@@ -30,8 +30,8 @@ const ListGame = (props: ItemsProps) => {
       <RecommendContent column={column} limit={limit}>
         {listArr?.map((item, i: number) => {
           return (
-            <Link to={`/game?id=${item.id}`}>
-              <Card key={i} item={item} disableName={disableName} />
+            <Link to={`/game?id=${item.id}`} key={i}>
+              <Card item={item} disableName={disableName} />
             </Link>
           );
         })}

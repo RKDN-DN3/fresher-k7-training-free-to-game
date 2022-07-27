@@ -12,6 +12,7 @@ const Community = () => {
       <CommunityItem>
         <CardGame
           item={{
+            id: 11111,
             title: 'tien',
             thumbnail: 'https://www.freetogame.com/g/365/thumbnail.jpg',
             short_description: 'alo',
@@ -37,6 +38,7 @@ const Community = () => {
       <CommunityItem>
         <CardGame
           item={{
+            id: 11111,
             title: 'tien',
             thumbnail: 'https://www.freetogame.com/g/475/thumbnail.jpg',
             short_description: 'alo',

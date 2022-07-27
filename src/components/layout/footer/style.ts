@@ -27,15 +27,6 @@ export const FooterContent = styled.div`
   @media (max-width: ${breakpoints.desktop}) {
     width: auto;
   }
-  /* @media (max-width: 1200px) {
-    width: auto;
-  }
-  @media (max-width: 980px) {
-    width: auto;
-  }
-  @media (max-width: 918px) {
-    width: auto;
-  } */
 `;
 
 export const ListItem = styled.div`

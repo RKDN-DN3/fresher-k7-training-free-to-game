@@ -1,7 +1,7 @@
-import { textColor } from 'styles/themeProvider';
-import { Link as LinkStyle } from 'react-router-dom';
 import styled from 'styled-components';
+import { textColor } from 'styles/themeProvider';
 import { primaryTextColor } from 'styles/theme';
+import { Link as LinkStyle } from 'react-router-dom';
 
 export const Container = styled.div`
   color: ${primaryTextColor};

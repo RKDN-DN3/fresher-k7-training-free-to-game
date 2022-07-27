@@ -1,9 +1,8 @@
-import { STATUS_SUCCESS } from 'constants/constants.d';
-import { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Game } from 'types';
-import { API_HOST, API_KEY } from 'constants/constants.d';
+import React from 'react';
+import { STATUS_SUCCESS, API_HOST, API_KEY } from 'constants/constants.d';
 import { Filter } from './type';
+import { Game } from 'types';
+import axios from 'axios';
 import _ from 'lodash';
 
 type Response = {
@@ -13,11 +12,12 @@ type Response = {
 };
 
 const useFetch = (params: Filter): Response => {
-  const [games, setGames] = useState<Game[]>([]);
-  const [err, setErr] = useState<string>('');
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [games, setGames] = React.useState<Game[]>([]);
+  const [err, setErr] = React.useState<string>('');
+  const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const { platform, genre, tag, sortBy } = params;
-  useEffect(() => {
+
+  React.useEffect(() => {
     if (!_.isEmpty(params)) {
       setIsLoading(true);
       let urlFetch = '/games';
@@ -32,9 +32,9 @@ const useFetch = (params: Filter): Response => {
             'x-rapidapi-host': API_HOST,
           },
           params: {
-            platform,
+            platform: platform,
             category: genre,
-            tag,
+            tag: tag,
             'sort-by': sortBy,
           },
         })

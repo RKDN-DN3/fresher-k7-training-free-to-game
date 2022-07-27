@@ -1,6 +1,3 @@
-import { ButtonPrimary } from 'components/button';
-import { useLocation } from 'react-router-dom';
-import { Link } from 'styles/components/style';
 import {
   BackGroundImgStyled,
   DetailContainer,
@@ -12,21 +9,24 @@ import {
   InformationTitle,
   Screenshots,
 } from './style';
+import { ButtonPrimary } from 'components/button';
+import { useLocation } from 'react-router-dom';
+import { Link } from 'styles/components/style';
 import { Typography } from '@mui/material';
+import { STATUS_SUCCESS } from 'constants/constants.d';
+import { RootState } from 'store/store';
+import { useSelector } from 'react-redux';
+import { translate } from 'util/translate';
+import { GameDetails } from 'types';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import GroupBtnState from 'components/groupBtnState';
 import Comment from 'components/comment';
 import ErrorIcon from '@mui/icons-material/Error';
 import Information from 'components/information';
-import { GameDetails } from 'types';
 import SystemRequirements from 'components/systemRequirements';
-import { STATUS_SUCCESS } from 'constants/constants.d';
 import React from 'react';
 import requestApi from 'api/requestApi';
 import Reviews from 'components/reviews';
-import { RootState } from 'store/store';
-import { useSelector } from 'react-redux';
-import { translate } from 'util/translate';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 
 const Detail = () => {
@@ -47,6 +47,7 @@ const Detail = () => {
 
   return (
     <DetailContainer>
+      {/* BackGroundImgStyled */}
       <BackGroundImgStyled>
         <div className="detail-gradient"></div>
       </BackGroundImgStyled>

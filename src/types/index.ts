@@ -10,10 +10,10 @@ export interface RouteType {
 }
 
 export type Game = {
-  id?: number;
-  title?: string;
-  thumbnail?: string;
-  short_description?: string;
+  id: number;
+  title: string;
+  thumbnail: string;
+  short_description: string;
   game_url?: string;
   genre?: string;
   platform?: string;
