@@ -47,6 +47,7 @@ const Games = () => {
         genre: sortBy,
       });
     }
+    // setFilter when has pathname and no search
     if (window.location.pathname === GAMES && !search) {
       setFilter({
         sortBy: RELEASE_DATE,
@@ -84,7 +85,7 @@ const Games = () => {
     return data;
   };
 
-  //Clear set false isSearch
+  //Set false isSearch
   React.useEffect(() => {
     return () => {
       dispatch(setIsSearchRedux(false));
@@ -114,7 +115,9 @@ const Games = () => {
           </div>
         }
       />
+      {/* ListGame  render */}
       <ListGame items={games} limit={3} Card={CardGame} />
+      {/* Input search */}
       {isSearch && (
         <SearchStyled>
           <div className="games_search-icon-title">
@@ -128,9 +131,11 @@ const Games = () => {
           </div>
         </SearchStyled>
       )}
+      {/* FilterSelect */}
       <FilterSelect onChange={onFilterChange} />
       {isLoading && <Loading />}
       <ContentGame>
+        {/* ListGame  render */}
         <ListGame items={renderWhenSearch()} Card={CardGameMiniViewGames} />
       </ContentGame>
     </Container>

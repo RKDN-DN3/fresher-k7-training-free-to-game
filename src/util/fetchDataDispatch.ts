@@ -1,4 +1,4 @@
-import { API_HOST, API_KEY } from 'constants/constants.d';
+import { API_HOST, API_KEY, STATUS_SUCCESS } from 'constants/constants.d';
 import axios from 'axios';
 
 export const fetchDataDispatch = (sortBy: string) => {
@@ -14,7 +14,7 @@ export const fetchDataDispatch = (sortBy: string) => {
           'sort-by': sortBy,
         },
       });
-      if (res && res.data) {
+      if (res && res.status === STATUS_SUCCESS) {
         resolve(res.data);
       }
     } catch (error) {
