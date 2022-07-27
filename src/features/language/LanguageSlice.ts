@@ -1,11 +1,13 @@
-import { EN } from 'constants/constants.d';
+import { EN, VI } from 'constants/constants.d';
 import { PayloadType } from 'types';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { LanguageState } from 'types';
 const localStorageLang = localStorage.getItem('language');
 
+const checkLanguage = localStorageLang === EN || localStorageLang === VI;
+
 const initialState: LanguageState = {
-  language: localStorageLang ? localStorageLang : EN,
+  language: checkLanguage ? localStorageLang : EN,
 };
 
 export const LanguageSlice = createSlice({

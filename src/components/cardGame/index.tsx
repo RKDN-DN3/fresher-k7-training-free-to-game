@@ -9,7 +9,7 @@ import { CardGameContainer, Name, Button, ButtonAlone, Img } from './style';
 export type ItemProps = {
   item?: Game;
   disableName?: boolean;
-  size?: 'minium';
+  size?: 'minium' | null;
 };
 
 const CardGame = (props: ItemProps) => {

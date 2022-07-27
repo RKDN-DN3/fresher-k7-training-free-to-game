@@ -104,7 +104,6 @@ export const Dropdown = styled(Popover)`
 `;
 
 export const Item = styled(ItemSelect)`
-  width: 160px;
   padding: 4px 24px !important;
   font-size: 15px !important;
   height: 30px;

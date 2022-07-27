@@ -16,24 +16,25 @@ import {
   Action,
   SearchIconStyled,
 } from './style';
-import { Box } from '@mui/system';
-import { useSelector } from 'react-redux';
-import { RootState } from 'store/store';
-import { translate } from 'util/translate';
-import { IconButton } from '@mui/material';
 import {
   GENRES_ALL,
   GENRES_BROWSER,
   BROWSER,
   IMG_LOGO,
+  EN,
 } from 'constants/constants.d';
-import { GENRES_ARR, GENRES_BROWSER_ARR, typeListGame } from 'constants/games';
+import { Box } from '@mui/system';
+import { useSelector } from 'react-redux';
+import { RootState } from 'store/store';
+import { translate } from 'util/translate';
+import { IconButton } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import SelectLanguage from 'components/selectLanguage';
 import { headers, headerType } from './type';
-import LightOfDark from 'components/lightOfDark';
-import { setIsSearchRedux } from 'features/actionHeader';
 import { useDispatch } from 'react-redux';
+import { setIsSearchRedux } from 'features/actionHeader';
+import { GENRES_ARR, GENRES_BROWSER_ARR, typeListGame } from 'constants/games';
+import LightOfDark from 'components/lightOfDark';
+import SelectLanguage from 'components/selectLanguage';
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(
@@ -119,7 +120,7 @@ const Header = () => {
             {listSubMenu?.map((item: typeListGame, i: any) => {
               return (
                 <Item key={i} onClick={() => handleClickMenuItem(item)}>
-                  {item.display}
+                  {language === EN ? item.display : item.displayVi}
                 </Item>
               );
             })}

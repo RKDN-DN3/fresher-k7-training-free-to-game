@@ -19,7 +19,7 @@ import { CardGameMiniViewGames } from 'components/cardGameMini';
 import HeaderTitle from 'components/headerTitle';
 import CardGame from 'components/cardGame';
 import ListGame from 'components/listGame';
-import useFetch from 'hook/hookFeatch';
+import useFetch from 'hook/hookFetch';
 import Loading from 'components/loading';
 import FilterSelect from 'components/filterSelect';
 import searchInput from 'util/search';

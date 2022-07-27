@@ -1,7 +1,7 @@
 import React from 'react';
 import { ItemProps } from 'components/cardGame';
 import { Container, Link } from 'styles/components/style';
-import { RecommendContent } from './style';
+import { ListContentGame } from './style';
 import { Game } from 'types';
 
 export type ItemsProps = {
@@ -27,7 +27,7 @@ const ListGame = (props: ItemsProps) => {
 
   return (
     <Container>
-      <RecommendContent column={column} limit={limit}>
+      <ListContentGame column={column} limit={limit}>
         {listArr?.map((item, i: number) => {
           return (
             <Link to={`/game?id=${item.id}`} key={i}>
@@ -35,7 +35,7 @@ const ListGame = (props: ItemsProps) => {
             </Link>
           );
         })}
-      </RecommendContent>
+      </ListContentGame>
     </Container>
   );
 };

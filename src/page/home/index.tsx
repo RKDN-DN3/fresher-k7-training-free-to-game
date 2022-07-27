@@ -5,6 +5,7 @@ import { translate } from 'util/translate';
 import { RootState } from 'store/store';
 import { ButtonOutline } from 'components/button';
 import { useAppDispatch } from 'hook/hooksStore';
+import { Link } from 'styles/components/style';
 import ListGame from 'components/listGame';
 import SmartToyIcon from '@mui/icons-material/SmartToy';
 import HelpIcon from '@mui/icons-material/Help';
@@ -44,20 +45,25 @@ const Home = () => {
         IconBottom={HelpIcon}
       />
       {gamesRelevance.length === 0 && <Loading />}
+      {/* ListGame render */}
       <ListGame items={gamesRelevance} limit={3} Card={CardGame} />
       {/* body */}
       <ContentGame>
         {/* Recently Added */}
         <ContentLeft>
           <HeaderTitle topTile={translate('recently-added', language)} />
+          {/* ListGame render */}
           <ListGame items={gamesRelease} limit={6} Card={CardGameMini} column />
           <div style={{ float: 'right', marginTop: '20px' }}>
-            <ButtonOutline>{translate('more-games', language)}</ButtonOutline>
+            <ButtonOutline>
+              <Link to="/games">{translate('more-games', language)}</Link>
+            </ButtonOutline>
           </div>
         </ContentLeft>
         {/* Most Played Today */}
         <ContentRight>
           <HeaderTitle topTile={translate('most-play-today', language)} />
+          {/* ListGame render */}
           <ListGame
             items={gamesPopularity}
             column

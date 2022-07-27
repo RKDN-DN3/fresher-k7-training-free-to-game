@@ -33,13 +33,13 @@ const SelectLanguage = () => {
           disablePortal: true,
         }}
       >
-        <ItemSelect value={VI}>
-          <IconVi />
-          <p style={{ margin: '0px' }}>{translate('vi', language)}</p>
-        </ItemSelect>
         <ItemSelect value={EN}>
           <IconEn />
           <p style={{ margin: '0px' }}>{translate('en', language)}</p>
+        </ItemSelect>
+        <ItemSelect value={VI}>
+          <IconVi />
+          <p style={{ margin: '0px' }}>{translate('vi', language)}</p>
         </ItemSelect>
       </SelectStyled>
     </>

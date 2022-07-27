@@ -1,6 +1,7 @@
 export type typeListGame = {
   value: string;
   display: string;
+  displayVi?: string;
 };
 
 export const PLATFORMS: typeListGame[] = [
@@ -17,39 +18,48 @@ export const PLATFORMS: typeListGame[] = [
 export const GENRES_ARR: typeListGame[] = [
   {
     value: 'mmo',
+    displayVi: 'Game Online',
     display: 'MMO',
   },
   {
     value: 'mmorpg',
     display: 'MMORPG',
+    displayVi: 'Game nhập vai',
   },
   {
     value: 'shooter',
     display: 'Shooter',
+    displayVi: 'Bắn súng',
   },
   {
     value: 'strategy',
     display: 'Strategy',
+    displayVi: 'Chiến lược',
   },
   {
     value: 'moba',
     display: 'Moba',
+    displayVi: 'Moba',
   },
   {
     value: 'card',
     display: 'Card Games',
+    displayVi: 'Thẻ Bài',
   },
   {
     value: 'racing',
     display: 'Racing',
+    displayVi: 'Đua xe',
   },
   {
     value: 'sports',
     display: 'Sports',
+    displayVi: 'Thể thao',
   },
   {
     value: 'social',
     display: 'Social',
+    displayVi: 'Xã hội',
   },
 ];
 
@@ -57,26 +67,32 @@ export const GENRES_BROWSER_ARR: typeListGame[] = [
   {
     value: 'mmorpg',
     display: 'MMORPG',
+    displayVi: 'Game nhập vai ',
   },
   {
     value: 'shooter',
     display: 'Shooter',
+    displayVi: 'Bắn súng',
   },
   {
     value: 'strategy',
     display: 'Strategy',
+    displayVi: 'Chiến lược',
   },
   {
     value: 'racing',
     display: 'Racing',
+    displayVi: 'Đua xe',
   },
   {
     value: 'sports',
     display: 'Sports',
+    displayVi: 'Thể thao',
   },
   {
     value: 'social',
     display: 'Social',
+    displayVi: 'Xã hội',
   },
 ];
 
