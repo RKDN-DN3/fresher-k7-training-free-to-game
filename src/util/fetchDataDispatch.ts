@@ -1,5 +1,6 @@
 import { API_HOST, API_KEY } from 'constants/constants.d';
 import axios from 'axios';
+
 export const fetchDataDispatch = (sortBy: string) => {
   return new Promise(async (resolve, reject) => {
     try {

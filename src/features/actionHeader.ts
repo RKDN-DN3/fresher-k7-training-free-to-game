@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+const localStorageLightOfDark = localStorage.getItem('lightOfDark');
 
 type State = {
   isLight: boolean;
@@ -6,7 +7,10 @@ type State = {
 };
 
 const initialState: State = {
-  isLight: false,
+  isLight:
+    localStorageLightOfDark === 'true'
+      ? localStorageLightOfDark === 'true'
+      : false,
   isSearch: false,
 };
 
@@ -16,6 +20,7 @@ export const ActionHeader = createSlice({
   reducers: {
     setIsLightRedux: (state: State, action: PayloadAction<boolean>) => {
       state.isLight = action.payload;
+      localStorage.setItem('lightOfDark', `${action.payload}`);
     },
     setIsSearchRedux: (state: State, action: PayloadAction<boolean>) => {
       state.isSearch = action.payload;

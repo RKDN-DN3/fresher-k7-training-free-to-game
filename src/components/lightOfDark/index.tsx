@@ -9,7 +9,6 @@ const LightOfDark = () => {
   const dispatch = useDispatch();
   const handleOnClick = () => {
     dispatch(setIsLightRedux(!isLight));
-    console.log(isLight);
   };
   return (
     <div style={{ cursor: 'pointer' }}>
