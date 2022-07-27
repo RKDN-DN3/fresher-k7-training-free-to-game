@@ -1,4 +1,4 @@
-import { gradientColor } from './../../styles/themeProvider/index';
+import { whiteColor } from './../../styles/theme/index';
 import styled from 'styled-components';
 import {
   width,
@@ -11,9 +11,9 @@ import {
   cardMenuColor,
   backgroundHoverColor,
   textColor,
+  gradientColor,
 } from 'styles/themeProvider';
 import { Breadcrumbs as BreadcrumbsStyle } from '@mui/material';
-
 import HeaderTitle from 'components/headerTitle';
 
 export const DetailContainer = styled.div`
@@ -90,9 +90,32 @@ export const H4 = styled.h4`
   padding-bottom: 10px;
 `;
 
+type TextType = {
+  showMoreText: boolean;
+};
+
 export const Text = styled.p`
   color: ${primaryTextColor};
-  margin-bottom: 50px;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 6;
+  ${({ showMoreText }: TextType) =>
+    showMoreText
+      ? ` 
+  -webkit-line-clamp: inherit;
+  `
+      : ''};
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 `;
 
 export const BackGroundImgStyled = styled.div`
@@ -125,5 +148,13 @@ export const Screenshots = styled.div`
   margin: 15px 0;
   img {
     width: 168px;
+  }
+`;
+
+export const ReadMore = styled.p`
+  color: ${whiteColor};
+  &:hover {
+    opacity: 0.8;
+    cursor: pointer;
   }
 `;

@@ -1,7 +1,7 @@
-import { breakpoints } from 'styles/breakpoints';
-import { Container as ContainerStyle } from 'styles/components/style';
 import styled from 'styled-components';
 import { width } from 'styles/theme';
+import { breakpoints } from 'styles/breakpoints';
+import { Container as ContainerStyle } from 'styles/components/style';
 
 export const Container = styled(ContainerStyle)`
   width: ${width};

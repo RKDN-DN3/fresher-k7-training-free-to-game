@@ -1,11 +1,11 @@
+import { CommentInput, Container, Textarea } from './style';
+import { RootState } from 'store/store';
+import { translate } from 'util/translate';
+import { useSelector } from 'react-redux';
 import SentimentVerySatisfiedIcon from '@mui/icons-material/SentimentVerySatisfied';
 import SentimentNeutralIcon from '@mui/icons-material/SentimentNeutral';
 import MoodBadIcon from '@mui/icons-material/MoodBad';
-import { CommentInput, Container, Textarea } from './style';
 import SendIcon from '@mui/icons-material/Send';
-import { useSelector } from 'react-redux';
-import { RootState } from 'store/store';
-import { translate } from 'util/translate';
 
 const Comment = () => {
   const { language } = useSelector((state: RootState) => state.lang);

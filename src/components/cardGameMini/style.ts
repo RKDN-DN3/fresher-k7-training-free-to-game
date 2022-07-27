@@ -1,5 +1,5 @@
-import { breakpoints } from 'styles/breakpoints';
 import styled from 'styled-components';
+import { breakpoints } from 'styles/breakpoints';
 import { cardMenuColor, backgroundHoverColor } from 'styles/themeProvider';
 import { buttonColor, secondaryTextColor, whiteColor } from 'styles/theme';
 import { ReactComponent as IconWindow } from 'assets/icons/IconWindow.svg';

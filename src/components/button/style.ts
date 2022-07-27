@@ -1,6 +1,4 @@
-import { buttonColor } from './../../styles/theme/index';
-import { secondaryTextColor } from 'styles/theme/index';
-import { whiteColor } from 'styles/theme';
+import { secondaryTextColor, buttonColor, whiteColor } from 'styles/theme';
 import styled from 'styled-components';
 
 export const ButtonPrimaryStyled = styled.button`

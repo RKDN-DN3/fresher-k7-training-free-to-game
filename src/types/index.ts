@@ -10,7 +10,6 @@ export interface RouteType {
   component: () => JSX.Element;
   patch: string;
   noneBanner?: boolean;
-  backGroundImg?: boolean;
 }
 
 //Games

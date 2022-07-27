@@ -1,6 +1,5 @@
-import { API_KEY } from './../constants/constants.d';
+import { API_HOST, API_KEY } from 'constants/constants.d';
 import axios from 'axios';
-import { API_HOST } from 'constants/constants.d';
 import queryString from 'query-string';
 
 const axiosClient = axios.create({

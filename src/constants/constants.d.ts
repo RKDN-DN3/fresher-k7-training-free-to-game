@@ -1,5 +1,8 @@
 export const CONSTANTS = {
   FREE: 'FREE',
+  LIGHT: 'light',
+  DARK: 'dark',
+  THEME: 'theme',
 };
 
 //API
@@ -8,6 +11,7 @@ export const API_HOST = 'free-to-play-games-database.p.rapidapi.com';
 export const RAPIDAPI_KEY = 'x-rapidapi-key';
 export const RAPIDAPI_HOST = 'x-rapidapi-host';
 export const SORT_BY = 'sort-by';
+
 //LANGUAGE
 export const EN = 'EN';
 export const VI = 'VI';

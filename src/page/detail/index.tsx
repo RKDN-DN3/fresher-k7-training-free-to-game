@@ -8,6 +8,7 @@ import {
   HeaderTitleStyled,
   InformationTitle,
   Screenshots,
+  ReadMore,
 } from './style';
 import { ButtonPrimary } from 'components/button';
 import { useLocation } from 'react-router-dom';
@@ -27,11 +28,14 @@ import React from 'react';
 import requestApi from 'api/requestApi';
 import Reviews from 'components/reviews';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import _ from 'lodash';
+import Loading from 'components/loading';
 
 const Detail = () => {
   const { search } = useLocation();
   const id = new URLSearchParams(search).get('id');
   const [game, setGame] = React.useState<GameDetails>({});
+  const [showMoreText, setShowMoreText] = React.useState<boolean>(false);
   const { language } = useSelector((state: RootState) => state.lang);
 
   React.useEffect(() => {
@@ -49,7 +53,10 @@ const Detail = () => {
         <div className="detail-gradient"></div>
       </BackGroundImgStyled>
       <div className="detail-left">
+        {/* Card */}
         <div className="detail-card">
+          {/* Loading */}
+          {_.isEmpty(game) && <Loading />}
           <img src={game?.thumbnail} alt="" />
           <ActionStyled>
             <div className="detail-free">{translate('FREE', language)}</div>
@@ -81,10 +88,14 @@ const Detail = () => {
         <Reviews />
         {/* Comment */}
         <Comment />
+        {/* About */}
         <H4>
           {translate('about', language)} {game?.title}
         </H4>
-        <Text>{game?.description}</Text>
+        <Text showMoreText={showMoreText}>{game?.description}</Text>
+        <ReadMore onClick={() => setShowMoreText(!showMoreText)}>
+          {!showMoreText ? 'Read more +' : '- Read less'}
+        </ReadMore>
         <InformationTitle>
           <HeaderTitleStyled
             topTile={translate('additional-information', language)}
@@ -92,6 +103,7 @@ const Detail = () => {
             IconBottom={ErrorIcon}
           />
         </InformationTitle>
+        {/* Information */}
         <Information item={game} />
         <H4>
           {game?.title} {translate('screenshots', language)}
@@ -110,6 +122,7 @@ const Detail = () => {
           {translate('system-requirements', language)} ({game?.platform})
         </H4>
         <InformationTitle>
+          {/* SystemRequirements */}
           <SystemRequirements item={game} />
         </InformationTitle>
         <p className="detail-title-end">

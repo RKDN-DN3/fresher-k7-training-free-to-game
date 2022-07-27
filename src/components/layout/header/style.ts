@@ -36,7 +36,6 @@ export const HeaderContainer = styled.div`
     padding: 0 70px;
   }
   @media (max-width: 1200px) {
-    /* width: auto; */
     padding: 0 50px;
   }
 `;
