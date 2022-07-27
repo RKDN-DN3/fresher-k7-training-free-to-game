@@ -54,11 +54,13 @@
   "platform": "Nền tảng",
   "screenshots": "Ảnh chụp màn hình",
   "os": "Hệ điều hành",
-  "processor": "Ram",
+  "processor": "Vi xử lý",
   "memory": "Bộ nhớ",
   "graphics": "Card Đồ họa",
   "storage": "Bộ nhớ lưu trữ",
-  "additional-notes": "Ghi chú bổ sung",
+  "additional-notes": "Hệ điều hành",
   "system-requirements": "Yêu cầu hệ thống tối thiểu",
-  "license-note": "Tất cả tài liệu trên trang này thuộc bản quyền của © Trion Worlds và các nhà cấp phép tương ứng của họ. Tất cả các nhãn hiệu khác là tài sản của chủ sở hữu tương ứng."
+  "license-note": "Tất cả tài liệu trên trang này thuộc bản quyền của © Trion Worlds và các nhà cấp phép tương ứng của họ. Tất cả các nhãn hiệu khác là tài sản của chủ sở hữu tương ứng.",
+  "read-more": "+ Đọc thêm",
+  "read-less": "- Đọc ít hơn"
 }

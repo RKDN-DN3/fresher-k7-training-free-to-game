@@ -107,7 +107,11 @@ const Detail = () => {
         </H4>
         <Text showMoreText={showMoreText}>{game?.description}</Text>
         <ReadMore onClick={() => setShowMoreText(!showMoreText)}>
-          {!showMoreText ? 'Read more +' : '- Read less'}
+          {!showMoreText ? (
+            <>{translate('read-more', language)}</>
+          ) : (
+            <>{translate('read-less', language)}</>
+          )}
         </ReadMore>
         <InformationTitle>
           <HeaderTitleStyled
