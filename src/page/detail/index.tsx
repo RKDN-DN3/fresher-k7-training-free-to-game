@@ -61,7 +61,11 @@ const Detail = () => {
           <ActionStyled>
             <div className="detail-free">{translate('FREE', language)}</div>
             <ButtonPrimary>
-              <a href={game?.game_url}>
+              <a
+                href={game?.game_url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 {translate('play-now', language)}
                 <PlayArrowIcon />
               </a>
