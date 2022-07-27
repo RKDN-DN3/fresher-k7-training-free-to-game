@@ -1,6 +1,4 @@
 import React from 'react';
-import { translate } from 'util/translate';
-import { RootState } from 'store/store';
 import {
   ContentGame,
   TextField,
@@ -8,21 +6,23 @@ import {
   SearchIcon,
   Container,
 } from './style';
+import { translate } from 'util/translate';
+import { RootState } from 'store/store';
 import { Filter } from 'hook/type';
 import { useSelector } from 'react-redux';
-import { CardGameMiniViewGames } from 'components/cardGameMini';
 import { useLocation } from 'react-router-dom';
+import { useAppDispatch } from 'hook/hooksStore';
+import { setIsSearchRedux } from 'features/actionHeader';
 import { GAMES, RELEASE_DATE } from 'constants/constants.d';
+import { Game } from 'types';
+import { CardGameMiniViewGames } from 'components/cardGameMini';
 import HeaderTitle from 'components/headerTitle';
 import CardGame from 'components/cardGame';
 import ListGame from 'components/listGame';
 import useFetch from 'hook';
 import Loading from 'components/loading';
 import FilterSelect from 'components/filterSelect';
-import { useAppDispatch } from 'hook/hooksStore';
-import { setIsSearchRedux } from 'features/actionHeader';
 import searchInput from 'util/search';
-import { Game } from 'types';
 
 const Games = () => {
   const { search } = useLocation();

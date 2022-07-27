@@ -12,9 +12,9 @@ import HeaderTitle from 'components/headerTitle';
 import CardGame from 'components/cardGame';
 import CardGameMini from 'components/cardGameMini';
 import dispatchDataRedux from 'util/dispatchDataRedux';
-import _ from 'lodash';
 import Community from 'components/community';
 import Loading from 'components/loading';
+import _ from 'lodash';
 
 const Home = () => {
   const { language, gamesRelease, gamesRelevance, gamesPopularity } =
@@ -68,6 +68,7 @@ const Home = () => {
       </ContentGame>
       {/* recommendations */}
       <HeaderTitle topTile={translate('community-recommendations', language)} />
+      {/* Community */}
       <Community />
     </Container>
   );

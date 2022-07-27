@@ -1,4 +1,4 @@
-import { Game } from './../types/index';
+import { Game } from 'types/index';
 const searchInput = (arr: Game[], searchText: string) => {
   let dataRender: Game[] = [];
   arr.filter((item: Game) => {
