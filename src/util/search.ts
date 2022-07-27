@@ -1,4 +1,6 @@
 import { Game } from 'types';
+
+// search return list arr searchInput
 const searchInput = (arr: Game[], searchText: string) => {
   let dataRender: Game[] = [];
   arr.filter((item: Game) => {

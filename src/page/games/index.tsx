@@ -19,7 +19,7 @@ import { CardGameMiniViewGames } from 'components/cardGameMini';
 import HeaderTitle from 'components/headerTitle';
 import CardGame from 'components/cardGame';
 import ListGame from 'components/listGame';
-import useFetch from 'hook';
+import useFetch from 'hook/hookFeatch';
 import Loading from 'components/loading';
 import FilterSelect from 'components/filterSelect';
 import searchInput from 'util/search';
@@ -36,8 +36,8 @@ const Games = () => {
   });
 
   const [filter, setFilter] = React.useState<Filter>({});
-  const { games, isLoading } = useFetch(filter);
   const [searchArr, setSearchArr] = React.useState<Game[]>([]);
+  const { games, isLoading } = useFetch(filter);
 
   React.useEffect(() => {
     if (platform || sortBy) {
@@ -54,6 +54,7 @@ const Games = () => {
     }
   }, [sortBy, platform, search]);
 
+  //Filter
   const onFilterChange = React.useCallback(
     (event: React.ChangeEvent<HTMLFormElement>) => {
       setFilter((current) => ({
@@ -66,11 +67,13 @@ const Games = () => {
     [],
   );
 
+  //Input search
   const handleOnChangeInput = (e: any) => {
     const searchArr = searchInput(games, e.target.value);
     setSearchArr(searchArr as any);
   };
 
+  //Return Array search
   const renderWhenSearch = () => {
     let data = [];
     if (searchArr.length > 0) {
@@ -81,6 +84,7 @@ const Games = () => {
     return data;
   };
 
+  //Clear set false isSearch
   React.useEffect(() => {
     return () => {
       dispatch(setIsSearchRedux(false));

@@ -1,14 +1,18 @@
+// language
 export type LanguageState = {
   language: string;
 };
+//PayLoadActionType
+export type PayloadType = 'VI' | 'EN';
 
+// Route
 export interface RouteType {
   component: () => JSX.Element;
   patch: string;
   noneBanner?: boolean;
-  backGroundImg?: boolean;
 }
 
+//Games
 export type Game = {
   id: number;
   title: string;
@@ -59,9 +63,9 @@ export type Games = {
   gamesPopularity: Array<Game>;
   gamesFilter: Array<Game>;
   loading?: boolean;
-  failed?: boolean;
 };
 
+//Filter
 export type Filter = {
   platform: string;
   genre?: string;

@@ -1,9 +1,11 @@
+import { EN } from 'constants/constants.d';
+import { PayloadType } from 'types';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { LanguageState } from 'types';
 const localStorageLang = localStorage.getItem('language');
 
 const initialState: LanguageState = {
-  language: localStorageLang ? localStorageLang : 'EN',
+  language: localStorageLang ? localStorageLang : EN,
 };
 
 export const LanguageSlice = createSlice({
@@ -12,7 +14,7 @@ export const LanguageSlice = createSlice({
   reducers: {
     changeLanguage: (
       state: LanguageState,
-      action: PayloadAction<'VI' | 'EN'>,
+      action: PayloadAction<PayloadType>,
     ) => {
       state.language = action.payload;
       localStorage.setItem('language', action.payload);

@@ -1,10 +1,16 @@
 export const CONSTANTS = {
   FREE: 'FREE',
+  LIGHT: 'light',
+  DARK: 'dark',
+  THEME: 'theme',
 };
 
 //API
 export const API_KEY = '8e11c68c69msh19cd21edee59632p14d94bjsn69f31a32bb26';
 export const API_HOST = 'free-to-play-games-database.p.rapidapi.com';
+export const RAPIDAPI_KEY = 'x-rapidapi-key';
+export const RAPIDAPI_HOST = 'x-rapidapi-host';
+export const SORT_BY = 'sort-by';
 
 //LANGUAGE
 export const EN = 'EN';
@@ -28,6 +34,6 @@ export const STATUS_SUCCESS = 200;
 //PATCH
 export const GAMES = '/games';
 
-//img link
+//LINK
 export const IMG_LOGO =
   'https://www.freetogame.com/assets/images/freetogame-logo.png';
