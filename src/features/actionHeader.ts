@@ -7,10 +7,7 @@ type State = {
 };
 
 const initialState: State = {
-  isLight:
-    localStorageLightOfDark === 'true'
-      ? localStorageLightOfDark === 'true'
-      : false,
+  isLight: localStorageLightOfDark === 'true' ? true : false,
   isSearch: false,
 };
 

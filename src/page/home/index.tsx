@@ -25,6 +25,7 @@ const Home = () => {
   const dispatch = useAppDispatch();
 
   React.useEffect(() => {
+    // Check for empty, then dispatch and fetch data
     if (
       _.isEmpty(gamesRelease) &&
       _.isEmpty(gamesRelevance) &&

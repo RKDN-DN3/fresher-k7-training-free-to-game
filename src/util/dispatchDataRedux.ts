@@ -6,6 +6,7 @@ import {
 import { fetchDataDispatch } from 'util/fetchDataDispatch';
 import { RELEASE_DATE, RELEVANCE, POPULARITY } from 'constants/constants.d';
 
+// dispatch and fetch data list game
 const dispatchDataRedux = async (dispatch: any) => {
   const resRelease = await fetchDataDispatch(RELEASE_DATE);
   const resRelevance = await fetchDataDispatch(RELEVANCE);

@@ -4,7 +4,7 @@ import { RouteType } from './types';
 import { RootState } from 'store/store';
 import { useSelector } from 'react-redux';
 import { publicRoute } from 'router';
-import NotFound from 'components/notFound';
+import NotFound from 'page/notFound';
 import GlobalStyle from 'components/layout/globalStyle';
 import DefaultLayout from 'components/layout/defaultLayout';
 

@@ -13,7 +13,6 @@ import { ButtonPrimary } from 'components/button';
 import { useLocation } from 'react-router-dom';
 import { Link } from 'styles/components/style';
 import { Typography } from '@mui/material';
-import { STATUS_SUCCESS } from 'constants/constants.d';
 import { RootState } from 'store/store';
 import { useSelector } from 'react-redux';
 import { translate } from 'util/translate';
@@ -38,9 +37,7 @@ const Detail = () => {
   React.useEffect(() => {
     const fetch = async () => {
       const res = await requestApi.getGame(id);
-      if (res && res.status === STATUS_SUCCESS) {
-        setGame(res.data);
-      }
+      setGame(res);
     };
     fetch();
   }, [id]);

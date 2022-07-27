@@ -21,23 +21,27 @@ const useFetch = (params: Filter): Response => {
     if (!_.isEmpty(params)) {
       setIsLoading(true);
       let urlFetch = '/games';
+
       if (tag) {
         urlFetch = 'filter';
       }
+
+      const options = {
+        baseURL: `https://${API_HOST}/api`,
+        headers: {
+          'x-rapidapi-key': API_KEY,
+          'x-rapidapi-host': API_HOST,
+        },
+        params: {
+          platform: platform,
+          category: genre,
+          tag: tag,
+          'sort-by': sortBy,
+        },
+      };
+
       axios
-        .get(urlFetch, {
-          baseURL: `https://${API_HOST}/api`,
-          headers: {
-            'x-rapidapi-key': API_KEY,
-            'x-rapidapi-host': API_HOST,
-          },
-          params: {
-            platform: platform,
-            category: genre,
-            tag: tag,
-            'sort-by': sortBy,
-          },
-        })
+        .get(urlFetch, options)
         .then((res) => {
           if (res && res.status === STATUS_SUCCESS) {
             setGames(res.data);

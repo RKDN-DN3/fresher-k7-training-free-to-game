@@ -6,8 +6,7 @@ const initialState: Games = {
   gamesRelevance: [],
   gamesPopularity: [],
   gamesFilter: [],
-  loading: false,
-  failed: false,
+  loading: true,
 };
 
 export const GameSlice = createSlice({
@@ -26,22 +25,10 @@ export const GameSlice = createSlice({
       state.gamesPopularity = action.payload;
       state.loading = false;
     },
-    getGameFilter: (state: Games, action: PayloadAction<Game[]>) => {
-      state.gamesFilter = action.payload;
-      state.loading = false;
-    },
-    getGameFailed: (state: Games) => {
-      state.failed = true;
-    },
   },
 });
 
-export const {
-  getGameRelevance,
-  getGameRelease,
-  getGamePopularity,
-  getGameFailed,
-  getGameFilter,
-} = GameSlice.actions;
+export const { getGameRelevance, getGameRelease, getGamePopularity } =
+  GameSlice.actions;
 
 export default GameSlice.reducer;
