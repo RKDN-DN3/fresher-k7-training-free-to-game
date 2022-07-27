@@ -18,6 +18,7 @@ export const RAPIDAPI_KEY = 'x-rapidapi-key';
 export const RAPIDAPI_HOST = 'x-rapidapi-host';
 export const SORT_BY = 'sort-by';
 export const PLATFORM = 'platform';
+export const ID = 'id';
 
 //LANGUAGE
 export const EN = 'EN';

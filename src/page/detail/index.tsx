@@ -18,6 +18,7 @@ import { RootState } from 'store/store';
 import { useSelector } from 'react-redux';
 import { translate } from 'util/translate';
 import { GameDetails } from 'types';
+import { ID } from 'constants/constants.d';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 import GroupBtnState from 'components/groupBtnState';
 import Comment from 'components/comment';
@@ -33,10 +34,14 @@ import Loading from 'components/loading';
 
 const Detail = () => {
   const { search } = useLocation();
-  const id = new URLSearchParams(search).get('id');
+  const id = new URLSearchParams(search).get(ID);
   const [game, setGame] = React.useState<GameDetails>({});
   const [showMoreText, setShowMoreText] = React.useState<boolean>(false);
   const { language } = useSelector((state: RootState) => state.lang);
+
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   React.useEffect(() => {
     const fetch = async () => {
@@ -49,7 +54,11 @@ const Detail = () => {
   return (
     <DetailContainer>
       {/* BackGroundImgStyled */}
-      <BackGroundImgStyled>
+      <BackGroundImgStyled
+        style={{
+          background: `url(https://www.freetogame.com/g/${game?.id}/background.jpg)`,
+        }}
+      >
         <div className="detail-gradient"></div>
       </BackGroundImgStyled>
       <div className="detail-left">

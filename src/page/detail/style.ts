@@ -120,10 +120,9 @@ export const Text = styled.p`
 
 export const BackGroundImgStyled = styled.div`
   height: 38rem !important;
-  background: url('https://www.freetogame.com/g/365/background.webp');
-  background-size: cover;
-  background-position: top;
-  background-repeat: no-repeat;
+  background-size: cover !important;
+  background-position: top !important;
+  background-repeat: no-repeat !important;
   position: absolute;
   left: 0;
   right: 0;
