@@ -40,4 +40,4 @@ const ListGame = (props: ItemsProps) => {
   );
 };
 
-export default ListGame;
+export default React.memo(ListGame);

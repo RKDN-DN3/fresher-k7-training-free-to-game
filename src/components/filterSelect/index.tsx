@@ -1,4 +1,5 @@
 import { PLATFORMS, GENRES_ARR, TAGS, SORT_BY } from 'constants/games';
+import React from 'react';
 import { Form, Label, Select, Option, IconCheckSquare } from './style';
 interface Props {
   onChange: (e: any) => void;
@@ -60,4 +61,4 @@ const FilterSelect = ({ onChange }: Props) => {
   );
 };
 
-export default FilterSelect;
+export default React.memo(FilterSelect);

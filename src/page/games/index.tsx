@@ -75,7 +75,7 @@ const Games = () => {
   };
 
   //Return Array search
-  const renderWhenSearch = () => {
+  const renderWhenSearch = React.useMemo(() => {
     let data = [];
     if (searchArr.length > 0) {
       data = searchArr;
@@ -83,7 +83,7 @@ const Games = () => {
       data = games;
     }
     return data;
-  };
+  }, [games, searchArr]);
 
   //Set false isSearch
   React.useEffect(() => {
@@ -136,7 +136,7 @@ const Games = () => {
       {isLoading && <Loading />}
       <ContentGame>
         {/* ListGame  render */}
-        <ListGame items={renderWhenSearch()} Card={CardGameMiniViewGames} />
+        <ListGame items={renderWhenSearch} Card={CardGameMiniViewGames} />
       </ContentGame>
     </Container>
   );
