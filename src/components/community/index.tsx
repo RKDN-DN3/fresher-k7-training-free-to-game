@@ -1,4 +1,5 @@
 import CardGame from 'components/cardGame';
+import React from 'react';
 import {
   CommunityStyled,
   CommunityItem,
@@ -63,4 +64,4 @@ const Community = () => {
   );
 };
 
-export default Community;
+export default React.memo(Community);

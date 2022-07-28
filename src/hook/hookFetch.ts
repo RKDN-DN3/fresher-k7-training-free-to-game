@@ -1,7 +1,12 @@
 import React from 'react';
 import { Game } from 'types';
 import { Filter } from './type';
-import { STATUS_SUCCESS, API_HOST, API_KEY } from 'constants/constants.d';
+import {
+  STATUS_SUCCESS,
+  API_HOST,
+  API_KEY,
+  PATCH,
+} from 'constants/constants.d';
 import axios from 'axios';
 import _ from 'lodash';
 
@@ -20,10 +25,10 @@ const useFetch = (params: Filter): Response => {
   React.useEffect(() => {
     if (!_.isEmpty(params)) {
       setIsLoading(true);
-      let urlFetch = '/games';
+      let urlFetch = PATCH.GAMES;
 
       if (tag) {
-        urlFetch = 'filter';
+        urlFetch = PATCH.FILTER;
       }
 
       const options = {

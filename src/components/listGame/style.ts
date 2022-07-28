@@ -5,7 +5,7 @@ type styleProps = {
   limit?: number | null;
 };
 
-export const RecommendContent = styled.div`
+export const ListContentGame = styled.div`
   display: flex;
   gap: 15px;
   justify-content: flex-start;

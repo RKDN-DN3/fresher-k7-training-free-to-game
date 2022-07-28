@@ -60,5 +60,7 @@
   "storage": "Storage",
   "additional-notes": "Additional notes",
   "system-requirements": "Minimum System Requirements",
-  "license-note": "All material on this page is copyrighted by ©Trion Worlds and their respective licensors. All other trademarks are the property of their respective owners."
+  "license-note": "All material on this page is copyrighted by ©Trion Worlds and their respective licensors. All other trademarks are the property of their respective owners.",
+  "read-more": "+ Read More",
+  "read-less": "- Read Less"
 }

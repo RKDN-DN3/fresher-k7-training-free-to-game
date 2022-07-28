@@ -13,21 +13,21 @@ import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { useAppDispatch } from 'hook/hooksStore';
 import { setIsSearchRedux } from 'features/actionHeader';
-import { GAMES, RELEASE_DATE } from 'constants/constants.d';
+import { GAMES, PLATFORM, RELEASE_DATE, SORT_BY } from 'constants/constants.d';
 import { Game } from 'types';
 import { CardGameMiniViewGames } from 'components/cardGameMini';
 import HeaderTitle from 'components/headerTitle';
 import CardGame from 'components/cardGame';
 import ListGame from 'components/listGame';
-import useFetch from 'hook/hookFeatch';
+import useFetch from 'hook/hookFetch';
 import Loading from 'components/loading';
 import FilterSelect from 'components/filterSelect';
 import searchInput from 'util/search';
 
 const Games = () => {
   const { search } = useLocation();
-  const sortBy = new URLSearchParams(search).get('sort-by');
-  const platform = new URLSearchParams(search).get('platform');
+  const sortBy = new URLSearchParams(search).get(SORT_BY);
+  const platform = new URLSearchParams(search).get(PLATFORM);
 
   const dispatch = useAppDispatch();
 
@@ -47,6 +47,7 @@ const Games = () => {
         genre: sortBy,
       });
     }
+    // setFilter when has pathname = /games and no search
     if (window.location.pathname === GAMES && !search) {
       setFilter({
         sortBy: RELEASE_DATE,
@@ -74,7 +75,7 @@ const Games = () => {
   };
 
   //Return Array search
-  const renderWhenSearch = () => {
+  const renderWhenSearch = React.useMemo(() => {
     let data = [];
     if (searchArr.length > 0) {
       data = searchArr;
@@ -82,9 +83,9 @@ const Games = () => {
       data = games;
     }
     return data;
-  };
+  }, [games, searchArr]);
 
-  //Clear set false isSearch
+  //Set false isSearch
   React.useEffect(() => {
     return () => {
       dispatch(setIsSearchRedux(false));
@@ -114,7 +115,9 @@ const Games = () => {
           </div>
         }
       />
+      {/* ListGame  render */}
       <ListGame items={games} limit={3} Card={CardGame} />
+      {/* Input search */}
       {isSearch && (
         <SearchStyled>
           <div className="games_search-icon-title">
@@ -128,10 +131,12 @@ const Games = () => {
           </div>
         </SearchStyled>
       )}
+      {/* FilterSelect */}
       <FilterSelect onChange={onFilterChange} />
       {isLoading && <Loading />}
       <ContentGame>
-        <ListGame items={renderWhenSearch()} Card={CardGameMiniViewGames} />
+        {/* ListGame  render */}
+        <ListGame items={renderWhenSearch} Card={CardGameMiniViewGames} />
       </ContentGame>
     </Container>
   );

@@ -5,12 +5,20 @@ export const CONSTANTS = {
   THEME: 'theme',
 };
 
+export const PATCH = {
+  GAME: '/game',
+  GAMES: '/games',
+  FILTER: 'filter',
+};
+
 //API
 export const API_KEY = '8e11c68c69msh19cd21edee59632p14d94bjsn69f31a32bb26';
 export const API_HOST = 'free-to-play-games-database.p.rapidapi.com';
 export const RAPIDAPI_KEY = 'x-rapidapi-key';
 export const RAPIDAPI_HOST = 'x-rapidapi-host';
 export const SORT_BY = 'sort-by';
+export const PLATFORM = 'platform';
+export const ID = 'id';
 
 //LANGUAGE
 export const EN = 'EN';

@@ -1,9 +1,3 @@
-import { RootState } from 'store/store';
-import { CONSTANTS, PC_BROWSER, WEB_BROWSER } from 'constants/constants.d';
-import { translate } from 'util/translate';
-import { useSelector } from 'react-redux';
-import { H3 } from 'styles/components/style';
-import { Game } from 'types';
 import {
   CardGameContainer,
   Name,
@@ -16,6 +10,12 @@ import {
   CardGameMiniViewGamesStyled,
   IconSa,
 } from './style';
+import { CONSTANTS, PC_BROWSER, WEB_BROWSER } from 'constants/constants.d';
+import { RootState } from 'store/store';
+import { translate } from 'util/translate';
+import { useSelector } from 'react-redux';
+import { H3 } from 'styles/components/style';
+import { Game } from 'types';
 
 type ItemProps = {
   item?: Game;
@@ -40,12 +40,10 @@ const CardGameMini = (props: ItemProps) => {
                 <Button>{translate(CONSTANTS.FREE, language)}</Button>
               </div>
               <TitleDes className="card-game-mini_des">
-                Play the most competitive massively multiplayer party royale
-                game featuring beans ever for free on a variety of platforms.
+                {item?.short_description}
               </TitleDes>
               <div className="card-game-mini_battle">
                 <ButtonType>{item?.genre}</ButtonType>
-
                 {item?.platform === PC_BROWSER ? (
                   <>
                     <IconSa /> <IconWin />

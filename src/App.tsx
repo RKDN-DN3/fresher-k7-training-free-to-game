@@ -19,6 +19,7 @@ const App = () => {
       <GlobalStyle>
         <BrowserRouter>
           <Routes>
+            {/* LIST ROUTE */}
             {publicRoute?.map((route: RouteType, index: number) => {
               const Component = route.component;
               return (
@@ -26,13 +27,14 @@ const App = () => {
                   key={index}
                   path={route.patch}
                   element={
-                    <DefaultLayout noneBanner={route.noneBanner && true}>
+                    <DefaultLayout noneBanner={route.noneBanner}>
                       <Component />
                     </DefaultLayout>
                   }
                 />
               );
             })}
+            {/* NOT FOUND ROUTE */}
             <Route
               path="*"
               element={
