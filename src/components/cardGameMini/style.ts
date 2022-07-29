@@ -100,11 +100,17 @@ export const CardGameMiniViewGamesStyled = styled.div`
     flex-direction: column;
     width: 270px;
     height: 280px;
-    @media (min-width: 1200px) {
-      max-width: 300px;
+    @media (max-width: ${breakpoints.desktop}) {
+      width: 311px;
+      height: auto;
     }
-    @media (max-width: 990px) {
-      max-width: 216px;
+    @media (max-width: ${breakpoints.tablet}) {
+      width: 216px;
+      height: auto;
+    }
+    @media (max-width: ${breakpoints.mobile}) {
+      width: 430px !important;
+      height: auto;
     }
     padding: 0;
     img {

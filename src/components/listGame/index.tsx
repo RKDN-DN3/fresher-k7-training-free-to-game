@@ -26,17 +26,15 @@ const ListGame = (props: ItemsProps) => {
   }, [limit, items]);
 
   return (
-    <Container>
-      <ListContentGame column={column} limit={limit}>
-        {listArr?.map((item, i: number) => {
-          return (
-            <Link to={`/game?id=${item.id}`} key={i}>
-              <Card item={item} disableName={disableName} />
-            </Link>
-          );
-        })}
-      </ListContentGame>
-    </Container>
+    <ListContentGame column={column} limit={limit}>
+      {listArr?.map((item, i: number) => {
+        return (
+          <Link to={`/game?id=${item.id}`} key={i}>
+            <Card item={item} disableName={disableName} />
+          </Link>
+        );
+      })}
+    </ListContentGame>
   );
 };
 

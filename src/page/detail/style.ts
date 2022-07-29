@@ -1,10 +1,10 @@
-import { whiteColor } from './../../styles/theme/index';
 import styled from 'styled-components';
 import {
   width,
   secondaryTextColor,
   primaryTextColor,
   borderColor,
+  whiteColor,
 } from 'styles/theme';
 import {
   textHoverColor,
@@ -13,6 +13,7 @@ import {
   textColor,
   gradientColor,
 } from 'styles/themeProvider';
+import { breakpoints } from 'styles/breakpoints';
 import { Breadcrumbs as BreadcrumbsStyle } from '@mui/material';
 import HeaderTitle from 'components/headerTitle';
 
@@ -21,25 +22,53 @@ export const DetailContainer = styled.div`
   width: ${width};
   margin: 20px auto 50px auto;
   color: ${textColor};
+  @media (max-width: ${breakpoints.desktop}) {
+    width: 900px;
+  }
+  @media (max-width: ${breakpoints.tablet}) {
+    width: 800px;
+  }
+  @media (max-width: ${breakpoints.mobile}) {
+    width: 100%;
+    flex-direction: column;
+  }
   .detail-right {
     flex: 2;
     color: ${textColor};
     z-index: 1;
+    @media (max-width: ${breakpoints.mobile}) {
+      padding: 0 100px;
+    }
   }
   .detail-left {
     flex: 1;
+
     img {
       width: 356px;
+      @media (max-width: ${breakpoints.desktop}) {
+        width: 250px;
+      }
+      @media (max-width: ${breakpoints.tablet}) {
+        width: 200px;
+      }
     }
   }
   .detail-card {
     z-index: 1;
     position: fixed;
     top: 80px;
-  }
-  .detail-title-end {
-    font-size: 12px;
-    color: ${secondaryTextColor};
+    @media (max-width: ${breakpoints.mobile}) {
+      padding: 20px 100px;
+      position: relative;
+      top: 0;
+      img {
+        width: 100%;
+      }
+    }
+    .detail-title-end {
+      font-size: 12px;
+      color: ${secondaryTextColor};
+    }
   }
 `;
 
@@ -147,6 +176,13 @@ export const Screenshots = styled.div`
   margin: 15px 0;
   img {
     width: 168px;
+    @media (max-width: ${breakpoints.mobile}) {
+      width: 100%;
+      padding: 10px;
+    }
+  }
+  @media (max-width: ${breakpoints.mobile}) {
+    flex-wrap: wrap;
   }
 `;
 

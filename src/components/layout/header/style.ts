@@ -31,12 +31,14 @@ export const HeaderContainer = styled.div`
   background-color: ${backgroundColor};
   border-bottom: 1px solid rgba(28, 28, 28, 0.6) !important;
   text-shadow: 1px 1px 1px rgb(0 0 0 / 30%);
+  @media (max-width: ${breakpoints.desktop}) {
+    padding: 0 50px;
+    width: auto;
+  }
   @media (max-width: ${breakpoints.tablet}) {
     white-space: nowrap;
     padding: 0 70px;
-  }
-  @media (max-width: 1200px) {
-    padding: 0 50px;
+    width: auto;
   }
 `;
 

@@ -1,10 +1,10 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { ThemeProvider } from 'styled-components';
+import { CONSTANTS } from 'constants/constants.d';
 import { RouteType } from './types';
 import { RootState } from 'store/store';
-import { useSelector } from 'react-redux';
 import { publicRoute } from 'router';
-import { CONSTANTS } from 'constants/constants.d';
+import { useSelector } from 'react-redux';
+import { ThemeProvider } from 'styled-components';
 import NotFound from 'page/notFound';
 import GlobalStyle from 'components/layout/globalStyle';
 import DefaultLayout from 'components/layout/defaultLayout';

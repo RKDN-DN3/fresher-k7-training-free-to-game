@@ -1,31 +1,32 @@
 import React from 'react';
 import {
-  ContentGame,
-  TextField,
-  SearchStyled,
-  SearchIcon,
   Container,
+  TextField,
+  SearchIcon,
+  ContentGame,
+  SearchStyled,
 } from './style';
-import { translate } from 'util/translate';
-import { RootState } from 'store/store';
+import { Game } from 'types';
 import { Filter } from 'hook/type';
+import { RootState } from 'store/store';
+import { translate } from 'util/translate';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { useAppDispatch } from 'hook/hooksStore';
 import { setIsSearchRedux } from 'features/actionHeader';
-import { GAMES, PLATFORM, RELEASE_DATE, SORT_BY } from 'constants/constants.d';
-import { Game } from 'types';
 import { CardGameMiniViewGames } from 'components/cardGameMini';
-import HeaderTitle from 'components/headerTitle';
+import { GAMES, PLATFORM, RELEASE_DATE, SORT_BY } from 'constants/constants.d';
+import Loading from 'components/loading';
 import CardGame from 'components/cardGame';
 import ListGame from 'components/listGame';
 import useFetch from 'hook/hookFetch';
-import Loading from 'components/loading';
-import FilterSelect from 'components/filterSelect';
 import searchInput from 'util/search';
+import HeaderTitle from 'components/headerTitle';
+import FilterSelect from 'components/filterSelect';
 
 const Games = () => {
   const { search } = useLocation();
+  //Get url
   const sortBy = new URLSearchParams(search).get(SORT_BY);
   const platform = new URLSearchParams(search).get(PLATFORM);
 
