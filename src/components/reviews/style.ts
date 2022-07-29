@@ -6,6 +6,9 @@ export const ReviewsStyle = styled.div`
   display: flex;
   margin-top: 30px;
   justify-content: space-between;
+  @media (max-width: 450px) {
+    overflow: hidden;
+  }
   .detail-reviews-left {
     display: flex;
     flex-direction: column;
