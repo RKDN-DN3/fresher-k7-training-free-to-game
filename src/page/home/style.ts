@@ -16,6 +16,10 @@ export const Container = styled(ContainerStyle)`
     padding: 0 50px;
     width: auto;
   }
+  @media (max-width: 450px) {
+    padding: 0 20px;
+    width: auto;
+  }
 `;
 
 export const ContentGame = styled.div`

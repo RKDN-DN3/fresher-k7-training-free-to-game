@@ -19,6 +19,9 @@ export const Form = styled.form`
     width: auto;
     gap: 20px;
   }
+  @media (max-width: 450px) {
+    display: none;
+  }
 `;
 
 export const Label = styled.label`

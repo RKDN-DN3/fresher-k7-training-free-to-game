@@ -11,7 +11,7 @@ const LightOfDark = () => {
     dispatch(setIsLightRedux(!isLight));
   };
   return (
-    <div style={{ cursor: 'pointer' }}>
+    <div style={{ cursor: 'pointer' }} className="lightOfDark">
       {isLight ? (
         <Brightness5Icon onClick={handleOnClick} />
       ) : (

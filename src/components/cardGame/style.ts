@@ -21,10 +21,13 @@ export const CardGameContainer = styled.div`
     width: ${({ size }: ItemProps) => (size === 'minium' ? '100%' : '315px')};
   }
   @media (max-width: ${breakpoints.tablet}) {
-    width: ${({ size }: ItemProps) => (size === 'minium' ? '100%' : '216px')};
+    width: ${({ size }: ItemProps) => (size === 'minium' ? '100%' : '176px')};
   }
   @media (max-width: ${breakpoints.mobile}) {
     width: ${({ size }: ItemProps) => (size === 'minium' ? '100%' : '430px')};
+  }
+  @media (max-width: 450px) {
+    width: ${({ size }: ItemProps) => (size === 'minium' ? '100%' : '375px')};
   }
 `;
 export const Name = styled.div`

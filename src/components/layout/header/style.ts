@@ -40,6 +40,9 @@ export const HeaderContainer = styled.div`
     padding: 0 70px;
     width: auto;
   }
+  @media (max-width: 450px) {
+    padding: 10px;
+  }
 `;
 
 export const HeaderContent = styled.div`
@@ -57,6 +60,18 @@ export const HeaderContent = styled.div`
   }
   @media (max-width: 1160px) {
     width: 100%;
+  }
+  @media (max-width: 450px) {
+    .lightOfDark {
+      display: none;
+    }
+    .MuiOutlinedInput-root {
+      & > div {
+      }
+      p {
+        display: none;
+      }
+    }
   }
 `;
 

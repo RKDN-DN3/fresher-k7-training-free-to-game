@@ -39,10 +39,12 @@ export const DetailContainer = styled.div`
     @media (max-width: ${breakpoints.mobile}) {
       padding: 0 100px;
     }
+    @media (max-width: 450px) {
+      padding: 20px 20px;
+    }
   }
   .detail-left {
     flex: 1;
-
     img {
       width: 356px;
       @media (max-width: ${breakpoints.desktop}) {
@@ -64,6 +66,9 @@ export const DetailContainer = styled.div`
       img {
         width: 100%;
       }
+    }
+    @media (max-width: 450px) {
+      padding: 20px 20px;
     }
     .detail-title-end {
       font-size: 12px;
