@@ -59,7 +59,7 @@ const Detail = () => {
           background: `url(https://www.freetogame.com/g/${game?.id}/background.jpg)`,
         }}
       >
-        <div className="detail-gradient"></div>
+        <div className="detail-gradient" />
       </BackGroundImgStyled>
       <div className="detail-left">
         {/* Card */}
