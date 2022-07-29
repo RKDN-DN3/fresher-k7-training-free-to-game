@@ -19,6 +19,9 @@ export const CardGameContainer = styled.div`
     cursor: pointer;
     transform: scale(1.01);
   }
+  @media (max-width: 450px) {
+    padding: 10px;
+  }
 `;
 
 export const Name = styled.div`
@@ -38,6 +41,9 @@ export const Button = styled.button`
   font-size: 11px !important;
   font-weight: 700;
   cursor: pointer;
+  @media (max-width: 450px) {
+    font-size: 8px !important;
+  }
 `;
 export const Img = styled.img`
   height: 90px;
@@ -76,6 +82,9 @@ export const TitleDes = styled.div`
   @media (max-width: 980px), (max-width: 1160px) {
     max-width: 200px;
   }
+  @media (max-width: 450px) {
+    font-size: 12px;
+  }
 `;
 
 export const IconSa = styled(IconSave)`
@@ -85,6 +94,9 @@ export const IconSa = styled(IconSave)`
   path {
     fill: ${secondaryTextColor} !important;
   }
+  @media (max-width: 450px) {
+    display: none !important;
+  }
 `;
 
 export const IconWin = styled(IconWindow)`
@@ -93,23 +105,30 @@ export const IconWin = styled(IconWindow)`
   path {
     fill: ${secondaryTextColor} !important;
   }
+  @media (max-width: 450px) {
+    display: none !important;
+  }
 `;
 
 export const CardGameMiniViewGamesStyled = styled.div`
   .cardGameMini {
     flex-direction: column;
-    width: 270px;
+    width: 260px;
     height: 280px;
     @media (max-width: ${breakpoints.desktop}) {
       width: 311px;
       height: auto;
     }
     @media (max-width: ${breakpoints.tablet}) {
-      width: 216px;
+      width: 176px;
       height: auto;
     }
     @media (max-width: ${breakpoints.mobile}) {
-      width: 430px !important;
+      width: 430px;
+      height: auto;
+    }
+    @media (max-width: 450px) {
+      width: 375px;
       height: auto;
     }
     padding: 0;
@@ -134,6 +153,9 @@ export const CardGameMiniViewGamesStyled = styled.div`
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
+    @media (max-width: 450px) {
+      max-width: 100%;
+    }
   }
   .card-game-mini_battle {
     display: flex;

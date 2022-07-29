@@ -82,13 +82,17 @@ const Header = () => {
     dispatch(setIsSearchRedux(!isSearch));
   };
 
+  const handleClickLogo = () => {
+    window.scrollTo(0, 0);
+  };
+
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
   return (
     <HeaderContainer>
       <HeaderContent>
         <Left>
-          <LinkStyled to="/">
+          <LinkStyled onClick={handleClickLogo} to="/">
             <Li>
               <Img src={IMG_LOGO} />
             </Li>

@@ -20,6 +20,9 @@ export const ReviewsStyle = styled.div`
   }
   .detail-reviews-right {
     padding-right: 100px;
+    @media (max-width: 450px) {
+      padding: 0;
+    }
   }
 `;
 export const PersonIcon = styled(Person)``;
