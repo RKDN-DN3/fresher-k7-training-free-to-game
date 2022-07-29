@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/deploy-github/static/css/main.253f703f.css",
+    "main.js": "/deploy-github/static/js/main.6573dda1.js",
+    "static/media/IconVi.svg": "/deploy-github/static/media/IconVi.cced293599633fdeb290ad949b227b2f.svg",
+    "static/media/IconSave.svg": "/deploy-github/static/media/IconSave.15b10c7a8bddf576a966dbc981db3686.svg",
+    "static/media/IconEn.svg": "/deploy-github/static/media/IconEn.783291e70d06d5b11741ca310d3d3f5b.svg",
+    "static/media/IconWindow.svg": "/deploy-github/static/media/IconWindow.5a1bfc26efdb08580b045671ca6973c7.svg",
+    "index.html": "/deploy-github/index.html",
+    "static/media/IconCheckSquare.svg": "/deploy-github/static/media/IconCheckSquare.d3632c6616bf762ec4b7605fe9666cd0.svg",
+    "main.253f703f.css.map": "/deploy-github/static/css/main.253f703f.css.map",
+    "main.6573dda1.js.map": "/deploy-github/static/js/main.6573dda1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.253f703f.css",
+    "static/js/main.6573dda1.js"
+  ]
+}
