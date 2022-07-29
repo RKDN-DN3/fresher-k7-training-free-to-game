@@ -113,7 +113,7 @@ export const IconWin = styled(IconWindow)`
 export const CardGameMiniViewGamesStyled = styled.div`
   .cardGameMini {
     flex-direction: column;
-    width: 260px;
+    width: 269px;
     height: 280px;
     @media (max-width: ${breakpoints.desktop}) {
       width: 311px;
