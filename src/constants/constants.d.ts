@@ -1,3 +1,4 @@
+// CONSTANTS
 export const CONSTANTS = {
   FREE: 'FREE',
   LIGHT: 'light',
@@ -5,11 +6,13 @@ export const CONSTANTS = {
   THEME: 'theme',
 };
 
+// PATCH
 export const PATCH = {
   GAME: '/game',
   GAMES: '/games',
   FILTER: 'filter',
 };
+export const GAMES = '/games';
 
 //API
 export const API_KEY = '8e11c68c69msh19cd21edee59632p14d94bjsn69f31a32bb26';
@@ -38,9 +41,6 @@ export const POPULARITY = 'popularity';
 
 //STATUS
 export const STATUS_SUCCESS = 200;
-
-//PATCH
-export const GAMES = '/games';
 
 //LINK
 export const IMG_LOGO =

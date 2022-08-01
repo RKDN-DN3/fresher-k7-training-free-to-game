@@ -15,7 +15,7 @@ import { useLocation } from 'react-router-dom';
 import { useAppDispatch } from 'hook/hooksStore';
 import { setIsSearchRedux } from 'features/actionHeaderSlice';
 import { CardGameMiniViewGames } from 'components/cardGameMini';
-import { GAMES, PLATFORM, RELEASE_DATE, SORT_BY } from 'constants/constants.d';
+import { PATCH, PLATFORM, RELEASE_DATE, SORT_BY } from 'constants/constants.d';
 import Loading from 'components/loading';
 import CardGame from 'components/cardGame';
 import ListGame from 'components/listGame';
@@ -49,7 +49,7 @@ const Games = () => {
       });
     }
     // setFilter when has pathname = /games and no search
-    if (window.location.pathname === GAMES && !search) {
+    if (window.location.pathname === PATCH.GAMES && !search) {
       setFilter({
         sortBy: RELEASE_DATE,
       });
@@ -72,7 +72,7 @@ const Games = () => {
   //Input search
   const handleOnChangeInput = (e: any) => {
     const searchArr = searchInput(games, e.target.value);
-    setSearchArr(searchArr as any);
+    setSearchArr(searchArr);
   };
 
   //Return Array search
@@ -125,8 +125,8 @@ const Games = () => {
             <SearchIcon />
             <TextField
               onChange={handleOnChangeInput}
-              variant="filled"
               placeholder={translate('find-games', language)}
+              variant="filled"
               autoFocus
             />
           </div>

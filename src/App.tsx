@@ -38,7 +38,7 @@ const App = () => {
             <Route
               path="*"
               element={
-                <DefaultLayout noneBanner={true}>
+                <DefaultLayout noneBanner>
                   <NotFound />
                 </DefaultLayout>
               }

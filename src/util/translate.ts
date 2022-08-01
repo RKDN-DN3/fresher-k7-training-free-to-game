@@ -4,12 +4,15 @@ import { EN, VI } from 'constants/constants.d';
 
 export const translate = (key: string, language: string): string => {
   let langData: { [key: string]: string } = {};
-
-  if (language === EN) {
-    langData = en;
-  } else if (language === VI) {
-    langData = vi;
+  switch (language) {
+    case EN:
+      langData = en;
+      break;
+    case VI:
+      langData = vi;
+      break;
+    default:
+      break;
   }
-
   return langData[key];
 };
