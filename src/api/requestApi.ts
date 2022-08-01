@@ -1,5 +1,5 @@
 import axiosClient from './axiosClient';
-import { PATCH } from 'constants/constants.d';
+import { PATCH } from 'constants/constants';
 import _ from 'lodash';
 
 const requestApi = {

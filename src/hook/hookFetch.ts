@@ -1,12 +1,7 @@
 import React from 'react';
 import { Game } from 'types';
 import { Filter } from './type';
-import {
-  STATUS_SUCCESS,
-  API_HOST,
-  API_KEY,
-  PATCH,
-} from 'constants/constants.d';
+import { STATUS_SUCCESS, API_HOST, API_KEY, PATCH } from 'constants/constants';
 import axios from 'axios';
 import _ from 'lodash';
 

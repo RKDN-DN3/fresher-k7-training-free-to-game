@@ -1,4 +1,4 @@
-import { CONSTANTS } from 'constants/constants.d';
+import { CONSTANTS } from 'constants/constants';
 import { RootState } from 'store/store';
 import { RouteType } from './types';
 import { useSelector } from 'react-redux';

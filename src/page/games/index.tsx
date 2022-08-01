@@ -15,7 +15,7 @@ import { useLocation } from 'react-router-dom';
 import { useAppDispatch } from 'hook/hooksStore';
 import { setIsSearchRedux } from 'features/actionHeaderSlice';
 import { CardGameMiniViewGames } from 'components/cardGameMini';
-import { PATCH, PLATFORM, RELEASE_DATE, SORT_BY } from 'constants/constants.d';
+import { PATCH, PLATFORM, RELEASE_DATE, SORT_BY } from 'constants/constants';
 import Loading from 'components/loading';
 import CardGame from 'components/cardGame';
 import ListGame from 'components/listGame';

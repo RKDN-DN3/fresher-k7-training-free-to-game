@@ -10,7 +10,7 @@ import {
   black_1,
   secondaryTextColor,
 } from 'styles/theme';
-import { CONSTANTS } from 'constants/constants.d';
+import { CONSTANTS } from 'constants/constants';
 import theme from 'styled-theming';
 
 export const backgroundColor = theme(CONSTANTS.THEME, {

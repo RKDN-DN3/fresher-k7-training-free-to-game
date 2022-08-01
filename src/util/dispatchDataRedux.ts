@@ -7,7 +7,7 @@ import {
   dispatchGamePopularity,
 } from 'features/games/GameApi';
 import { fetchDataDispatch } from 'util/fetchDataDispatch';
-import { RELEASE_DATE, RELEVANCE, POPULARITY } from 'constants/constants.d';
+import { RELEASE_DATE, RELEVANCE, POPULARITY } from 'constants/constants';
 
 // dispatch and fetch data list game
 const dispatchDataRedux = async (

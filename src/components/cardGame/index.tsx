@@ -1,7 +1,7 @@
 import { H3 } from 'styles/components/style';
 import { Game } from 'types';
 import { RootState } from 'store/store';
-import { CONSTANTS } from 'constants/constants.d';
+import { CONSTANTS } from 'constants/constants';
 import { translate } from 'util/translate';
 import { useSelector } from 'react-redux';
 import { CardGameContainer, Name, Button, ButtonAlone, Img } from './style';

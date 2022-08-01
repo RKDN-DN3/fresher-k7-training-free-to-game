@@ -11,7 +11,7 @@ import {
   HeaderTitleStyled,
   BackGroundImgStyled,
 } from './style';
-import { ID } from 'constants/constants.d';
+import { ID } from 'constants/constants';
 import { Link } from 'styles/components/style';
 import { translate } from 'util/translate';
 import { RootState } from 'store/store';

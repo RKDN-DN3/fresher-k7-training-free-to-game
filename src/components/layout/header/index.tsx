@@ -22,7 +22,7 @@ import {
   BROWSER,
   IMG_LOGO,
   EN,
-} from 'constants/constants.d';
+} from 'constants/constants';
 import { Box } from '@mui/system';
 import { useSelector } from 'react-redux';
 import { RootState } from 'store/store';
