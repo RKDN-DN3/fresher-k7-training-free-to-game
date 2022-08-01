@@ -31,7 +31,7 @@ import { IconButton } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import { headers, headerType } from './type';
 import { useDispatch } from 'react-redux';
-import { setIsSearchRedux } from 'features/actionHeader';
+import { setIsSearchRedux } from 'features/actionHeaderSlice';
 import { GENRES_ARR, GENRES_BROWSER_ARR, typeListGame } from 'constants/games';
 import LightOfDark from 'components/lightOfDark';
 import SelectLanguage from 'components/selectLanguage';

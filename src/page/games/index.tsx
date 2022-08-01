@@ -13,7 +13,7 @@ import { translate } from 'util/translate';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { useAppDispatch } from 'hook/hooksStore';
-import { setIsSearchRedux } from 'features/actionHeader';
+import { setIsSearchRedux } from 'features/actionHeaderSlice';
 import { CardGameMiniViewGames } from 'components/cardGameMini';
 import { GAMES, PLATFORM, RELEASE_DATE, SORT_BY } from 'constants/constants.d';
 import Loading from 'components/loading';
@@ -135,8 +135,8 @@ const Games = () => {
       {/* FilterSelect */}
       <FilterSelect onChange={onFilterChange} />
       {isLoading && <Loading />}
+      {/* ListGame  render */}
       <ContentGame>
-        {/* ListGame  render */}
         <ListGame items={renderWhenSearch} Card={CardGameMiniViewGames} />
       </ContentGame>
     </Container>

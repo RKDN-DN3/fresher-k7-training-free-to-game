@@ -1,3 +1,6 @@
+import React from 'react';
+import { Game } from './../types/index';
+import { PayloadAction } from '@reduxjs/toolkit';
 import {
   dispatchGameRelease,
   dispatchGameRelevance,
@@ -7,7 +10,9 @@ import { fetchDataDispatch } from 'util/fetchDataDispatch';
 import { RELEASE_DATE, RELEVANCE, POPULARITY } from 'constants/constants.d';
 
 // dispatch and fetch data list game
-const dispatchDataRedux = async (dispatch: any) => {
+const dispatchDataRedux = async (
+  dispatch: React.Dispatch<PayloadAction<Game[]>>,
+) => {
   const resRelease = await fetchDataDispatch(RELEASE_DATE);
   const resRelevance = await fetchDataDispatch(RELEVANCE);
   const resPopularity = await fetchDataDispatch(POPULARITY);
