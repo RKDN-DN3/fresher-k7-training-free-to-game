@@ -23,6 +23,7 @@ import useFetch from 'hook/hookFetch';
 import searchInput from 'util/search';
 import HeaderTitle from 'components/headerTitle';
 import FilterSelect from 'components/filterSelect';
+import _ from 'lodash';
 
 const Games = () => {
   const { search } = useLocation();
@@ -57,17 +58,14 @@ const Games = () => {
   }, [sortBy, platform, search]);
 
   //Filter
-  const onFilterChange = React.useCallback(
-    (event: React.ChangeEvent<HTMLFormElement>) => {
-      setFilter((current) => ({
-        ...current,
-        [event.target.name]: event.target.value,
-      }));
-      event.preventDefault();
-      setSearchArr([]);
-    },
-    [],
-  );
+  const onFilterChange = React.useCallback((e: any) => {
+    setFilter((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+    e.preventDefault();
+    setSearchArr([]);
+  }, []);
 
   //Input search
   const handleOnChangeInput = (e: any) => {
@@ -78,7 +76,7 @@ const Games = () => {
   //Return Array search
   const renderWhenSearch = React.useMemo(() => {
     let data = [];
-    if (searchArr.length > 0) {
+    if (!_.isEmpty(searchArr)) {
       data = searchArr;
     } else {
       data = games;

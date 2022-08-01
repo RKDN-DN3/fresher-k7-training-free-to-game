@@ -12,7 +12,6 @@ export const PATCH = {
   GAMES: '/games',
   FILTER: 'filter',
 };
-export const GAMES = '/games';
 
 //API
 export const API_KEY = '8e11c68c69msh19cd21edee59632p14d94bjsn69f31a32bb26';
@@ -22,6 +21,9 @@ export const RAPIDAPI_HOST = 'x-rapidapi-host';
 export const SORT_BY = 'sort-by';
 export const PLATFORM = 'platform';
 export const ID = 'id';
+
+//STATUS
+export const STATUS_SUCCESS = 200;
 
 //LANGUAGE
 export const EN = 'EN';
@@ -38,9 +40,6 @@ export const PC_BROWSER = 'PC (Windows), Web Browser';
 export const RELEVANCE = 'relevance';
 export const RELEASE_DATE = 'release-date';
 export const POPULARITY = 'popularity';
-
-//STATUS
-export const STATUS_SUCCESS = 200;
 
 //LINK
 export const IMG_LOGO =

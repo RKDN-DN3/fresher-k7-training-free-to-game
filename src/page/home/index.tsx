@@ -44,7 +44,7 @@ const Home = () => {
         IconTop={SmartToyIcon}
         IconBottom={HelpIcon}
       />
-      {gamesRelevance.length === 0 && <Loading />}
+      {_.isEmpty(gamesRelevance) && <Loading />}
       {/* ListGame render */}
       <ListGame items={gamesRelevance} limit={3} Card={CardGame} />
       {/* body */}

@@ -4,8 +4,8 @@ import {
   Text,
   ReadMore,
   Breadcrumbs,
-  ActionStyled,
   Screenshots,
+  ActionStyled,
   DetailContainer,
   InformationTitle,
   HeaderTitleStyled,
@@ -113,6 +113,7 @@ const Detail = () => {
             <>{translate('read-less', language)}</>
           )}
         </ReadMore>
+        {/* Information */}
         <InformationTitle>
           <HeaderTitleStyled
             topTile={translate('additional-information', language)}
@@ -120,7 +121,6 @@ const Detail = () => {
             IconBottom={ErrorIcon}
           />
         </InformationTitle>
-        {/* Information */}
         <Information item={game} />
         <H4>
           {game?.title} {translate('screenshots', language)}

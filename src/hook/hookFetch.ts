@@ -12,10 +12,10 @@ type Response = {
 };
 
 const useFetch = (params: Filter): Response => {
+  const { platform, genre, tag, sortBy } = params;
   const [games, setGames] = React.useState<Game[]>([]);
   const [err, setErr] = React.useState<string>('');
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
-  const { platform, genre, tag, sortBy } = params;
 
   React.useEffect(() => {
     if (!_.isEmpty(params)) {
