@@ -20,6 +20,7 @@ import Loading from 'components/loading';
 import CardGame from 'components/cardGame';
 import ListGame from 'components/listGame';
 import useFetch from 'hook/hookFetch';
+import CloseIcon from '@mui/icons-material/Close';
 import searchInput from 'util/search';
 import HeaderTitle from 'components/headerTitle';
 import FilterSelect from 'components/filterSelect';
@@ -39,6 +40,7 @@ const Games = () => {
 
   const [filter, setFilter] = React.useState<Filter>({});
   const [searchArr, setSearchArr] = React.useState<Game[]>([]);
+  const [valueSearch, setValueSearch] = React.useState<string>('');
   const { games, isLoading } = useFetch(filter);
 
   React.useEffect(() => {
@@ -69,8 +71,17 @@ const Games = () => {
 
   //Input search
   const handleOnChangeInput = (e: any) => {
-    const searchArr = searchInput(games, e.target.value);
-    setSearchArr(searchArr);
+    setValueSearch(e.target.value);
+    if (valueSearch) {
+      const searchArr = searchInput(games, valueSearch);
+      setSearchArr(searchArr);
+    }
+  };
+
+  // remove value search and set arrr
+  const handleRemoveValueSearch = () => {
+    setValueSearch('');
+    setSearchArr(games);
   };
 
   //Return Array search
@@ -122,11 +133,18 @@ const Games = () => {
           <div className="games_search-icon-title">
             <SearchIcon />
             <TextField
+              value={valueSearch}
               onChange={handleOnChangeInput}
               placeholder={translate('find-games', language)}
               variant="filled"
               autoFocus
             />
+            {valueSearch && (
+              <CloseIcon
+                sx={{ cursor: 'pointer', '&:hover': { opacity: 0.8 } }}
+                onClick={handleRemoveValueSearch}
+              />
+            )}
           </div>
         </SearchStyled>
       )}
