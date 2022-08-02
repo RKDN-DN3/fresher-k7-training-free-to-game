@@ -2,7 +2,10 @@
 
 ## Link demo: https://rkdn-dn3.github.io/fresher-k7-training-free-to-game/
 
+
+
 In the project directory, you can run:
+### `npm install`
 
 ### `npm start`
 
