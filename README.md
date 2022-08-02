@@ -5,9 +5,10 @@
 
 
 In the project directory, you can run:
-Step1:
+
+1.
 ### `npm install`
-Step2:
+2.
 ### `npm start`
 
 Runs the app in the development mode.\
