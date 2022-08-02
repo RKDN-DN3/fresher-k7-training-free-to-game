@@ -20,11 +20,11 @@ const App = () => {
         <BrowserRouter>
           <Routes>
             {/* LIST ROUTE */}
-            {publicRoute?.map((route: RouteType, index: number) => {
+            {publicRoute?.map((route: RouteType, i: number) => {
               const Component = route.component;
               return (
                 <Route
-                  key={index}
+                  key={i}
                   path={route.patch}
                   element={
                     <DefaultLayout noneBanner={route.noneBanner}>

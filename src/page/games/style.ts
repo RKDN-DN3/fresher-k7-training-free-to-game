@@ -8,6 +8,7 @@ import { TextField as TextFieldStyle } from '@mui/material';
 
 export const Container = styled(ContainerStyle)`
   width: ${width};
+  min-height: 100vh;
   margin: auto;
   margin-top: 50px;
   margin-bottom: 50px;

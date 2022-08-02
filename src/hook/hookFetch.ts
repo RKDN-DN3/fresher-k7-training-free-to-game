@@ -1,15 +1,9 @@
 import React from 'react';
 import { Game } from 'types';
-import { Filter } from './type';
+import { Filter, Response } from './type';
 import { STATUS_SUCCESS, API_HOST, API_KEY, PATCH } from 'constants/constants';
 import axios from 'axios';
 import _ from 'lodash';
-
-type Response = {
-  games: Game[];
-  error: string;
-  isLoading: boolean;
-};
 
 const useFetch = (params: Filter): Response => {
   const { platform, genre, tag, sortBy } = params;
@@ -21,11 +15,9 @@ const useFetch = (params: Filter): Response => {
     if (!_.isEmpty(params)) {
       setIsLoading(true);
       let urlFetch = PATCH.GAMES;
-
       if (tag) {
         urlFetch = PATCH.FILTER;
       }
-
       const options = {
         baseURL: `https://${API_HOST}/api`,
         headers: {
@@ -39,7 +31,6 @@ const useFetch = (params: Filter): Response => {
           'sort-by': sortBy,
         },
       };
-
       axios
         .get(urlFetch, options)
         .then((res) => {
