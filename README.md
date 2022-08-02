@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-## Link demo: http://localhost:3000](https://rkdn-dn3.github.io/fresher-k7-training-free-to-game/
+## Link demo: https://rkdn-dn3.github.io/fresher-k7-training-free-to-game/
 
 In the project directory, you can run:
 
