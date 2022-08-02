@@ -114,7 +114,7 @@ const Games = () => {
           </div>
         }
       />
-      {/* ListGame  render */}
+      {/* ListGame render */}
       <ListGame items={games} limit={3} Card={CardGame} />
       {/* Input search */}
       {isSearch && (
@@ -133,7 +133,7 @@ const Games = () => {
       {/* FilterSelect */}
       <FilterSelect onChange={onFilterChange} />
       {isLoading && <Loading />}
-      {/* ListGame  render */}
+      {/* ListGame render */}
       <ContentGame>
         <ListGame items={renderWhenSearch} Card={CardGameMiniViewGames} />
       </ContentGame>

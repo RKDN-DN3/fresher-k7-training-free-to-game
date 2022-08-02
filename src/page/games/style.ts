@@ -60,6 +60,14 @@ export const SearchStyled = styled.div`
     display: flex;
     align-items: center;
     padding-bottom: 10px;
+    @media (max-width: ${breakpoints.desktop}) {
+      width: auto;
+      padding: 0 20px;
+    }
+    @media (max-width: ${breakpoints.tablet}) {
+      align-items: center;
+      justify-content: center;
+    }
   }
 `;
 

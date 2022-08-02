@@ -4,7 +4,6 @@ import {
   secondaryTextColor,
   primaryTextColor,
   borderColor,
-  whiteColor,
 } from 'styles/theme';
 import {
   textHoverColor,
@@ -192,7 +191,7 @@ export const Screenshots = styled.div`
 `;
 
 export const ReadMore = styled.p`
-  color: ${whiteColor};
+  color: ${textHoverColor};
   &:hover {
     opacity: 0.8;
     cursor: pointer;
