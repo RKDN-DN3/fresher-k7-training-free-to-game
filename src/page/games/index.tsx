@@ -78,7 +78,7 @@ const Games = () => {
     }
   };
 
-  // remove value search and set arrr
+  // remove value search and set arr
   const handleRemoveValueSearch = () => {
     setValueSearch('');
     setSearchArr(games);
