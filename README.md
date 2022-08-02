@@ -1,14 +1,12 @@
 # Getting Started with Create React App
 
-## Link demo: https://rkdn-dn3.github.io/fresher-k7-training-free-to-game/
-
-
-
 In the project directory, you can run:
 
 1. ### `npm install`
 
 2. ### `npm start`
+
+Link demo: https://rkdn-dn3.github.io/fresher-k7-training-free-to-game/
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
